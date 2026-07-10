@@ -1,6 +1,6 @@
 ---
 name: build-poo-learning-app
-description: Build or extend a downloadable offline-first learning application for object-oriented programming using React, TypeScript, TanStack Router, TanStack Query, Zustand, markdown knowledge corpus files, progressive lessons, examples, exercises, QCM/quizzes, stats, tags, and optional local small-model exercise generation. Use when creating, improving, or maintaining the POO learning app based on POO/plan.md or any future course corpus.
+description: Build or extend a downloadable offline-first learning application for object-oriented programming using React, TypeScript, TanStack Router, TanStack Query, Zustand, markdown knowledge corpus files, progressive lessons, examples, exercises, QCM/quizzes, stats, corpus tags, and optional local small-model exercise generation. Use when creating, improving, or maintaining the POO learning app based on POO/plan.md or any future course corpus.
 ---
 
 # Build POO Learning App
@@ -23,7 +23,6 @@ L'application doit proposer :
 - des QCM pour apprendre et vérifier ce qui a été retenu ;
 - des lectures gratuites ou librement accessibles importantes sur le web ;
 - une partie statistiques pour suivre précisément la progression ;
-- des fiches personnelles créées avec des tags ;
 - un corpus Markdown modifiable pour enrichir le cours, ajouter des remarques, références et supports ;
 - une option de génération locale de nouveaux exercices et QCM avec un petit modèle, par exemple Mistral, à partir du corpus.
 
@@ -57,8 +56,6 @@ src/
 │   ├── exercises/
 │   ├── quizzes/
 │   ├── stats/
-│   ├── notes/
-│   ├── tags/
 │   └── generation/
 ├── content/
 │   ├── corpus-index.ts
@@ -87,8 +84,7 @@ corpus/
 │   │   ├── examples.md
 │   │   ├── exercises.md
 │   │   ├── quiz.md
-│   │   ├── readings.md
-│   │   └── notes.md
+│   │   └── readings.md
 │   └── module-02-encapsulation/
 └── shared/
     ├── glossary.md
@@ -168,9 +164,6 @@ Utiliser Zustand pour stocker localement :
 - réponses aux QCM ;
 - scores et historique ;
 - exercices terminés ;
-- notes personnelles ;
-- fiches créées par l'utilisateur ;
-- tags personnalisés ;
 - préférences d'affichage.
 
 Prévoir une persistance locale, par exemple `localStorage` ou IndexedDB selon le volume. Prévoir l'export/import des données utilisateur en JSON.
@@ -195,8 +188,7 @@ La page stats doit montrer précisément où l'utilisateur en est :
 - séries d'apprentissage ;
 - temps estimé restant ;
 - exercices à reprendre ;
-- tags les plus travaillés ;
-- fiches personnelles créées.
+- modules à reprendre.
 
 Les stats doivent aider à reprendre le travail, pas seulement afficher des graphiques.
 
@@ -220,8 +212,9 @@ Une intégration possible est Ollama avec un petit modèle Mistral local, mais g
 Construire une interface sobre, lisible et inspirée de shadcn/ui :
 
 - navigation latérale ou top-level claire ;
-- cartes compactes pour modules, exercices et fiches ;
-- badges de tags ;
+- navigation latérale dense inspirée d'une documentation API ;
+- cartes compactes pour modules et exercices ;
+- badges de tags de corpus ;
 - progress bars ;
 - onglets pour leçon, exemples, exercices, QCM et lectures ;
 - états vides utiles ;
@@ -241,9 +234,6 @@ Prévoir ces routes :
 /learn/$corpusId/$moduleId
 /exercises/$corpusId/$moduleId
 /quiz/$corpusId/$moduleId
-/notes
-/notes/$noteId
-/tags/$tagId
 /stats
 /settings
 ```

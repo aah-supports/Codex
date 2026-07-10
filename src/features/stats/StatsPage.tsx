@@ -7,7 +7,6 @@ import { useCorpusIndex } from '../corpus/useCorpus'
 export function StatsPage() {
   const { data } = useCorpusIndex()
   const progress = useLearningStore((state) => state.progress)
-  const notes = useLearningStore((state) => state.notes)
 
   const modules = data?.corpora.flatMap((corpus) => corpus.modules) ?? []
   const completedLessons = modules.filter((module) => progress[module.id]?.lessonCompleted).length
@@ -54,8 +53,8 @@ export function StatsPage() {
       </Card>
 
       <Card>
-        <h3>Fiches personnelles</h3>
-        <p>{notes.length} fiche(s) creees.</p>
+        <h3>Persistance</h3>
+        <p>La progression est locale dans IndexedDB. Le corpus reste versionne dans GitHub.</p>
       </Card>
     </div>
   )

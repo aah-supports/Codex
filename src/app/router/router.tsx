@@ -2,7 +2,6 @@ import { createHashHistory, createRootRoute, createRoute, createRouter, Outlet }
 import { AppShell } from '../shell/AppShell'
 import { CorpusPage } from '../../features/corpus/CorpusPage'
 import { LessonPage } from '../../features/lessons/LessonPage'
-import { NotesPage } from '../../features/notes/NotesPage'
 import { QuizPage } from '../../features/quizzes/QuizPage'
 import { SettingsPage } from '../../features/settings/SettingsPage'
 import { StatsPage } from '../../features/stats/StatsPage'
@@ -39,12 +38,6 @@ const quizRoute = createRoute({
   component: QuizPage,
 })
 
-const notesRoute = createRoute({
-  getParentRoute: () => rootRoute,
-  path: '/notes',
-  component: NotesPage,
-})
-
 const statsRoute = createRoute({
   getParentRoute: () => rootRoute,
   path: '/stats',
@@ -62,7 +55,6 @@ const routeTree = rootRoute.addChildren([
   corpusRoute,
   learnRoute,
   quizRoute,
-  notesRoute,
   statsRoute,
   settingsRoute,
 ])

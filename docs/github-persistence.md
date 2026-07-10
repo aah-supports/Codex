@@ -9,13 +9,11 @@ GitHub stocke le contenu partageable. IndexedDB stocke le travail personnel quot
 - corpus Markdown ;
 - modules ;
 - exercices et QCM relus ;
-- fiches partageables ;
 - templates de generation ;
 - stats anonymisees si l'utilisateur l'active.
 
 ## Ne doit pas etre public par defaut
 
-- notes privees ;
 - historique detaille de reponses ;
 - email, nom, identifiants personnels ;
 - exports complets non anonymises.

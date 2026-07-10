@@ -4,8 +4,8 @@ Application React/TypeScript local-first pour apprendre la programmation oriente
 
 ## Architecture de persistance
 
-- GitHub est la source de verite du contenu partageable : app, corpus Markdown, exercices, QCM, fiches publiques.
-- IndexedDB est la source locale des donnees utilisateur : progression, scores, notes privees, preferences.
+- GitHub est la source de verite du contenu partageable : app, corpus Markdown, exercices et QCM.
+- IndexedDB est la source locale des donnees utilisateur : progression, scores et preferences.
 - Export/import JSON sert de securite anti-perte et de sauvegarde portable.
 - Les stats peuvent etre poussees sur GitHub uniquement apres anonymisation et action explicite de l'utilisateur.
 

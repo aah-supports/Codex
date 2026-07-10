@@ -75,7 +75,7 @@ export function SettingsPage() {
       <div className="settings-grid">
         <Card>
           <h3>Backup complet</h3>
-          <p>Contient progression, scores, notes et tags. A garder prive.</p>
+          <p>Contient progression, scores et tentatives. A garder prive.</p>
           <Button onClick={exportFullBackup}>Exporter mes donnees</Button>
         </Card>
         <Card>

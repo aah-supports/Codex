@@ -44,16 +44,6 @@ export type QuizQuestion = {
   explanation: string
 }
 
-export type UserNote = {
-  id: string
-  title: string
-  body: string
-  tags: string[]
-  moduleId?: ModuleId
-  createdAt: string
-  updatedAt: string
-}
-
 export type ModuleProgress = {
   moduleId: ModuleId
   lessonCompleted: boolean
@@ -82,6 +72,4 @@ export type UserDataExport = {
   schemaVersion: number
   exportedAt: string
   progress: Record<ModuleId, ModuleProgress>
-  notes: UserNote[]
-  tags: string[]
 }

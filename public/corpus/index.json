@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "corpora": [
+    {
+      "id": "poo",
+      "title": "Programmation orientee objet",
+      "description": "Parcours progressif base sur le plan de cours POO et le projet fil rouge de reservation de cinema.",
+      "version": "0.1.0",
+      "modules": [
+        {
+          "id": "poo.module-01",
+          "slug": "paradigme-objet",
+          "title": "Comprendre le paradigme objet",
+          "description": "Distinguer procedural et objet, puis identifier et responsabiliser des objets.",
+          "level": "beginner",
+          "durationMinutes": 45,
+          "tags": ["poo", "objet", "responsabilite"],
+          "paths": {
+            "lesson": "poo/module-01-paradigme-objet/lesson.md",
+            "examples": "poo/module-01-paradigme-objet/examples.md",
+            "exercises": "poo/module-01-paradigme-objet/exercises.md",
+            "quiz": "poo/module-01-paradigme-objet/quiz.md",
+            "readings": "poo/module-01-paradigme-objet/readings.md"
+          }
+        },
+        {
+          "id": "poo.module-02",
+          "slug": "encapsulation",
+          "title": "Classes, objets et encapsulation",
+          "description": "Construire des objets valides, proteger les invariants et eviter les setters automatiques.",
+          "level": "beginner",
+          "durationMinutes": 50,
+          "tags": ["poo", "classe", "encapsulation", "invariant"],
+          "paths": {
+            "lesson": "poo/module-02-encapsulation/lesson.md",
+            "examples": "poo/module-02-encapsulation/examples.md",
+            "exercises": "poo/module-02-encapsulation/exercises.md",
+            "quiz": "poo/module-02-encapsulation/quiz.md",
+            "readings": "poo/module-02-encapsulation/readings.md"
+          }
+        },
+        {
+          "id": "poo.module-05",
+          "slug": "heritage-composition",
+          "title": "Heritage, composition et polymorphisme",
+          "description": "Comprendre extends, la substitution, le polymorphisme et pourquoi la composition est souvent plus robuste.",
+          "level": "beginner-intermediate",
+          "durationMinutes": 60,
+          "tags": ["poo", "heritage", "composition", "polymorphisme"],
+          "paths": {
+            "lesson": "poo/module-05-heritage-composition/lesson.md",
+            "examples": "poo/module-05-heritage-composition/examples.md",
+            "exercises": "poo/module-05-heritage-composition/exercises.md",
+            "quiz": "poo/module-05-heritage-composition/quiz.md",
+            "readings": "poo/module-05-heritage-composition/readings.md"
+          }
+        }
+      ]
+    }
+  ]
+}

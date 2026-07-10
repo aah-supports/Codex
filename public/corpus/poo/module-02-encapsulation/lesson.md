@@ -52,3 +52,37 @@ Commencer petit :
 3. ajouter le constructeur ;
 4. refuser les valeurs invalides ;
 5. exposer seulement ce qui est necessaire.
+
+## Encapsulation et langage metier
+
+L'encapsulation ne sert pas seulement a cacher des attributs. Elle permet de donner un nom metier aux operations.
+
+Comparer :
+
+```java
+reservation.setStatus("CANCELLED");
+```
+
+et :
+
+```java
+reservation.cancel();
+```
+
+La deuxieme version donne une intention. Elle permet aussi de verifier les regles : une reservation deja remboursee ne peut peut-etre plus etre annulee.
+
+## Mauvais signal : getters partout
+
+Quand un objet expose tous ses attributs, le reste du programme commence a prendre les decisions a sa place.
+
+```java
+if (reservation.getScreening().getRoom().getName().equals("IMAX")) {
+    price += 4.0;
+}
+```
+
+Cette chaine revele que la connaissance est dispersee. Il faut se demander quel objet ou service metier devrait porter cette decision.
+
+## Travail attendu
+
+Chaque classe du domaine doit avoir au moins une raison d'exister autre que "stocker des donnees". Si une classe n'a que des getters et setters, elle est peut-etre anemique ou pas encore terminee.

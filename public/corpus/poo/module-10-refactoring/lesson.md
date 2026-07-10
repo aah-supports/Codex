@@ -35,3 +35,33 @@ Exemples :
 - Message Chains.
 
 Les tests servent de filet de securite. Sans test, commencer par caracteriser le comportement existant.
+
+## Strategie en code existant
+
+Quand le code est deja fragile, ne commence pas par "bien architecturer". Commence par reduire le risque.
+
+1. comprendre le comportement actuel ;
+2. ecrire un test de caracterisation ;
+3. extraire un petit morceau ;
+4. relancer les tests ;
+5. renommer pour clarifier ;
+6. recommencer.
+
+## Exemple de sequence
+
+Pour une methode `reserve` de 120 lignes :
+
+- extraire `validateSeats` ;
+- extraire `calculatePrice` ;
+- introduire `PricingPolicy` ;
+- extraire `chargePayment` ;
+- introduire `PaymentGateway` ;
+- extraire `notifyCustomer`.
+
+Chaque etape doit etre suffisamment petite pour etre comprise en revue.
+
+## Refactoring et design
+
+Le refactoring revele souvent les objets manquants. Quand plusieurs lignes manipulent toujours les memes valeurs ensemble, il manque peut-etre un objet.
+
+Exemple : `amount` et `currency` manipules partout signalent souvent un objet `Money`.

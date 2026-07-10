@@ -34,3 +34,45 @@ public class FakeReservationRepository implements ReservationRepository {
 ```
 
 Le fake permet de tester un cas d'utilisation sans base de donnees.
+
+# Test d'invariant
+
+```java
+@Test
+void shouldRejectMovieWithoutTitle() {
+    assertThrows(IllegalArgumentException.class, () -> {
+        new Movie("", 120);
+    });
+}
+```
+
+# Test de transition
+
+```java
+@Test
+void shouldNotCancelRefundedReservation() {
+    Reservation reservation = confirmedReservation();
+    reservation.refund();
+
+    assertThrows(InvalidReservationStateException.class, reservation::cancel);
+}
+```
+
+# Spy de notification
+
+```java
+public class SpyNotificationService implements NotificationService {
+    private boolean confirmationSent;
+
+    @Override
+    public void reservationConfirmed(Reservation reservation) {
+        confirmationSent = true;
+    }
+
+    public boolean confirmationWasSent() {
+        return confirmationSent;
+    }
+}
+```
+
+Le spy verifie une interaction observable sans coupler le test a une bibliotheque externe.

@@ -44,3 +44,54 @@ public class StripePaymentAdapter implements PaymentGateway {
 ```
 
 Le domaine depend de `PaymentGateway`, pas de Stripe.
+
+# Observer pour les evenements
+
+```java
+public interface ReservationListener {
+    void onReservationConfirmed(Reservation reservation);
+}
+```
+
+```java
+public class ReservationNotifier {
+    private final List<ReservationListener> listeners;
+
+    public void confirmed(Reservation reservation) {
+        for (ReservationListener listener : listeners) {
+            listener.onReservationConfirmed(reservation);
+        }
+    }
+}
+```
+
+Le cas d'utilisation n'a pas besoin de connaitre tous les effets secondaires.
+
+# Command
+
+```java
+public interface Command {
+    void execute();
+}
+```
+
+```java
+public class CancelReservationCommand implements Command {
+    private final Reservation reservation;
+
+    public CancelReservationCommand(Reservation reservation) {
+        this.reservation = reservation;
+    }
+
+    @Override
+    public void execute() {
+        reservation.cancel();
+    }
+}
+```
+
+Une commande peut etre loggee, rejouee ou mise en file.
+
+# Quand ne pas utiliser de pattern
+
+Si une application a un seul tarif fixe, `StandardPricing` suffit. Ajouter une hierarchy Strategy complete sans variation reelle alourdit le code.

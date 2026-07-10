@@ -59,3 +59,38 @@ Dans le projet cinema, `PricingPolicy` peut representer plusieurs politiques de 
 ## Regle pratique
 
 Utiliser l'heritage quand la relation de substitution est solide. Utiliser la composition quand on veut assembler des comportements.
+
+## Progression pedagogique
+
+Ne commence pas par `extends`. Commence par un probleme :
+
+1. plusieurs tarifs existent ;
+2. chaque tarif calcule differemment ;
+3. le code contient une condition qui grossit ;
+4. on introduit un contrat commun ;
+5. on remplace la condition par du polymorphisme.
+
+L'heritage de classe arrive seulement si une vraie specialisation existe.
+
+## Quand l'heritage est raisonnable
+
+Un heritage peut etre acceptable si :
+
+- la sous-classe est vraiment un cas particulier de la classe mere ;
+- les invariants de la classe mere restent vrais ;
+- aucune methode heritee ne devient absurde ;
+- le comportement commun est stable ;
+- la substitution ne surprend pas le code client.
+
+Si une sous-classe doit dire "je ne supporte pas cette methode", c'est un signal fort contre l'heritage.
+
+## Composition et combinaison
+
+La composition permet de combiner des comportements sans enfermer le modele dans une hierarchie rigide. Pour la tarification, on peut composer :
+
+- un tarif de base ;
+- une reduction ;
+- une majoration 3D ;
+- un code promotionnel.
+
+Cette approche evite une explosion de classes comme `Student3DWednesdayPromotionPricing`.

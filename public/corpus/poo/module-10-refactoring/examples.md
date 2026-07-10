@@ -29,3 +29,44 @@ public void reserve(ReservationRequest request) {
 ```
 
 Le code n'est pas encore parfait, mais les responsabilites apparaissent.
+
+# Remplacer primitive par objet
+
+Avant :
+
+```java
+public void pay(double amount, String currency) {
+    if (amount < 0) {
+        throw new IllegalArgumentException();
+    }
+}
+```
+
+Apres :
+
+```java
+public void pay(Money amount) {
+    paymentGateway.charge(amount);
+}
+```
+
+La validation du montant n'est plus dupliquee.
+
+# Remplacer condition par polymorphisme
+
+Avant :
+
+```java
+switch (reservation.status()) {
+    case "PENDING" -> reservation.confirm();
+    case "CANCELLED" -> throw new IllegalStateException();
+}
+```
+
+Apres :
+
+```java
+reservation.confirm();
+```
+
+La logique de transition peut vivre dans l'objet ou dans un etat dedie.

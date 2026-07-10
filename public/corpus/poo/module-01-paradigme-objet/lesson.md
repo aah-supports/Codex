@@ -59,3 +59,43 @@ Une classe ne doit pas forcement representer un objet physique. Une regle tarifa
 - commencer par les getters et setters ;
 - mettre toute la logique dans un service central ;
 - croire que "objet" signifie toujours "objet physique".
+
+## Progression mentale
+
+Pour apprendre la POO, il faut accepter de ralentir au debut. Le reflexe naturel est souvent d'ecrire une fonction qui prend toutes les donnees, puis de multiplier les conditions. La progression attendue est differente :
+
+1. decrire le domaine avec des mots simples ;
+2. reperer les choses qui ont une identite stable ;
+3. reperer les regles qui doivent rester vraies ;
+4. attribuer chaque regle a l'objet qui a le plus de legitimite ;
+5. faire collaborer les objets au lieu de concentrer toutes les decisions.
+
+Dans le projet cinema, "reserver une place" semble etre une action simple. Pourtant cette action implique un client, une seance, une salle, des sieges, une politique tarifaire et un paiement. Le but de la POO est de repartir cette complexite pour que chaque objet reste comprehensible.
+
+## Exemple d'analyse de domaine
+
+Phrase de depart :
+
+> Un client reserve deux sieges pour une seance du film Alien dans la salle 3.
+
+Objets candidats :
+
+- `Customer` : identifie la personne qui reserve ;
+- `Movie` : porte le titre, la duree, la classification ;
+- `Room` : porte le nom de la salle et ses sieges ;
+- `Seat` : represente une place precise ;
+- `Screening` : associe un film, une salle et un horaire ;
+- `Reservation` : represente l'engagement de garder des sieges pour un client.
+
+Responsabilites possibles :
+
+- `Screening` sait si elle chevauche une autre seance ;
+- `Reservation` sait combien de sieges elle contient ;
+- `Room` sait quels sieges existent ;
+- `PricingPolicy` sait calculer un prix.
+
+La POO commence quand on justifie ces choix, pas quand on ecrit `class`.
+
+## Critere de comprehension
+
+Tu as compris ce module si tu peux expliquer pourquoi `Reservation` n'est pas juste une ligne dans une table, mais un objet qui porte une partie du sens metier.

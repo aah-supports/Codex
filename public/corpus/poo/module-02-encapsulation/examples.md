@@ -35,3 +35,59 @@ public class Movie {
     }
 }
 ```
+
+# Version avec intention metier
+
+```java
+public class Screening {
+    private final Movie movie;
+    private final Room room;
+    private final LocalDateTime startsAt;
+
+    public Screening(Movie movie, Room room, LocalDateTime startsAt) {
+        if (movie == null) {
+            throw new IllegalArgumentException("Movie is required");
+        }
+
+        if (room == null) {
+            throw new IllegalArgumentException("Room is required");
+        }
+
+        if (startsAt == null || startsAt.isBefore(LocalDateTime.now())) {
+            throw new IllegalArgumentException("Screening must be planned in the future");
+        }
+
+        this.movie = movie;
+        this.room = room;
+        this.startsAt = startsAt;
+    }
+
+    public LocalDateTime endsAt() {
+        return startsAt.plusMinutes(movie.durationInMinutes());
+    }
+}
+```
+
+La methode `endsAt` evite de recalculer la fin de seance partout. L'objet porte une connaissance utile.
+
+# Exemple de setter remplace
+
+Faible :
+
+```java
+reservation.setCancelled(true);
+```
+
+Meilleur :
+
+```java
+reservation.cancel();
+```
+
+Encore meilleur si la regle existe :
+
+```java
+reservation.cancelAt(LocalDateTime cancellationDate);
+```
+
+Le nom de la methode doit raconter l'action metier.

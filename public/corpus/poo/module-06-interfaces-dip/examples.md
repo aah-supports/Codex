@@ -41,3 +41,49 @@ public class CreateReservationUseCase {
 ```
 
 Le cas d'utilisation depend d'une abstraction.
+
+# Mauvais couplage
+
+```java
+public class CreateReservationUseCase {
+    private final MySqlReservationRepository repository = new MySqlReservationRepository();
+
+    public void execute(Reservation reservation) {
+        repository.save(reservation);
+    }
+}
+```
+
+Le cas d'utilisation decide lui-meme du stockage. Il devient plus difficile a tester et a deployer dans un autre contexte.
+
+# Injection explicite
+
+```java
+public class CreateReservationUseCase {
+    private final ReservationRepository repository;
+    private final PaymentGateway paymentGateway;
+
+    public CreateReservationUseCase(
+        ReservationRepository repository,
+        PaymentGateway paymentGateway
+    ) {
+        this.repository = repository;
+        this.paymentGateway = paymentGateway;
+    }
+}
+```
+
+Le constructeur documente les besoins reels du cas d'utilisation.
+
+# Adapter de paiement
+
+```java
+public class FakePaymentGateway implements PaymentGateway {
+    @Override
+    public PaymentResult charge(PaymentMethod method, Money amount) {
+        return PaymentResult.accepted();
+    }
+}
+```
+
+Cette implementation permet de travailler avant l'integration d'un vrai prestataire.

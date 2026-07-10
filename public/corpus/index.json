@@ -5,7 +5,7 @@
       "id": "poo",
       "title": "Programmation orientee objet",
       "description": "Parcours progressif base sur le plan de cours POO et le projet fil rouge de reservation de cinema.",
-      "version": "0.1.0",
+      "version": "0.2.0",
       "modules": [
         {
           "id": "poo.module-01",
@@ -40,6 +40,38 @@
           }
         },
         {
+          "id": "poo.module-03",
+          "slug": "relations-objets",
+          "title": "Relations entre objets",
+          "description": "Modeliser associations, composition, agregations, dependances et multiplicités.",
+          "level": "beginner-intermediate",
+          "durationMinutes": 55,
+          "tags": ["poo", "uml", "association", "composition"],
+          "paths": {
+            "lesson": "poo/module-03-relations/lesson.md",
+            "examples": "poo/module-03-relations/examples.md",
+            "exercises": "poo/module-03-relations/exercises.md",
+            "quiz": "poo/module-03-relations/quiz.md",
+            "readings": "poo/module-03-relations/readings.md"
+          }
+        },
+        {
+          "id": "poo.module-04",
+          "slug": "responsabilites-cohesion-couplage",
+          "title": "Responsabilites, cohesion et couplage",
+          "description": "Attribuer les responsabilites, detecter les objets qui font trop et reduire le couplage.",
+          "level": "beginner-intermediate",
+          "durationMinutes": 60,
+          "tags": ["poo", "responsabilite", "cohesion", "couplage"],
+          "paths": {
+            "lesson": "poo/module-04-responsabilites/lesson.md",
+            "examples": "poo/module-04-responsabilites/examples.md",
+            "exercises": "poo/module-04-responsabilites/exercises.md",
+            "quiz": "poo/module-04-responsabilites/quiz.md",
+            "readings": "poo/module-04-responsabilites/readings.md"
+          }
+        },
+        {
           "id": "poo.module-05",
           "slug": "heritage-composition",
           "title": "Heritage, composition et polymorphisme",
@@ -53,6 +85,118 @@
             "exercises": "poo/module-05-heritage-composition/exercises.md",
             "quiz": "poo/module-05-heritage-composition/quiz.md",
             "readings": "poo/module-05-heritage-composition/readings.md"
+          }
+        },
+        {
+          "id": "poo.module-06",
+          "slug": "interfaces-dip",
+          "title": "Interfaces et inversion des dependances",
+          "description": "Dependre de contrats, injecter les dependances et rendre le code testable.",
+          "level": "intermediate",
+          "durationMinutes": 60,
+          "tags": ["poo", "interface", "dip", "testabilite"],
+          "paths": {
+            "lesson": "poo/module-06-interfaces-dip/lesson.md",
+            "examples": "poo/module-06-interfaces-dip/examples.md",
+            "exercises": "poo/module-06-interfaces-dip/exercises.md",
+            "quiz": "poo/module-06-interfaces-dip/quiz.md",
+            "readings": "poo/module-06-interfaces-dip/readings.md"
+          }
+        },
+        {
+          "id": "poo.module-07",
+          "slug": "solid",
+          "title": "Principes SOLID",
+          "description": "Utiliser SOLID comme outil de diagnostic sans transformer les principes en dogmes.",
+          "level": "intermediate",
+          "durationMinutes": 70,
+          "tags": ["poo", "solid", "architecture", "diagnostic"],
+          "paths": {
+            "lesson": "poo/module-07-solid/lesson.md",
+            "examples": "poo/module-07-solid/examples.md",
+            "exercises": "poo/module-07-solid/exercises.md",
+            "quiz": "poo/module-07-solid/quiz.md",
+            "readings": "poo/module-07-solid/readings.md"
+          }
+        },
+        {
+          "id": "poo.module-08",
+          "slug": "contrats-value-objects",
+          "title": "Exceptions, contrats et objets-valeurs",
+          "description": "Proteger les invariants, distinguer erreurs metier et techniques, creer des value objects.",
+          "level": "intermediate",
+          "durationMinutes": 60,
+          "tags": ["poo", "contrat", "exception", "value-object"],
+          "paths": {
+            "lesson": "poo/module-08-contrats-value-objects/lesson.md",
+            "examples": "poo/module-08-contrats-value-objects/examples.md",
+            "exercises": "poo/module-08-contrats-value-objects/exercises.md",
+            "quiz": "poo/module-08-contrats-value-objects/quiz.md",
+            "readings": "poo/module-08-contrats-value-objects/readings.md"
+          }
+        },
+        {
+          "id": "poo.module-09",
+          "slug": "tests-objet",
+          "title": "Tests unitaires orientes objet",
+          "description": "Tester les comportements observables, isoler les dependances et eviter les tests fragiles.",
+          "level": "intermediate",
+          "durationMinutes": 65,
+          "tags": ["poo", "tests", "mock", "tdd"],
+          "paths": {
+            "lesson": "poo/module-09-tests/lesson.md",
+            "examples": "poo/module-09-tests/examples.md",
+            "exercises": "poo/module-09-tests/exercises.md",
+            "quiz": "poo/module-09-tests/quiz.md",
+            "readings": "poo/module-09-tests/readings.md"
+          }
+        },
+        {
+          "id": "poo.module-10",
+          "slug": "refactoring",
+          "title": "Refactoring d'un code existant",
+          "description": "Repérer les code smells et améliorer la conception par petites transformations sures.",
+          "level": "intermediate",
+          "durationMinutes": 75,
+          "tags": ["poo", "refactoring", "code-smells", "legacy"],
+          "paths": {
+            "lesson": "poo/module-10-refactoring/lesson.md",
+            "examples": "poo/module-10-refactoring/examples.md",
+            "exercises": "poo/module-10-refactoring/exercises.md",
+            "quiz": "poo/module-10-refactoring/quiz.md",
+            "readings": "poo/module-10-refactoring/readings.md"
+          }
+        },
+        {
+          "id": "poo.module-11",
+          "slug": "design-patterns",
+          "title": "Design patterns utiles",
+          "description": "Choisir Strategy, Adapter, Observer ou State quand une tension de conception le justifie.",
+          "level": "intermediate",
+          "durationMinutes": 80,
+          "tags": ["poo", "patterns", "strategy", "adapter", "state"],
+          "paths": {
+            "lesson": "poo/module-11-design-patterns/lesson.md",
+            "examples": "poo/module-11-design-patterns/examples.md",
+            "exercises": "poo/module-11-design-patterns/exercises.md",
+            "quiz": "poo/module-11-design-patterns/quiz.md",
+            "readings": "poo/module-11-design-patterns/readings.md"
+          }
+        },
+        {
+          "id": "poo.module-12",
+          "slug": "architecture-finale",
+          "title": "Modele metier et architecture finale",
+          "description": "Separer domaine, application et infrastructure, puis defendre les choix de conception.",
+          "level": "advanced",
+          "durationMinutes": 90,
+          "tags": ["poo", "architecture", "ddd", "clean-architecture"],
+          "paths": {
+            "lesson": "poo/module-12-architecture-finale/lesson.md",
+            "examples": "poo/module-12-architecture-finale/examples.md",
+            "exercises": "poo/module-12-architecture-finale/exercises.md",
+            "quiz": "poo/module-12-architecture-finale/quiz.md",
+            "readings": "poo/module-12-architecture-finale/readings.md"
           }
         }
       ]

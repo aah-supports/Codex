@@ -339,13 +339,68 @@ textarea {
 .markdown-card pre {
   overflow-x: auto;
   border-radius: 8px;
-  background: #111827;
-  color: #f9fafb;
+  background: #0f172a;
+  color: #e5e7eb;
   padding: 14px;
 }
 
 .markdown-card code {
   font-family: "SFMono-Regular", Consolas, monospace;
+  font-size: 0.92rem;
+}
+
+.markdown-card :not(pre) > code {
+  border: 1px solid #e5e7eb;
+  border-radius: 5px;
+  background: #f8fafc;
+  color: #be123c;
+  padding: 1px 5px;
+}
+
+.markdown-card pre code {
+  display: block;
+  background: transparent;
+  color: inherit;
+  line-height: 1.65;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-built_in {
+  color: #93c5fd;
+}
+
+.hljs-title.class_,
+.hljs-title.function_,
+.hljs-title {
+  color: #fde68a;
+}
+
+.hljs-type,
+.hljs-class .hljs-title {
+  color: #67e8f9;
+}
+
+.hljs-string,
+.hljs-meta .hljs-string {
+  color: #86efac;
+}
+
+.hljs-number,
+.hljs-literal {
+  color: #fca5a5;
+}
+
+.hljs-comment {
+  color: #94a3b8;
+  font-style: italic;
+}
+
+.hljs-params,
+.hljs-variable,
+.hljs-property,
+.hljs-attr {
+  color: #e5e7eb;
 }
 
 .markdown-card p,

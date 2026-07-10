@@ -1,11 +1,16 @@
+import type { ComponentPropsWithoutRef } from 'react'
 import { Link, useParams } from '@tanstack/react-router'
 import { useQuery } from '@tanstack/react-query'
 import ReactMarkdown from 'react-markdown'
+import hljs from 'highlight.js/lib/core'
+import java from 'highlight.js/lib/languages/java'
 import { Button } from '../../components/ui/Button'
 import { Card } from '../../components/ui/Card'
 import { getMarkdown } from '../../content/api'
 import { useLearningStore } from '../../stores/learningStore'
 import { useCorpusIndex } from '../corpus/useCorpus'
+
+hljs.registerLanguage('java', java)
 
 export function LessonPage() {
   const { corpusId, moduleId } = useParams({ from: '/learn/$corpusId/$moduleId' })
@@ -100,5 +105,25 @@ function MarkdownState({
     return <p>Contenu indisponible.</p>
   }
 
-  return <ReactMarkdown>{query.data.body}</ReactMarkdown>
+  return <ReactMarkdown components={{ code: CodeBlock }}>{query.data.body}</ReactMarkdown>
+}
+
+function CodeBlock({ className, children, ...props }: ComponentPropsWithoutRef<'code'>) {
+  const code = String(children ?? '').replace(/\n$/, '')
+  const language = /language-(\w+)/.exec(className ?? '')?.[1]
+
+  if (language === 'java') {
+    return (
+      <code
+        className="hljs language-java"
+        dangerouslySetInnerHTML={{ __html: hljs.highlight(code, { language: 'java' }).value }}
+      />
+    )
+  }
+
+  return (
+    <code className={className} {...props}>
+      {children}
+    </code>
+  )
 }

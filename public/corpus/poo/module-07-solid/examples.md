@@ -19,7 +19,7 @@ public double priceFor(Customer customer) {
 }
 ```
 
-Chaque nouveau type modifie la meme methode.
+Chaque nouveau type modifie la même méthode.
 
 # Extension par polymorphisme
 
@@ -29,7 +29,7 @@ public interface PricingPolicy {
 }
 ```
 
-Ajouter une politique revient a ajouter une classe, pas a modifier la chaine de conditions stable.
+Ajouter une politique revient à ajouter une classe, pas à modifier la chaîne de conditions stable.
 
 # Violation ISP
 
@@ -41,7 +41,7 @@ public interface CinemaDevice {
 }
 ```
 
-Une imprimante de tickets ne devrait pas dependre de `sendEmail`.
+Une imprimante de tickets ne devrait pas dépendre de `sendEmail`.
 
 Separation :
 
@@ -70,4 +70,4 @@ public class CancelledReservation extends Reservation {
 }
 ```
 
-Si `confirm` n'a plus de sens, l'heritage est probablement un mauvais modele. Un pattern State ou une composition peut mieux exprimer le cycle de vie.
+Si `confirm` n'a plus de sens, l'héritage est probablement un mauvais modèle. Un pattern State ou une composition peut mieux exprimer le cycle de vie.

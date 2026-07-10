@@ -1,15 +1,15 @@
 ---
 id: poo.module-12.lesson
-title: Modele metier et architecture finale
+title: Modèle métier et architecture finale
 tags:
   - architecture
   - domaine
   - infrastructure
 ---
 
-# Modele metier et architecture finale
+# Modèle métier et architecture finale
 
-Le but final n'est pas d'avoir beaucoup de classes. Le but est de pouvoir faire evoluer le logiciel sans propager les changements partout.
+Le but final n'est pas d'avoir beaucoup de classes. Le but est de pouvoir faire évoluer le logiciel sans propager les changements partout.
 
 Une organisation possible :
 
@@ -34,60 +34,60 @@ src/
 
 ## Domaine
 
-Le domaine contient les regles metier : reservation, tarification, cycle de vie, invariants.
+Le domaine contient les règles métier : réservation, tarification, cycle de vie, invariants.
 
 ## Application
 
-L'application orchestre les cas d'utilisation : creer une reservation, annuler, lister les seances.
+L'application orchestre les cas d'utilisation : créer une réservation, annuler, lister les séances.
 
 ## Infrastructure
 
-L'infrastructure contient les details : base de donnees, paiement externe, email.
+L'infrastructure contient les détails : basé de données, paiement externe, email.
 
 ## Presentation
 
-La presentation adapte les entrees et sorties : API, controleur, interface.
+La presentation adapte les entrees et sorties : API, contrôleur, interface.
 
 ## Construire l'architecture progressivement
 
 Ne pas commencer le projet avec tous les dossiers parfaits. La progression recommandee :
 
-1. creer un modele domaine simple ;
-2. ecrire les invariants ;
+1. créer un modèle domaine simple ;
+2. écrire les invariants ;
 3. ajouter les cas d'utilisation ;
-4. introduire les ports necessaires ;
+4. introduire les ports nécessaires ;
 5. brancher l'infrastructure ;
 6. refactorer les frontieres quand la douleur apparait.
 
-L'architecture est une consequence des responsabilites, pas un decor.
+L'architecture est une consequence des responsabilités, pas un decor.
 
 ## Frontieres
 
-Une frontiere se justifie quand deux parties changent pour des raisons differentes.
+Une frontière se justifie quand deux parties changent pour des raisons différentes.
 
 Exemples :
 
-- les regles de reservation changent avec le metier ;
-- la base de donnees change avec l'infrastructure ;
+- les règles de réservation changent avec le métier ;
+- la basé de données change avec l'infrastructure ;
 - l'API HTTP change avec la presentation ;
 - le prestataire de paiement change avec un contrat externe.
 
-Chaque frontiere doit reduire le cout d'un changement probable.
+Chaque frontière doit reduire le coût d'un changement probable.
 
 ## Defense des choix
 
-En soutenance, il ne suffit pas de dire "j'ai utilise Clean Architecture". Il faut expliquer :
+En soutenance, il ne suffit pas de dire "j'ai utilisé Clean Architecture". Il faut expliquer :
 
-- quelle regle metier est protegee ;
+- quelle règle métier est protégée ;
 - quel detail technique est isole ;
 - quel test prouve le comportement ;
-- quel compromis a ete accepte.
+- quel compromis à été accepté.
 
 ## Definition de fini
 
-Le projet est fini si un autre developpeur peut :
+Le projet est fini si un autre développeur peut :
 
-- lire le domaine sans connaitre la base de donnees ;
+- lire le domaine sans connaître la basé de données ;
 - comprendre les cas d'utilisation ;
 - lancer les tests ;
 - remplacer un adaptateur ;

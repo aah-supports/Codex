@@ -16,39 +16,39 @@ SOLID n'est pas une checklist magique. Ce sont des outils de diagnostic pour com
 
 ## SRP
 
-Une unite de code doit avoir une raison coherente de changer.
+Une unité de code doit avoir une raison cohérente de changer.
 
 ## OCP
 
-Un systeme doit pouvoir etre etendu sans modifier excessivement le code stable.
+Un système doit pouvoir être éténdu sans modifier excessivement le code stable.
 
 ## LSP
 
-Une sous-classe doit pouvoir remplacer sa classe de base sans casser les attentes du programme.
+Une sous-classe doit pouvoir remplacer sa classe de basé sans casser les attentes du programme.
 
 ## ISP
 
-Un client ne doit pas dependre de methodes dont il n'a pas besoin.
+Un client ne doit pas dépendre de méthodes dont il n'a pas besoin.
 
 ## DIP
 
-Les regles de haut niveau ne doivent pas dependre directement des details techniques.
+Les règles de haut niveau ne doivent pas dépendre directement des détails techniques.
 
-Appliquer SOLID mecaniquement peut produire trop d'abstractions. Le but reste de reduire le cout du changement.
+Appliquer SOLID mécaniquement peut produire trop d'abstractions. Le but reste de reduire le coût du changement.
 
 ## Lecture progressive
 
-SOLID devient utile quand on a deja vu du code souffrir.
+SOLID devient utile quand on à déjà vu du code souffrir.
 
 Avant d'appliquer un principe, formuler la douleur :
 
-- "chaque nouveau tarif modifie cette methode" ;
+- "chaque nouveau tarif modifie cette méthode" ;
 - "cette classe change pour trop de raisons" ;
 - "cette sous-classe ne respecte pas le comportement attendu" ;
-- "cette interface force des methodes inutiles" ;
-- "le domaine depend d'une base de donnees".
+- "cette interface force des méthodes inutiles" ;
+- "le domaine dépend d'une basé de données".
 
-Le principe vient ensuite nommer le probleme.
+Le principe vient ensuite nommer le problème.
 
 ## Exemple de mauvais usage
 
@@ -62,12 +62,12 @@ MovieHandler
 MovieProcessor
 ```
 
-Si ces noms ne portent pas des responsabilites claires, l'abstraction est du bruit.
+Si ces noms ne portent pas des responsabilités claires, l'abstraction est du bruit.
 
 ## Questions d'auto-diagnostic
 
 - SRP : quelle est la raison de changer ?
-- OCP : quel changement futur est couteux aujourd'hui ?
-- LSP : le code client peut-il remplacer la classe mere par la sous-classe ?
-- ISP : qui utilise vraiment cette methode ?
-- DIP : le code important depend-il d'un detail instable ?
+- OCP : quel changement futur est coûteux aujourd'hui ?
+- LSP : le code client peut-il remplacer la classe mère par la sous-classe ?
+- ISP : qui utilisé vraiment cette méthode ?
+- DIP : le code important dépend-il d'un detail instable ?

@@ -3,7 +3,7 @@ id: poo.module-02.examples
 title: Exemples
 ---
 
-# Probleme
+# Problème
 
 ```java
 public class Movie {
@@ -36,7 +36,7 @@ public class Movie {
 }
 ```
 
-# Version avec intention metier
+# Version avec intention métier
 
 ```java
 public class Screening {
@@ -68,7 +68,7 @@ public class Screening {
 }
 ```
 
-La methode `endsAt` evite de recalculer la fin de seance partout. L'objet porte une connaissance utile.
+La méthode `endsAt` évite de recalculer la fin de séance partout. L'objet porte une connaissance utile.
 
 # Exemple de setter remplace
 
@@ -84,10 +84,10 @@ Meilleur :
 reservation.cancel();
 ```
 
-Encore meilleur si la regle existe :
+Encore meilleur si la règle existe :
 
 ```java
 reservation.cancelAt(LocalDateTime cancellationDate);
 ```
 
-Le nom de la methode doit raconter l'action metier.
+Le nom de la méthode doit raconter l'action métier.

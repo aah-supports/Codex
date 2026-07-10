@@ -31,7 +31,7 @@ public record EmailAddress(String value) {
 }
 ```
 
-Le type porte la validation. Le reste du code n'a plus a manipuler un simple `String` ambigu.
+Le type porte la validation. Le reste du code n'a plus à manipuler un simple `String` ambigu.
 
 # Operation sur Money
 
@@ -47,7 +47,7 @@ public record Money(double amount, String currency) {
 }
 ```
 
-La regle de devise appartient a `Money`, pas au service de reservation.
+La règle de devise appartient à `Money`, pas au service de réservation.
 
 # SeatNumber
 
@@ -65,9 +65,9 @@ public record SeatNumber(int row, int number) {
 }
 ```
 
-Le code ne manipule plus des chaines comme `"A12"` sans validation.
+Le code ne manipule plus des chaînes comme `"A12"` sans validation.
 
-# Exception metier
+# Exception métier
 
 ```java
 public class SeatAlreadyReservedException extends RuntimeException {

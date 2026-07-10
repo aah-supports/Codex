@@ -9,18 +9,18 @@ tags:
 
 # Tests unitaires orientes objet
 
-Tester un objet ne signifie pas verifier chaque ligne interne. Un bon test verifie un comportement observable.
+Tester un objet ne signifie pas vérifier chaque ligne interne. Un bon test vérifie un comportement observable.
 
-## Etat ou interaction
+## État ou interaction
 
-Un test d'etat verifie le resultat apres l'action. Un test d'interaction verifie qu'une collaboration a eu lieu.
+Un test d'état vérifie le résultat après l'action. Un test d'interaction vérifie qu'une collaboration à eu lieu.
 
-Il faut eviter les tests trop lies a l'implementation. Sinon, chaque refactoring casse les tests alors que le comportement n'a pas change.
+Il faut éviter les tests trop lies à l'implémentation. Sinon, chaque refactoring casse les tests alors que le comportement n'a pas change.
 
 ## Doubles de test
 
-- fake : implementation simple mais fonctionnelle ;
-- stub : reponse controlee ;
+- fake : implémentation simple mais fonctionnelle ;
+- stub : réponse contrôlée ;
 - mock : verification d'interaction ;
 - dummy : objet passe uniquement pour remplir une signature.
 
@@ -32,7 +32,7 @@ Un test lisible suit souvent trois temps :
 
 1. Arrange : preparer les objets ;
 2. Act : executer l'action ;
-3. Assert : verifier le resultat.
+3. Assert : vérifier le résultat.
 
 ```java
 @Test
@@ -55,13 +55,13 @@ void shouldConfirmReservationWhenPaymentIsAccepted() {
 
 Les objets du domaine doivent avoir leurs tests propres :
 
-- impossible de creer un `Movie` sans titre ;
-- impossible de creer une `Reservation` sans siege ;
-- impossible de confirmer une reservation deja annulee ;
-- impossible d'additionner deux `Money` de devises differentes.
+- impossible de créer un `Movie` sans titre ;
+- impossible de créer une `Reservation` sans siège ;
+- impossible de confirmer une réservation déjà annulée ;
+- impossible d'additionner deux `Money` de devises différentes.
 
-Ces tests documentent les regles metier.
+Ces tests documentent les règles métier.
 
-## Eviter le test miroir
+## Éviter le test miroir
 
-Un test miroir repete l'implementation au lieu de verifier le comportement. S'il contient les memes conditions que le code teste, il protege mal.
+Un test miroir répète l'implémentation au lieu de vérifier le comportement. S'il contient les mêmes conditions que le code testé, il protège mal.

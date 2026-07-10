@@ -5,49 +5,49 @@ title: Exercices
 
 # TP
 
-Implementer au minimum :
+Implémenter au minimum :
 
 - Strategy pour le calcul du prix ;
 - Adapter pour un prestataire de paiement ;
 - Observer pour une notification ;
-- State pour le cycle de vie d'une reservation.
+- State pour le cycle de vie d'une réservation.
 
 # Exercice autonome
 
-Pour chaque pattern utilise, ecrire :
+Pour chaque pattern utilisé, écrire :
 
-- le probleme initial ;
+- le problème initial ;
 - la solution apportee ;
-- le cout ajoute ;
+- le coût ajoute ;
 - pourquoi une solution plus simple ne suffit pas.
 
 # Atelier progressif
 
 ## Niveau 1
 
-Associer le probleme au pattern :
+Associer le problème au pattern :
 
 - plusieurs politiques de prix ;
 - integration d'un prestataire de paiement ;
-- plusieurs reactions apres confirmation ;
-- reservation avec etats `PENDING`, `CONFIRMED`, `CANCELLED`, `REFUNDED`.
+- plusieurs réactions après confirmation ;
+- réservation avec états `PENDING`, `CONFIRMED`, `CANCELLED`, `REFUNDED`.
 
 ## Niveau 2
 
-Implementer Strategy pour les tarifs sans toucher a `Reservation`.
+Implémenter Strategy pour les tarifs sans toucher à `Reservation`.
 
 ## Niveau 3
 
-Implementer State pour empecher :
+Implémenter State pour empêcher :
 
-- confirmer une reservation annulee ;
-- annuler une reservation remboursee ;
-- rembourser une reservation non confirmee.
+- confirmer une réservation annulée ;
+- annuler une réservation remboursée ;
+- rembourser une réservation non confirmée.
 
 ## Niveau 4
 
-Presenter un pattern refuse. Expliquer pourquoi une solution plus simple est meilleure dans ce cas.
+Presenter un pattern refusé. Expliquer pourquoi une solution plus simple est meilleure dans ce cas.
 
-## Critere de reussite
+## Critère de réussite
 
 Le pattern doit supprimer une tension visible. S'il ne fait qu'ajouter des noms abstraits, il est probablement inutile.

@@ -3,18 +3,18 @@ id: poo.module-02.quiz
 title: QCM
 ---
 
-Question: Pourquoi eviter les attributs publics pour un objet metier ?
+Question: Pourquoi éviter les attributs publics pour un objet métier ?
 A. Parce que Java l'interdit.
 B. Parce qu'ils permettent de casser les invariants.
 C. Parce que cela empeche les tests.
 D. Parce qu'un attribut public est plus lent.
 Answer: Parce qu'ils permettent de casser les invariants.
-Explanation: Un attribut public peut etre modifie sans passer par les regles de validation de l'objet.
+Explanation: Un attribut public peut être modifie sans passer par les règles de validation de l'objet.
 ---
 Question: Que signifie un objet valide des sa construction ?
-A. Tous ses invariants essentiels sont deja respectes.
-B. Il possede au moins un setter.
+A. Tous ses invariants essentiels sont déjà respectes.
+B. Il possède au moins un setter.
 C. Il ne peut jamais changer.
-D. Il est forcement serialisable.
-Answer: Tous ses invariants essentiels sont deja respectes.
-Explanation: Le constructeur empeche de creer un objet incoherent.
+D. Il est forcément sérialisable.
+Answer: Tous ses invariants essentiels sont déjà respectes.
+Explanation: Le constructeur empeche de créer un objet incohérent.

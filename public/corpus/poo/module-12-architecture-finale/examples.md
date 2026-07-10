@@ -21,12 +21,12 @@ public class CreateReservationUseCase {
 }
 ```
 
-# Decision de conception
+# Décision de conception
 
 ```text
-Decision: dependance vers PaymentGateway et non StripeClient.
-Raison: le paiement externe est un detail instable.
-Consequence: il faut ecrire un adapter, mais les tests et le domaine restent simples.
+Décision: dépendance vers PaymentGateway et non StripeClient.
+Raison: le paiement externe est un détail instable.
+Conséquence: il faut écrire un adapter, mais les tests et le domaine restent simples.
 ```
 
 # Package domaine
@@ -46,7 +46,7 @@ public class Reservation {
 }
 ```
 
-Le domaine parle de reservation, client, seance et etat. Il ne parle pas de SQL.
+Le domaine parle de réservation, client, séance et état. Il ne parle pas de SQL.
 
 # Package infrastructure
 
@@ -63,7 +63,7 @@ public class SqlReservationRepository implements ReservationRepository {
 }
 ```
 
-L'infrastructure adapte le domaine a une technologie.
+L'infrastructure adapte le domaine à une technologie.
 
 # Controller mince
 
@@ -79,4 +79,4 @@ public class ReservationController {
 }
 ```
 
-Le controller traduit. Il ne porte pas la regle metier.
+Le controller traduit. Il ne porte pas la règle métier.

@@ -43,7 +43,7 @@ public class StripePaymentAdapter implements PaymentGateway {
 }
 ```
 
-Le domaine depend de `PaymentGateway`, pas de Stripe.
+Le domaine dépend de `PaymentGateway`, pas de Stripe.
 
 # Observer pour les evenements
 
@@ -65,7 +65,7 @@ public class ReservationNotifier {
 }
 ```
 
-Le cas d'utilisation n'a pas besoin de connaitre tous les effets secondaires.
+Le cas d'utilisation n'a pas besoin de connaître tous les effets secondaires.
 
 # Command
 
@@ -90,8 +90,8 @@ public class CancelReservationCommand implements Command {
 }
 ```
 
-Une commande peut etre loggee, rejouee ou mise en file.
+Une commande peut être loggée, rejouée ou mise en file.
 
 # Quand ne pas utiliser de pattern
 
-Si une application a un seul tarif fixe, `StandardPricing` suffit. Ajouter une hierarchy Strategy complete sans variation reelle alourdit le code.
+Si une application à un seul tarif fixe, `StandardPricing` suffit. Ajouter une hiérarchie Strategy complété sans variation réelle alourdit le code.

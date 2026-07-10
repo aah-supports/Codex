@@ -69,18 +69,18 @@ export function SettingsPage() {
       <header className="page-header">
         <p className="eyebrow">Sauvegarde</p>
         <h2>Exporter, importer, partager</h2>
-        <p>Le backup complet est prive. Les stats anonymisees peuvent etre poussees sur GitHub si tu le choisis.</p>
+        <p>Le backup complet est privé. Les stats anonymisées peuvent être poussées sur GitHub si tu le choisis.</p>
       </header>
 
       <div className="settings-grid">
         <Card>
           <h3>Backup complet</h3>
-          <p>Contient progression, scores et tentatives. A garder prive.</p>
-          <Button onClick={exportFullBackup}>Exporter mes donnees</Button>
+          <p>Contient progression, scores et tentatives. À garder privé.</p>
+          <Button onClick={exportFullBackup}>Exporter mes données</Button>
         </Card>
         <Card>
-          <h3>Stats anonymisees</h3>
-          <p>Contient uniquement des scores agreges et des ids de modules.</p>
+          <h3>Stats anonymisées</h3>
+          <p>Contient uniquement des scores agrégés et des ids de modules.</p>
           <Button onClick={exportAnonymousStats} variant="secondary">
             Exporter pour GitHub
           </Button>

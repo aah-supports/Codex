@@ -33,7 +33,7 @@ public class FakeReservationRepository implements ReservationRepository {
 }
 ```
 
-Le fake permet de tester un cas d'utilisation sans base de donnees.
+Le fake permet de tester un cas d'utilisation sans basé de données.
 
 # Test d'invariant
 
@@ -75,4 +75,4 @@ public class SpyNotificationService implements NotificationService {
 }
 ```
 
-Le spy verifie une interaction observable sans coupler le test a une bibliotheque externe.
+Le spy vérifie une interaction observable sans coupler le test à une bibliothèque externe.

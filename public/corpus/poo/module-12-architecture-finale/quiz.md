@@ -3,18 +3,18 @@ id: poo.module-12.quiz
 title: QCM
 ---
 
-Question: Dans une architecture separee, la base de donnees appartient plutot a...
+Question: Dans une architecture séparée, la basé de données appartient plutôt a...
 A. L'infrastructure.
-B. L'entite metier.
+B. L'entite métier.
 C. L'objet-valeur.
-D. La classe mere.
+D. La classe mère.
 Answer: L'infrastructure.
-Explanation: La base de donnees est un detail technique que le domaine ne doit pas connaitre directement.
+Explanation: La basé de données est un detail technique que le domaine ne doit pas connaître directement.
 ---
 Question: Le domaine doit contenir principalement...
-A. Les regles metier et invariants.
+A. Les règles métier et invariants.
 B. Les controllers HTTP.
-C. Les requetes SQL.
+C. Les requétés SQL.
 D. Les templates HTML.
-Answer: Les regles metier et invariants.
-Explanation: Le domaine exprime le modele metier independamment des details techniques.
+Answer: Les règles métier et invariants.
+Explanation: Le domaine exprime le modèle métier indépendamment des détails techniques.

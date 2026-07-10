@@ -5,6 +5,6 @@ title: Lectures
 
 # Lectures conseillees
 
-- Sandi Metz, *Practical Object-Oriented Design* : responsabilites, dependances, interfaces, composition.
-- Joshua Bloch, *Effective Java* : composition plutot qu'heritage.
+- Sandi Metz, *Practical Object-Oriented Design* : responsabilités, dépendances, interfaces, composition.
+- Joshua Bloch, *Effective Java* : composition plutôt qu'héritage.
 - Martin Fowler, refactorings autour du remplacement de conditions par du polymorphisme.

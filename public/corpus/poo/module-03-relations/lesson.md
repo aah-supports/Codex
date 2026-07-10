@@ -13,57 +13,57 @@ Un programme objet n'est pas une collection de classes isolees. C'est un graphe 
 
 Les relations principales sont :
 
-- association : un objet connait ou utilise un autre objet ;
-- composition : un objet possede fortement un autre objet et controle son cycle de vie ;
-- agregation : un objet regroupe d'autres objets sans forcement les posseder ;
-- dependance : un objet utilise temporairement un service ou une valeur.
+- association : un objet connaît ou utilise un autre objet ;
+- composition : un objet possède fortement un autre objet et contrôle son cycle de vie ;
+- agrégation : un objet regroupe d'autres objets sans forcément les posséder ;
+- dépendance : un objet utilise temporairement un service ou une valeur.
 
 ## Question de conception
 
-Avant d'ajouter un attribut, demander : "cet objet doit-il vraiment connaitre cet autre objet ?"
+Avant d'ajouter un attribut, demander : "cet objet doit-il vraiment connaître cet autre objet ?"
 
-Dans le cinema, une `Screening` concerne un `Movie` et une `Room`. Une `Room` compose ses `Seat`. Une `Reservation` associe un `Customer`, une `Screening` et des sieges.
+Dans le cinéma, une `Screening` concerne un `Movie` et une `Room`. Une `Room` compose ses `Seat`. Une `Reservation` associe un `Customer`, une `Screening` et des sièges.
 
 ## Multiplicites
 
-Les cardinalites forcent a clarifier le modele :
+Les cardinalités forcent à clarifier le modèle :
 
-- une salle contient plusieurs sieges ;
-- une seance concerne exactement un film ;
-- une reservation contient au moins un siege ;
-- un client peut avoir plusieurs reservations.
+- une salle contient plusieurs sièges ;
+- une séance concerne exactement un film ;
+- une réservation contient au moins un siège ;
+- un client peut avoir plusieurs réservations.
 
-Une relation mal choisie rend le code difficile a faire evoluer. Une relation trop large propage les changements.
+Une relation mal choisie rend le code difficile à faire évoluer. Une relation trop large propage les changements.
 
-## Methode de modelisation
+## Méthode de modelisation
 
 Pour choisir une relation, avancer en quatre questions :
 
-1. l'objet A a-t-il besoin de connaitre B pour respecter une regle ?
-2. A controle-t-il la vie de B ?
-3. B peut-il exister sans A ?
-4. la relation doit-elle etre parcourue dans les deux sens ?
+1. l'objet À a-t-il besoin de connaître B pour respecter une règle ?
+2. À contrôle-t-il la vie de B ?
+3. B peut-il exister sans À ?
+4. la relation doit-elle être parcourue dans les deux sens ?
 
-Exemple : un `Seat` existe dans une `Room`. Dans notre modele, un siege sans salle n'a pas de sens. La composition est raisonnable.
+Exemple : un `Seat` existe dans une `Room`. Dans notre modèle, un siège sans salle n'a pas de sens. La composition est raisonnable.
 
-Exemple inverse : un `Customer` existe sans `Reservation`. Une reservation reference un client, mais ne le possede pas.
+Exemple inverse : un `Customer` existe sans `Reservation`. Une réservation reference un client, mais ne le possède pas.
 
 ## Attention aux relations bidirectionnelles
 
-Une relation bidirectionnelle semble pratique, mais elle augmente la complexite.
+Une relation bidirectionnelle semble pratique, mais elle augmente la complexité.
 
-Si `Room` connait toutes ses `Screening` et que chaque `Screening` connait sa `Room`, il faut maintenir les deux cotes coherents. Ce n'est utile que si le domaine le demande vraiment.
+Si `Room` connait toutes ses `Screening` et que chaque `Screening` connait sa `Room`, il faut maintenir les deux côtés cohérents. Ce n'est utile que si le domaine le demande vraiment.
 
 ## UML utile, pas bureaucratique
 
-Un diagramme de classes doit aider a penser. Il ne doit pas tout documenter.
+Un diagramme de classes doit aider à penser. Il ne doit pas tout documenter.
 
 Pour ce cours, un bon diagramme montre :
 
 - classes importantes du domaine ;
 - relations ;
-- cardinalites ;
-- responsabilites principales ;
+- cardinalités ;
+- responsabilités principales ;
 - invariants importants.
 
-Il peut ignorer les getters, setters et details techniques.
+Il peut ignorer les getters, setters et détails techniques.

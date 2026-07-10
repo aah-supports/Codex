@@ -6,4 +6,4 @@ title: Lectures
 # Lectures conseillees
 
 - Bertrand Meyer, *Object-Oriented Software Construction* : invariants, contrats et robustesse des abstractions.
-- Steve McConnell, *Code Complete* : conception de classes et gestion de la complexite.
+- Steve McConnell, *Code Complété* : conception de classes et gestion de la complexité.

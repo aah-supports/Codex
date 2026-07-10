@@ -9,13 +9,13 @@ tags:
 
 # Refactoring d'un code existant
 
-Refactorer, ce n'est pas reecrire parce qu'on prefere un autre style. C'est ameliorer la structure interne sans changer le comportement observable.
+Refactorer, ce n'est pas réécrire parce qu'on prefere un autre style. C'est ameliorer la structure interne sans changer le comportement observable.
 
 Le refactoring se fait par petites transformations :
 
-- extraire une methode ;
+- extraire une méthode ;
 - extraire une classe ;
-- deplacer une methode ;
+- deplacer une méthode ;
 - remplacer une primitive par un objet ;
 - remplacer une condition par du polymorphisme ;
 - encapsuler une collection.
@@ -34,14 +34,14 @@ Exemples :
 - Switch Statements ;
 - Message Chains.
 
-Les tests servent de filet de securite. Sans test, commencer par caracteriser le comportement existant.
+Les tests servent de filet de sécurité. Sans test, commencer par caractériser le comportement existant.
 
-## Strategie en code existant
+## Stratégie en code existant
 
-Quand le code est deja fragile, ne commence pas par "bien architecturer". Commence par reduire le risque.
+Quand le code est déjà fragile, ne commence pas par "bien architecturer". Commence par reduire le risque.
 
 1. comprendre le comportement actuel ;
-2. ecrire un test de caracterisation ;
+2. écrire un test de caracterisation ;
 3. extraire un petit morceau ;
 4. relancer les tests ;
 5. renommer pour clarifier ;
@@ -49,7 +49,7 @@ Quand le code est deja fragile, ne commence pas par "bien architecturer". Commen
 
 ## Exemple de sequence
 
-Pour une methode `reserve` de 120 lignes :
+Pour une méthode `reserve` de 120 lignes :
 
 - extraire `validateSeats` ;
 - extraire `calculatePrice` ;
@@ -58,10 +58,10 @@ Pour une methode `reserve` de 120 lignes :
 - introduire `PaymentGateway` ;
 - extraire `notifyCustomer`.
 
-Chaque etape doit etre suffisamment petite pour etre comprise en revue.
+Chaque etape doit être suffisamment petite pour être comprise en revue.
 
 ## Refactoring et design
 
-Le refactoring revele souvent les objets manquants. Quand plusieurs lignes manipulent toujours les memes valeurs ensemble, il manque peut-etre un objet.
+Le refactoring révèle souvent les objets manquants. Quand plusieurs lignes manipulent toujours les mêmes valeurs ensemble, il manque peut-être un objet.
 
 Exemple : `amount` et `currency` manipules partout signalent souvent un objet `Money`.

@@ -1,37 +1,37 @@
 ---
 id: poo.module-05.lesson
-title: Heritage, composition et polymorphisme
+title: Héritage, composition et polymorphisme
 tags:
-  - heritage
+  - héritage
   - composition
   - polymorphisme
 ---
 
-# Heritage, composition et polymorphisme
+# Héritage, composition et polymorphisme
 
-L'heritage exprime une relation de specialisation. Il ne doit pas servir uniquement a eviter quelques lignes de duplication.
+L'héritage exprime une relation de spécialisation. Il ne doit pas servir uniquement à éviter quelques lignes de duplication.
 
 ## Objectifs
 
-A la fin du module, tu dois pouvoir :
+À la fin du module, tu dois pouvoir :
 
 - reconnaitre une vraie relation "est un" ;
 - expliquer ce que `extends` implique ;
 - utiliser une interface pour obtenir du polymorphisme ;
-- remplacer une chaine de conditions par des strategies ;
-- choisir la composition quand l'heritage est trop fragile.
+- remplacer une chaîne de conditions par des stratégies ;
+- choisir la composition quand l'héritage est trop fragile.
 
-La citation de la banane, du gorille et de la foret rappelle le probleme : parfois on voulait seulement une banane, mais on recupere le gorille qui la tient, puis toute la foret autour. Avec `extends`, une sous-classe recupere plus que ce qu'elle voulait : API, comportements, contraintes et couplage avec la classe mere.
+La citation de la banane, du gorille et de la forêt rappelle le problème : parfois on voulait seulement une banane, mais on récupère le gorille qui la tient, puis toute la forêt autour. Avec `extends`, une sous-classe récupère plus que ce qu'elle voulait : API, comportements, contraintes et couplage avec la classe mère.
 
 ## Substitution
 
-Une sous-classe doit pouvoir remplacer sa classe mere sans surprise. Si `StudentPricing` herite de `StandardPricing`, mais doit desactiver la moitie des methodes heritees, la relation est probablement mauvaise.
+Une sous-classe doit pouvoir remplacer sa classe mère sans surprise. Si `StudentPricing` hérite de `StandardPricing`, mais doit désactiver la moitié des méthodes héritées, la relation est probablement mauvaise.
 
 ## Composition
 
-La composition consiste a assembler des objets plus petits. Elle rend souvent le systeme plus explicite et plus facile a faire evoluer.
+La composition consiste à assembler des objets plus petits. Elle rend souvent le système plus explicite et plus facile à faire évoluer.
 
-Au lieu d'heriter pour reutiliser du code, on peut deleguer :
+Au lieu d'hériter pour réutiliser du code, on peut déléguer :
 
 ```java
 public class DiscountedPricing implements PricingPolicy {
@@ -52,17 +52,17 @@ public class DiscountedPricing implements PricingPolicy {
 
 ## Polymorphisme
 
-Le polymorphisme permet d'utiliser plusieurs implementations derriere un meme contrat.
+Le polymorphisme permet d'utiliser plusieurs implémentations derrière un même contrat.
 
-Dans le projet cinema, `PricingPolicy` peut representer plusieurs politiques de prix sans multiplier les `if`.
+Dans le projet cinéma, `PricingPolicy` peut représenter plusieurs politiques de prix sans multiplier les `if`.
 
-## Regle pratique
+## Règle pratique
 
-Utiliser l'heritage quand la relation de substitution est solide. Utiliser la composition quand on veut assembler des comportements.
+Utiliser l'héritage quand la relation de substitution est solide. Utiliser la composition quand on veut assembler des comportements.
 
-## Progression pedagogique
+## Progression pédagogique
 
-Ne commence pas par `extends`. Commence par un probleme :
+Ne commence pas par `extends`. Commence par un problème :
 
 1. plusieurs tarifs existent ;
 2. chaque tarif calcule differemment ;
@@ -70,27 +70,27 @@ Ne commence pas par `extends`. Commence par un probleme :
 4. on introduit un contrat commun ;
 5. on remplace la condition par du polymorphisme.
 
-L'heritage de classe arrive seulement si une vraie specialisation existe.
+L'héritage de classe arrive seulement si une vraie spécialisation existe.
 
-## Quand l'heritage est raisonnable
+## Quand l'héritage est raisonnable
 
-Un heritage peut etre acceptable si :
+Un héritage peut être acceptable si :
 
-- la sous-classe est vraiment un cas particulier de la classe mere ;
-- les invariants de la classe mere restent vrais ;
-- aucune methode heritee ne devient absurde ;
+- la sous-classe est vraiment un cas particulier de la classe mère ;
+- les invariants de la classe mère restent vrais ;
+- aucune méthode héritée ne devient absurde ;
 - le comportement commun est stable ;
 - la substitution ne surprend pas le code client.
 
-Si une sous-classe doit dire "je ne supporte pas cette methode", c'est un signal fort contre l'heritage.
+Si une sous-classe doit dire "je ne supporte pas cette méthode", c'est un signal fort contre l'héritage.
 
 ## Composition et combinaison
 
-La composition permet de combiner des comportements sans enfermer le modele dans une hierarchie rigide. Pour la tarification, on peut composer :
+La composition permet de combiner des comportements sans enfermer le modèle dans une hierarchie rigide. Pour la tarification, on peut composer :
 
-- un tarif de base ;
+- un tarif de basé ;
 - une reduction ;
 - une majoration 3D ;
 - un code promotionnel.
 
-Cette approche evite une explosion de classes comme `Student3DWednesdayPromotionPricing`.
+Cette approche évite une explosion de classes comme `Student3DWednesdayPromotionPricing`.

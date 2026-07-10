@@ -5,14 +5,14 @@ title: Exercices
 
 # Exercice guide
 
-A partir du domaine du cinema, lister les objets probables :
+À partir du domaine du cinéma, lister les objets probables :
 
 - film ;
 - salle ;
-- siege ;
-- seance ;
+- siège ;
+- séance ;
 - client ;
-- reservation.
+- réservation.
 
 Pour chaque objet, noter :
 
@@ -22,26 +22,26 @@ Pour chaque objet, noter :
 
 # Exercice autonome
 
-Modeliser `Movie`, `Screening` et `MovieTheater`. Ne pas commencer par les attributs uniquement. Commencer par les responsabilites.
+Modéliser `Movie`, `Screening` et `MovieTheater`. Ne pas commencer par les attributs uniquement. Commencer par les responsabilités.
 
 # Atelier progressif
 
 ## Niveau 1
 
-Pour chacun des mots suivants, dire s'il s'agit plutot d'un objet, d'une valeur, d'une action ou d'une regle :
+Pour chacun des mots suivants, dire s'il s'agit plutôt d'un objet, d'une valeur, d'une action ou d'une règle :
 
 - film ;
-- duree ;
-- reserver ;
-- tarif etudiant ;
+- durée ;
+- réserver ;
+- tarif étudiant ;
 - salle ;
-- siege ;
-- paiement refuse ;
+- siège ;
+- paiement refusé ;
 - annulation.
 
 ## Niveau 2
 
-Ecrire une fiche pour trois objets :
+Écrire une fiche pour trois objets :
 
 ```text
 Nom:
@@ -58,13 +58,13 @@ Comparer deux conceptions :
 1. une fonction `reserve(customer, screening, seats)` qui fait tout ;
 2. des objets `Reservation`, `Screening`, `Seat`, `PricingPolicy`.
 
-Expliquer ce qui sera plus facile a changer si demain on ajoute :
+Expliquer ce qui sera plus facile à changer si demain on ajoute :
 
 - un tarif senior ;
 - une salle 4DX ;
-- une interdiction de reserver deux fois le meme siege ;
+- une interdiction de réserver deux fois le même siège ;
 - une annulation remboursable.
 
 ## Correction attendue
 
-Une bonne reponse ne cherche pas a creer beaucoup de classes. Elle justifie ou se trouve chaque responsabilite.
+Une bonne réponse ne cherche pas à créer beaucoup de classes. Elle justifie où se trouve chaque responsabilité.

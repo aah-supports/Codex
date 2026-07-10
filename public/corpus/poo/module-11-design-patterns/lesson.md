@@ -11,49 +11,49 @@ tags:
 
 # Design patterns utiles
 
-Un pattern n'est pas une decoration. C'est une reponse connue a une tension recurrente.
+Un pattern n'est pas une decoration. C'est une réponse connue à une tension recurrente.
 
-Le bon ordre pedagogique est :
+Le bon ordre pédagogique est :
 
-1. rencontrer le probleme ;
-2. sentir le cout du code actuel ;
+1. rencontrer le problème ;
+2. sentir le coût du code actuel ;
 3. introduire le pattern ;
-4. evaluer le cout du pattern.
+4. evaluer le coût du pattern.
 
-## Patterns du projet cinema
+## Patterns du projet cinéma
 
 - Strategy : politiques de prix, paiement, annulation ;
 - Adapter : prestataire de paiement externe ;
-- Observer : notification apres reservation ;
-- State : cycle de vie d'une reservation ;
-- Factory Method : creation controlee quand elle devient complexe ;
-- Command : action executable ou annulable.
+- Observer : notification après réservation ;
+- State : cycle de vie d'une réservation ;
+- Factory Method : creation contrôlée quand elle devient complexe ;
+- Command : action exécutable ou annulable.
 
-Eviter d'ajouter une factory, trois interfaces et quatre classes pour construire un objet simple.
+Éviter d'ajouter une factory, trois interfaces et quatre classes pour construire un objet simple.
 
 ## Pattern ou simple objet ?
 
 Avant d'utiliser un pattern, poser trois questions :
 
-1. quel probleme concret est en train d'apparaitre ?
+1. quel problème concret est en train d'apparaitre ?
 2. quel changement futur devient difficile ?
-3. quel cout le pattern ajoute-t-il ?
+3. quel coût le pattern ajoute-t-il ?
 
-Un pattern ajoute souvent des classes, des interfaces et une indirection. Ce cout est acceptable s'il rend un changement important plus simple.
+Un pattern ajoute souvent des classes, des interfaces et une indirection. Ce coût est acceptable s'il rend un changement important plus simple.
 
-## Progression par problemes
+## Progression par problèmes
 
 Strategy apparait quand une condition choisit entre plusieurs algorithmes.
 
 Adapter apparait quand une API externe ne correspond pas au contrat du domaine.
 
-Observer apparait quand plusieurs reactions doivent suivre un evenement sans coupler l'emetteur a tous les recepteurs.
+Observer apparait quand plusieurs réactions doivent suivre un evenement sans coupler l'emetteur à tous les recepteurs.
 
-State apparait quand les transitions d'un objet dependent fortement de son etat courant.
+State apparait quand les transitions d'un objet dépendent fortement de son état courant.
 
-## Anti-pattern pedagogique
+## Anti-pattern pédagogique
 
-Ne pas demander de memoriser 23 patterns d'un coup. Un etudiant progresse quand il reconnait la tension :
+Ne pas demander de memoriser 23 patterns d'un coup. Un étudiant progresse quand il reconnait la tension :
 
 - "cette condition grossit" ;
 - "cette API externe fuit partout" ;

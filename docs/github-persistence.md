@@ -1,24 +1,24 @@
 # Persistance GitHub
 
-## Regle de separation
+## Règle de séparation
 
 GitHub stocke le contenu partageable. IndexedDB stocke le travail personnel quotidien.
 
-## Peut etre versionne
+## Peut être versionné
 
 - corpus Markdown ;
 - modules ;
 - exercices et QCM relus ;
-- templates de generation ;
-- stats anonymisees si l'utilisateur l'active.
+- templates de génération ;
+- stats anonymisées si l'utilisateur l'active.
 
-## Ne doit pas etre public par defaut
+## Ne doit pas être public par défaut
 
-- historique detaille de reponses ;
+- historique détaillé de réponses ;
 - email, nom, identifiants personnels ;
-- exports complets non anonymises.
+- exports complets non anonymisés.
 
-## Format recommande pour stats anonymisees
+## Format recommandé pour stats anonymisées
 
 ```json
 {

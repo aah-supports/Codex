@@ -5,7 +5,7 @@ title: Exercices
 
 # TP
 
-Creer :
+Créer :
 
 - `Money` ;
 - `EmailAddress` ;
@@ -16,13 +16,13 @@ Pour chacun, definir les invariants.
 
 # Exercice autonome
 
-Remplacer dans le modele cinema :
+Remplacer dans le modèle cinéma :
 
 - `String email` par `EmailAddress` ;
 - `double price` par `Money` ;
 - `String seat` par `SeatNumber`.
 
-Identifier ce que le compilateur peut maintenant proteger.
+Identifier ce que le compilateur peut maintenant protéger.
 
 # Atelier progressif
 
@@ -38,7 +38,7 @@ Pour chaque primitive, proposer un objet-valeur :
 
 ## Niveau 2
 
-Ecrire les invariants :
+Écrire les invariants :
 
 ```text
 Money:
@@ -49,8 +49,8 @@ ScreeningPeriod:
 
 ## Niveau 3
 
-Modifier `Reservation` pour utiliser `Money` et `SeatNumber`. Rechercher les endroits ou le code devient plus simple parce que les validations sont deja faites.
+Modifier `Reservation` pour utiliser `Money` et `SeatNumber`. Rechercher les endroits où le code devient plus simple parce que les validations sont déjà faites.
 
-## Critere de reussite
+## Critère de réussite
 
-Un objet-valeur doit refuser une valeur invalide au moment de sa creation.
+Un objet-valeur doit refusér une valeur invalide au moment de sa creation.

@@ -19,7 +19,7 @@ double calculateAccountBalance(double balance, double amount, String operation) 
 }
 ```
 
-Le code connait l'operation sous forme de chaine et ne protege pas vraiment le compte.
+Le code connait l'operation sous forme de chaîne et ne protège pas vraiment le compte.
 
 # Version objet
 
@@ -41,11 +41,11 @@ public class BankAccount {
 }
 ```
 
-La responsabilite se rapproche de l'objet concerne.
+La responsabilité se rapproche de l'objet concerne.
 
-# Exemple fil rouge : reservation de cinema
+# Exemple fil rouge : réservation de cinéma
 
-Version procedurale fragile :
+Version procédurale fragile :
 
 ```java
 double calculateTotalPrice(int seatCount, String customerType, boolean is3D) {
@@ -67,9 +67,9 @@ double calculateTotalPrice(int seatCount, String customerType, boolean is3D) {
 }
 ```
 
-Ce code fonctionne, mais il concentre les decisions. Chaque nouveau tarif modifie la meme fonction.
+Ce code fonctionne, mais il concentre les décisions. Chaque nouveau tarif modifie la même fonction.
 
-Premiere lecture objet :
+Première lecture objet :
 
 ```java
 public class Reservation {
@@ -83,6 +83,6 @@ public class Reservation {
 }
 ```
 
-La reservation porte deja une information utile : le nombre de sieges. La tarification pourra ensuite collaborer avec elle.
+La réservation porte dejà une information utile : le nombre de sièges. La tarification pourra ensuite collaborer avec elle.
 
-Point pedagogique : ne cherche pas encore l'architecture parfaite. Le premier pas est de faire apparaitre les concepts du domaine.
+Point pédagogique : ne cherche pas encore l'architecture parfaite. Le premier pas est de faire apparaitre les concepts du domaine.

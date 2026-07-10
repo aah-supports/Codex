@@ -5,14 +5,14 @@ title: Exercices
 
 # TP
 
-Creer :
+Créer :
 
 - `Movie` ;
 - `Room` ;
 - `Customer` ;
 - `Screening`.
 
-Ajouter les regles de validite dans les constructeurs.
+Ajouter les règles de validite dans les constructeurs.
 
 # Question
 
@@ -25,32 +25,32 @@ Pourquoi un objet valide des sa construction simplifie-t-il le reste du code ?
 Ajouter les validations minimales :
 
 - titre de film non vide ;
-- duree positive ;
-- salle avec au moins un siege ;
+- durée positive ;
+- salle avec au moins un siège ;
 - client avec email non vide ;
-- reservation avec au moins un siege.
+- réservation avec au moins un siège.
 
 ## Niveau 2
 
-Remplacer trois setters par des methodes metier :
+Remplacer trois setters par des méthodes métier :
 
 - `setTitle` devient `renameTo` ;
 - `setCancelled` devient `cancel` ;
 - `setStartsAt` devient `rescheduleTo`.
 
-Pour chaque methode, ajouter au moins une validation.
+Pour chaque méthode, ajouter au moins une validation.
 
 ## Niveau 3
 
-Identifier les invariants qui appartiennent a :
+Identifier les invariants qui appartiennent à :
 
 - `Movie` ;
 - `Room` ;
 - `Screening` ;
 - `Reservation`.
 
-Puis expliquer pourquoi ces invariants ne doivent pas etre uniquement dans un controller ou un formulaire.
+Puis expliquer pourquoi ces invariants ne doivent pas être uniquement dans un controller ou un formulaire.
 
-## Critere de reussite
+## Critère de réussite
 
-Le code client ne doit pas pouvoir creer un objet manifestement invalide sans recevoir une exception claire.
+Le code client ne doit pas pouvoir créer un objet manifestement invalide sans recevoir une exception claire.

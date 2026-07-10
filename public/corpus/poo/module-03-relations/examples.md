@@ -21,9 +21,9 @@ public class Room {
 }
 ```
 
-La salle protege sa liste de sieges avec `List.copyOf`.
+La salle protège sa liste de sièges avec `List.copyOf`.
 
-# Association dans une reservation
+# Association dans une réservation
 
 ```java
 public class Reservation {
@@ -39,9 +39,9 @@ public class Reservation {
 }
 ```
 
-La reservation relie plusieurs objets, mais elle ne doit pas tout savoir faire.
+La réservation relie plusieurs objets, mais elle ne doit pas tout savoir faire.
 
-# Chevauchement de seances
+# Chevauchement de séances
 
 ```java
 public class Screening {
@@ -63,7 +63,7 @@ public class Screening {
 }
 ```
 
-La relation entre `Screening`, `Movie` et `Room` permet d'exprimer une vraie regle : deux seances dans la meme salle ne doivent pas se chevaucher.
+La relation entre `Screening`, `Movie` et `Room` permet d'exprimer une vraie règle : deux séances dans la même salle ne doivent pas se chevaucher.
 
 # Mauvaise relation
 
@@ -73,4 +73,4 @@ public class Movie {
 }
 ```
 
-Un film n'a pas besoin de connaitre les reservations. Cette relation ajoute du couplage sans porter une regle naturelle du domaine.
+Un film n'a pas besoin de connaître les réservations. Cette relation ajoute du couplage sans porter une règle naturelle du domaine.

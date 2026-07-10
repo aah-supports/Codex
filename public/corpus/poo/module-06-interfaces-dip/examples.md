@@ -11,7 +11,7 @@ public interface ReservationRepository {
 }
 ```
 
-# Adaptateur en memoire
+# Adaptateur en mémoire
 
 ```java
 public class InMemoryReservationRepository implements ReservationRepository {
@@ -40,7 +40,7 @@ public class CreateReservationUseCase {
 }
 ```
 
-Le cas d'utilisation depend d'une abstraction.
+Le cas d'utilisation dépend d'une abstraction.
 
 # Mauvais couplage
 
@@ -54,7 +54,7 @@ public class CreateReservationUseCase {
 }
 ```
 
-Le cas d'utilisation decide lui-meme du stockage. Il devient plus difficile a tester et a deployer dans un autre contexte.
+Le cas d'utilisation decide lui-même du stockage. Il devient plus difficile à tester et à deployer dans un autre contexte.
 
 # Injection explicite
 
@@ -86,4 +86,4 @@ public class FakePaymentGateway implements PaymentGateway {
 }
 ```
 
-Cette implementation permet de travailler avant l'integration d'un vrai prestataire.
+Cette implémentation permet de travailler avant l'integration d'un vrai prestataire.

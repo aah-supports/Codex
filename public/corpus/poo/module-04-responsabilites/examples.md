@@ -23,7 +23,7 @@ public class ReservationService {
 
 Cette classe melange tarification, persistance et notification.
 
-# Responsabilites separees
+# Responsabilités séparées
 
 ```java
 public interface PricingPolicy {
@@ -51,13 +51,13 @@ if (reservation.getStatus().equals("PENDING")) {
 }
 ```
 
-Version qui confie la decision :
+Version qui confie la décision :
 
 ```java
 reservation.confirm();
 ```
 
-L'objet peut maintenant proteger ses transitions.
+L'objet peut maintenant protéger ses transitions.
 
 # Feature Envy
 
@@ -69,7 +69,7 @@ public class PricingService {
 }
 ```
 
-La methode manipule surtout les donnees de `Reservation`. Elle envie une autre classe. Une meilleure conception :
+La méthode manipule surtout les données de `Reservation`. Elle envie une autre classe. Une meilleure conception :
 
 ```java
 public class Reservation {

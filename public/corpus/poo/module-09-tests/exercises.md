@@ -7,46 +7,46 @@ title: Exercices
 
 Tester :
 
-- une reservation valide ;
-- l'impossibilite de reserver un siege deja occupe ;
-- une regle tarifaire ;
-- l'annulation d'une reservation ;
+- une réservation valide ;
+- l'impossibilité de réserver un siège déjà occupé ;
+- une règle tarifaire ;
+- l'annulation d'une réservation ;
 - la sauvegarde avec un fake repository.
 
 # Exercice autonome
 
-Prendre un test qui verifie trop d'appels internes. Le reecrire pour verifier uniquement le comportement observable.
+Prendre un test qui vérifie trop d'appels internes. Le réécrire pour vérifier uniquement le comportement observable.
 
 # Atelier progressif
 
 ## Niveau 1
 
-Ecrire trois tests d'invariants :
+Écrire trois tests d'invariants :
 
-- `Movie` refuse une duree negative ;
-- `Room` refuse une liste vide de sieges ;
-- `Reservation` refuse zero siege.
+- `Movie` refusé une durée négative ;
+- `Room` refusé une liste vide de sièges ;
+- `Reservation` refusé zéro siège.
 
 ## Niveau 2
 
 Tester une politique tarifaire avec trois cas :
 
 - plein tarif ;
-- etudiant ;
+- étudiant ;
 - enfant.
 
-Ne pas tester les details internes, seulement le prix retourne.
+Ne pas tester les détails internes, seulement le prix retourne.
 
 ## Niveau 3
 
 Tester `CreateReservationUseCase` avec fake repository et fake paiement.
 
-Scenarios :
+Scénarios :
 
-- paiement accepte : reservation sauvegardee ;
-- paiement refuse : reservation non sauvegardee ;
-- siege deja reserve : exception metier.
+- paiement accepté : réservation sauvegardée ;
+- paiement refusé : réservation non sauvegardée ;
+- siège déjà réserve : exception métier.
 
-## Critere de reussite
+## Critère de réussite
 
-Si tu peux refactorer l'interieur de la classe sans casser le test, le test est probablement au bon niveau.
+Si tu peux refactorer l'intérieur de la classe sans casser le test, le test est probablement au bon niveau.

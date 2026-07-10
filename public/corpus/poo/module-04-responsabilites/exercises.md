@@ -7,17 +7,17 @@ title: Exercices
 
 Prendre une classe `ReservationService` qui :
 
-1. verifie les sieges ;
+1. vérifie les sièges ;
 2. calcule le prix ;
 3. sauvegarde ;
 4. envoie un email ;
-5. genere un billet.
+5. génère un billet.
 
-Identifier les responsabilites distinctes.
+Identifier les responsabilités distinctes.
 
 # Exercice autonome
 
-Proposer les classes ou interfaces necessaires :
+Proposer les classes ou interfaces nécessaires :
 
 - `Reservation` ;
 - `PricingPolicy` ;
@@ -25,20 +25,20 @@ Proposer les classes ou interfaces necessaires :
 - `NotificationService` ;
 - `TicketGenerator`.
 
-Pour chacune, ecrire une phrase : "cette classe change quand..."
+Pour chacune, écrire une phrase : "cette classe change quand..."
 
 # Atelier progressif
 
 ## Niveau 1
 
-Pour chaque responsabilite, choisir un proprietaire probable :
+Pour chaque responsabilité, choisir un proprietaire probable :
 
-- verifier qu'une reservation contient au moins un siege ;
-- calculer une reduction etudiante ;
+- vérifier qu'une réservation contient au moins un siège ;
+- calculer une reduction étudiante ;
 - envoyer un email ;
-- sauvegarder une reservation ;
-- produire un numero de billet ;
-- refuser une transition d'etat invalide.
+- sauvegarder une réservation ;
+- produire un numéro de billet ;
+- refusér une transition d'état invalide.
 
 ## Niveau 2
 
@@ -58,16 +58,16 @@ Nommer au moins trois raisons de changer.
 
 ## Niveau 3
 
-Refactorer en gardant un scenario simple :
+Refactorer en gardant un scénario simple :
 
 ```text
-Quand un client reserve deux sieges disponibles,
-alors la reservation est confirmee,
+Quand un client réserve deux sièges disponibles,
+alors la réservation est confirmée,
 le prix est calcule,
-la reservation est sauvegardee,
+la réservation est sauvegardée,
 une notification est envoyee.
 ```
 
-## Critere de reussite
+## Critère de réussite
 
-Chaque classe doit pouvoir etre expliquee en une phrase courte sans utiliser "et aussi".
+Chaque classe doit pouvoir être expliquee en une phrase courte sans utiliser "et aussi".

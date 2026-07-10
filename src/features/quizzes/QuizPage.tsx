@@ -54,7 +54,7 @@ export function QuizPage() {
       <header className="page-header">
         <p className="eyebrow">QCM</p>
         <h2>{module.title}</h2>
-        <p>Chaque correction explique le raisonnement, pas seulement la bonne reponse.</p>
+        <p>Chaque correction explique le raisonnement, pas seulement la bonne réponse.</p>
       </header>
 
       <div className="page-stack">

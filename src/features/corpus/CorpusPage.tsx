@@ -21,9 +21,9 @@ export function CorpusPage() {
     <div className="page-stack">
       <header className="page-header">
         <p className="eyebrow">Apprentissage progressif</p>
-        <h2>Reprendre ou demarrer un module</h2>
+        <h2>Reprendre ou démarrer un module</h2>
         <p>
-          Les contenus viennent des fichiers Markdown versionnes. Ta progression reste locale et exportable.
+          Les contenus viennent des fichiers Markdown versionnés. Ta progression reste locale et exportable.
         </p>
       </header>
 
@@ -40,7 +40,7 @@ export function CorpusPage() {
               </div>
               <Badge>v{corpus.version}</Badge>
             </div>
-            <Progress value={percent} label="Lecons terminees" />
+            <Progress value={percent} label="Leçons terminées" />
             <div className="module-grid">
               {corpus.modules.map((module) => {
                 const moduleProgress = progress[module.id]

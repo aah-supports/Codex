@@ -24,18 +24,18 @@ export function StatsPage() {
     <div className="page-stack">
       <header className="page-header">
         <p className="eyebrow">Progression locale</p>
-        <h2>Ou tu en es exactement</h2>
-        <p>Ces donnees viennent d'IndexedDB. Elles ne partent vers GitHub que par export explicite.</p>
+        <h2>Où tu en es exactement</h2>
+        <p>Ces données viennent d'IndexedDB. Elles ne partent vers GitHub que par export explicite.</p>
       </header>
 
       <div className="stats-grid">
         <Card>
           <span className="metric">{completedLessons}/{modules.length}</span>
-          <p>Lecons terminees</p>
+          <p>Leçons terminées</p>
         </Card>
         <Card>
           <span className="metric">{completedExercises}/{modules.length}</span>
-          <p>Exercices termines</p>
+          <p>Exercices terminés</p>
         </Card>
         <Card>
           <span className="metric">{formatPercent(averageScore)}</span>
@@ -48,13 +48,13 @@ export function StatsPage() {
       </div>
 
       <Card>
-        <Progress value={lessonPercent} label="Lecons" />
+        <Progress value={lessonPercent} label="Leçons" />
         <Progress value={exercisePercent} label="Exercices" />
       </Card>
 
       <Card>
         <h3>Persistance</h3>
-        <p>La progression est locale dans IndexedDB. Le corpus reste versionne dans GitHub.</p>
+        <p>La progression est locale dans IndexedDB. Le corpus reste versionné dans GitHub.</p>
       </Card>
     </div>
   )

@@ -3,11 +3,11 @@ id: poo.module-10.examples
 title: Exemples
 ---
 
-# Methode qui fait trop
+# Méthode qui fait trop
 
 ```java
 public void reserve(ReservationRequest request) {
-    // verifier les sieges
+    // vérifier les sièges
     // calculer le prix
     // sauvegarder
     // debiter
@@ -16,7 +16,7 @@ public void reserve(ReservationRequest request) {
 }
 ```
 
-# Premiere extraction
+# Première extraction
 
 ```java
 public void reserve(ReservationRequest request) {
@@ -28,7 +28,7 @@ public void reserve(ReservationRequest request) {
 }
 ```
 
-Le code n'est pas encore parfait, mais les responsabilites apparaissent.
+Le code n'est pas encore parfait, mais les responsabilités apparaissent.
 
 # Remplacer primitive par objet
 
@@ -42,7 +42,7 @@ public void pay(double amount, String currency) {
 }
 ```
 
-Apres :
+Après :
 
 ```java
 public void pay(Money amount) {
@@ -63,10 +63,10 @@ switch (reservation.status()) {
 }
 ```
 
-Apres :
+Après :
 
 ```java
 reservation.confirm();
 ```
 
-La logique de transition peut vivre dans l'objet ou dans un etat dedie.
+La logique de transition peut vivre dans l'objet ou dans un état dédié.

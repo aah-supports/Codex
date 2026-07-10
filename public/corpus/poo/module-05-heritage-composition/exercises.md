@@ -5,23 +5,23 @@ title: Exercices
 
 # TP
 
-Implementer plusieurs politiques :
+Implémenter plusieurs politiques :
 
 - tarif standard ;
-- tarif etudiant ;
+- tarif étudiant ;
 - tarif enfant ;
-- majoration pour une seance 3D ;
+- majoration pour une séance 3D ;
 - reduction le mercredi.
 
 # Refactoring
 
-Partir d'une longue chaine de conditions et remplacer les cas par des implementations de `PricingPolicy`.
+Partir d'une longue chaîne de conditions et remplacer les cas par des implémentations de `PricingPolicy`.
 
 # Atelier progressif
 
 ## Niveau 1
 
-Pour chaque relation, dire si l'heritage est plausible :
+Pour chaque relation, dire si l'héritage est plausible :
 
 - `StudentPricing` est un `PricingPolicy` ;
 - `Room` est un `Seat` ;
@@ -41,12 +41,12 @@ if (type.equals("CHILD")) { return 6.0; }
 return 12.0;
 ```
 
-en trois classes qui implementent `PricingPolicy`.
+en trois classes qui implémentent `PricingPolicy`.
 
 ## Niveau 3
 
 Ajouter une majoration 3D sans modifier les classes de tarif existantes. Utiliser la composition.
 
-## Critere de reussite
+## Critère de réussite
 
-Le code doit permettre d'ajouter un nouveau tarif sans modifier la methode centrale de calcul.
+Le code doit permettre d'ajouter un nouveau tarif sans modifier la méthode centrale de calcul.

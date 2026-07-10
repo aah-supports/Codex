@@ -55,7 +55,7 @@ export function LessonPage() {
         <p>{module.description}</p>
         <div className="action-row">
           <Button onClick={() => void markLessonCompleted(moduleId)} variant="secondary">
-            Marquer la lecon lue
+            Marquer la leçon lue
           </Button>
           <Button onClick={() => void markExerciseCompleted(moduleId)} variant="secondary">
             Exercices faits
@@ -65,14 +65,14 @@ export function LessonPage() {
           </Link>
         </div>
         <p className="muted">
-          Lecon: {progress?.lessonCompleted ? 'terminee' : 'en cours'} · Exercices:{' '}
-          {progress?.exerciseCompleted ? 'termines' : 'a faire'}
+          Leçon: {progress?.lessonCompleted ? 'terminée' : 'en cours'} · Exercices:{' '}
+          {progress?.exerciseCompleted ? 'terminés' : 'à faire'}
         </p>
       </header>
 
       <div className="lesson-layout">
         <Card className="markdown-card">
-          <h3>Lecon</h3>
+          <h3>Leçon</h3>
           <MarkdownState query={lesson} />
         </Card>
         <Card className="markdown-card">

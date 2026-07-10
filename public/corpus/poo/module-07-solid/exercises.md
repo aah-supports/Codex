@@ -5,11 +5,11 @@ title: Exercices
 
 # Exercice guide
 
-Associer chaque probleme a un principe SOLID :
+Associer chaque problème à un principe SOLID :
 
 - classe qui facture et envoie des emails ;
-- longue chaine de `if` pour les tarifs ;
-- sous-classe qui lance une exception sur une methode heritee ;
+- longue chaîne de `if` pour les tarifs ;
+- sous-classe qui lance une exception sur une méthode héritée ;
 - interface `Machine` avec `print`, `scan`, `fax` pour toutes les imprimantes ;
 - cas d'utilisation qui instancie directement une classe MySQL.
 
@@ -21,7 +21,7 @@ Refactorer un exemple de tarification pour appliquer OCP sans ajouter d'abstract
 
 ## Niveau 1
 
-Pour chaque extrait, nommer le principe concerne et la douleur concrete :
+Pour chaque extrait, nommer le principe concerne et la douleur concrété :
 
 ```java
 public class ReservationService {
@@ -46,7 +46,7 @@ public class UseCase {
 
 ## Niveau 2
 
-Refactorer uniquement ce qui fait mal. Ne pas ajouter d'interface si une classe concrete suffit pour le moment.
+Refactorer uniquement ce qui fait mal. Ne pas ajouter d'interface si une classe concrété suffit pour le moment.
 
 ## Niveau 3
 
@@ -57,6 +57,6 @@ Comparer deux versions :
 
 Dire dans quel contexte chaque version est acceptable.
 
-## Critere de reussite
+## Critère de réussite
 
 La justification doit mentionner un changement futur concret, pas seulement "c'est plus propre".

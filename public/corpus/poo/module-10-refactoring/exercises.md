@@ -5,9 +5,9 @@ title: Exercices
 
 # Exercice guide
 
-Identifier les smells dans une methode qui :
+Identifier les smells dans une méthode qui :
 
-1. verifie la disponibilite ;
+1. vérifie la disponibilité ;
 2. calcule le tarif ;
 3. enregistre ;
 4. debite ;
@@ -23,7 +23,7 @@ Refactorer en trois petites etapes maximum par commit :
 - introduire un repository ;
 - introduire un service de notification.
 
-Apres chaque etape, les tests doivent rester verts.
+Après chaque etape, les tests doivent rester verts.
 
 # Atelier progressif
 
@@ -31,7 +31,7 @@ Apres chaque etape, les tests doivent rester verts.
 
 Identifier le smell principal :
 
-- methode de 80 lignes ;
+- méthode de 80 lignes ;
 - classe qui connait SQL et SMTP ;
 - `String status` compare partout ;
 - `double amount` et `String currency` passes ensemble ;
@@ -45,12 +45,12 @@ Choisir le refactoring adapte :
 - Extract Class ;
 - Replace Primitive with Object ;
 - Replace Conditional with Polymorphism ;
-- Introduce Parameter Object.
+- Introduce Paramétér Object.
 
 ## Niveau 3
 
 Faire un plan de refactoring en 5 commits maximum. Chaque commit doit avoir un objectif verifiable.
 
-## Critere de reussite
+## Critère de réussite
 
 Le comportement observable reste identique, mais le prochain changement devient plus local.

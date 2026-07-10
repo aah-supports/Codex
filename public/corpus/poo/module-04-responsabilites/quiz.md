@@ -5,16 +5,16 @@ title: QCM
 
 Question: Une classe peu cohesive est souvent une classe qui...
 A. Melange plusieurs raisons de changer.
-B. Possede trop peu de methodes.
-C. N'utilise jamais d'interface.
-D. A un constructeur.
+B. Possède trop peu de méthodes.
+C. N'utilisé jamais d'interface.
+D. À un constructeur.
 Answer: Melange plusieurs raisons de changer.
-Explanation: La cohesion baisse quand une classe rassemble des responsabilites qui evoluent pour des raisons differentes.
+Explanation: La cohésion baisse quand une classe rassemble des responsabilités qui évoluent pour des raisons différentes.
 ---
-Question: Information Expert aide a choisir...
-A. L'objet qui porte une responsabilite.
+Question: Information Expert aide à choisir...
+A. L'objet qui porte une responsabilité.
 B. La couleur du theme.
-C. La base de donnees.
+C. La basé de données.
 D. Le nom du package racine.
-Answer: L'objet qui porte une responsabilite.
-Explanation: Le principe invite a placer le comportement pres de l'information utile.
+Answer: L'objet qui porte une responsabilité.
+Explanation: Le principe invite à placer le comportement près de l'information utile.

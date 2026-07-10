@@ -5,11 +5,11 @@ title: Exercices
 
 # Projet final
 
-Terminer le systeme de reservation de cinema :
+Terminer le système de réservation de cinéma :
 
 1. gestion des films ;
-2. programmation des seances ;
-3. reservation de sieges ;
+2. programmation des séances ;
+3. réservation de sièges ;
 4. tarification ;
 5. paiement ;
 6. cycle de vie ;
@@ -20,10 +20,10 @@ Terminer le systeme de reservation de cinema :
 - diagramme de classes limite au domaine ;
 - deux diagrammes de sequence ;
 - tests ;
-- trois decisions de conception ;
-- une mauvaise conception abandonnee ;
+- trois décisions de conception ;
+- une mauvaise conception abandonnée ;
 - un refactoring significatif ;
-- justification des patterns utilises ou refuses.
+- justification des patterns utilisés ou refusés.
 
 # Atelier progressif
 
@@ -41,7 +41,7 @@ Classer ces classes par couche :
 
 ## Niveau 2
 
-Ecrire trois decisions d'architecture :
+Écrire trois décisions d'architecture :
 
 ```text
 Decision:
@@ -54,13 +54,13 @@ Consequence negative:
 
 ## Niveau 3
 
-Construire un scenario complet :
+Construire un scénario complet :
 
 ```text
-Given une seance disponible
-And deux sieges libres
-When le client reserve et paye
-Then la reservation est confirmee
+Given une séance disponible
+And deux sièges libres
+When le client réserve et paye
+Then la réservation est confirmée
 And le paiement est enregistre
 And une notification est envoyee
 ```
@@ -71,12 +71,12 @@ Identifier les objets et ports traverses.
 
 Preparer la soutenance :
 
-- une responsabilite bien placee ;
-- une responsabilite deplacee pendant le refactoring ;
+- une responsabilité bien placee ;
+- une responsabilité deplacee pendant le refactoring ;
 - un pattern utile ;
-- un pattern refuse ;
+- un pattern refusé ;
 - un compromis non resolu.
 
-## Critere de reussite
+## Critère de réussite
 
-Le projet doit pouvoir evoluer sur au moins trois axes sans modification massive : nouveau tarif, nouveau moyen de paiement, nouveau canal de notification.
+Le projet doit pouvoir évoluer sur au moins trois axes sans modification massive : nouveau tarif, nouveau moyen de paiement, nouveau canal de notification.

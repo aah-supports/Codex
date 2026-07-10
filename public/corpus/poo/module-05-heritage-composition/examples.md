@@ -11,7 +11,7 @@ public interface PricingPolicy {
 }
 ```
 
-# Implementations
+# Implémentations
 
 ```java
 public class StandardPricing implements PricingPolicy {
@@ -31,9 +31,9 @@ public class StudentPricing implements PricingPolicy {
 }
 ```
 
-Le code client depend du contrat `PricingPolicy`, pas des classes concretes.
+Le code client dépend du contrat `PricingPolicy`, pas des classes concrétés.
 
-# Explosion par heritage
+# Explosion par héritage
 
 ```java
 public class StudentPricing3DWednesday extends StudentPricing3D {
@@ -60,7 +60,7 @@ public class ThreeDSurcharge implements PricingPolicy {
 }
 ```
 
-On peut envelopper une politique existante au lieu de creer une nouvelle branche d'heritage.
+On peut envelopper une politique existante au lieu de créer une nouvelle branche d'héritage.
 
 # Substitution cassee
 
@@ -73,4 +73,4 @@ public class ReadOnlyReservation extends Reservation {
 }
 ```
 
-Si le code client attend qu'une `Reservation` puisse etre annulee, cette sous-classe casse le contrat implicite.
+Si le code client attend qu'une `Reservation` puisse être annulée, cette sous-classe casse le contrat implicite.

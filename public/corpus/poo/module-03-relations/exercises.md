@@ -5,7 +5,7 @@ title: Exercices
 
 # Exercice guide
 
-Dessiner le diagramme de classes minimal du cinema :
+Dessiner le diagramme de classes minimal du cinéma :
 
 - `Movie` ;
 - `Room` ;
@@ -20,13 +20,13 @@ Indiquer les multiplicites.
 
 Repondre pour chaque relation :
 
-- qui controle le cycle de vie ?
-- la relation doit-elle etre navigable dans les deux sens ?
-- peut-on remplacer l'objet par un identifiant sans perdre une regle importante ?
+- qui contrôle le cycle de vie ?
+- la relation doit-elle être navigable dans les deux sens ?
+- peut-on remplacer l'objet par un identifiant sans perdre une règle importante ?
 
 # TP
 
-Coder `Room`, `Seat` et `Screening`. Ajouter une methode qui refuse deux seances qui se chevauchent dans la meme salle.
+Coder `Room`, `Seat` et `Screening`. Ajouter une méthode qui refusé deux séances qui se chevauchent dans la même salle.
 
 # Atelier progressif
 
@@ -34,17 +34,17 @@ Coder `Room`, `Seat` et `Screening`. Ajouter une methode qui refuse deux seances
 
 Classer les relations :
 
-- une salle contient des sieges ;
-- une seance concerne un film ;
-- une reservation concerne un client ;
-- une reservation contient plusieurs sieges ;
-- un paiement confirme une reservation.
+- une salle contient des sièges ;
+- une séance concerne un film ;
+- une réservation concerne un client ;
+- une réservation contient plusieurs sièges ;
+- un paiement confirme une réservation.
 
-Pour chaque relation, choisir association, composition, agregation ou dependance.
+Pour chaque relation, choisir association, composition, agrégation ou dépendance.
 
 ## Niveau 2
 
-Ajouter les cardinalites :
+Ajouter les cardinalités :
 
 ```text
 Room 1 -- * Seat
@@ -53,12 +53,12 @@ Reservation * -- 1 Customer
 Reservation 1 -- * Seat
 ```
 
-Discuter les cardinalites qui pourraient changer selon le metier.
+Discuter les cardinalités qui pourraient changer selon le métier.
 
 ## Niveau 3
 
-Coder une methode `Room.hasSeat(SeatNumber seatNumber)` et l'utiliser dans `Reservation` pour refuser un siege qui n'appartient pas a la salle de la seance.
+Coder une méthode `Room.hasSeat(SeatNumber seatNumber)` et l'utiliser dans `Reservation` pour refusér un siège qui n'appartient pas à la salle de la séance.
 
-## Critere de reussite
+## Critère de réussite
 
-Le modele doit empecher une reservation incoherente : reserver un siege d'une autre salle, reserver zero siege, ou programmer deux seances incompatibles.
+Le modèle doit empêcher une réservation incohérente : réserver un siège d'une autre salle, réserver zéro siège, ou programmer deux séances incompatibles.

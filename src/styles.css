@@ -669,23 +669,11 @@ textarea {
 
 .glossary-references {
   display: grid;
-  gap: 6px;
+  gap: 4px;
   border-top: 1px solid #1f2937;
   padding-top: 10px;
-}
-
-.glossary-references p {
-  color: #94a3b8;
-  font-size: 0.78rem;
-  font-weight: 800;
-  text-transform: uppercase;
-}
-
-.glossary-references ul {
-  display: grid;
-  gap: 4px;
-  margin: 0;
   padding-left: 18px;
+  margin: 0;
 }
 
 .glossary-references li {

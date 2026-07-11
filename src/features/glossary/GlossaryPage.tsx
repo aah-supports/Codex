@@ -94,16 +94,13 @@ export function GlossaryPage() {
                 <MarkdownRenderer>{item.text}</MarkdownRenderer>
               </div>
               {item.links.length > 0 ? (
-                <div className="glossary-references" aria-label={`Cours associés à ${item.term}`}>
-                  <p>{normalizedQuery ? 'Références pertinentes dans le cours' : 'Références dans le cours'}</p>
-                  <ul>
-                    {rankLinks(item.links, normalizedQuery).map((link) => (
-                      <li key={`${item.term}-${link.href}-${link.label}`}>
-                        <a href={link.href}>{link.label}</a>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                <ul className="glossary-references" aria-label={`Cours associés à ${item.term}`}>
+                  {rankLinks(item.links, normalizedQuery, item.term).map((link) => (
+                    <li key={`${item.term}-${link.href}-${link.label}`}>
+                      <a href={link.href}>{link.label}</a>
+                    </li>
+                  ))}
+                </ul>
               ) : null}
             </article>
           ))}
@@ -237,29 +234,40 @@ function expandQuery(query: string) {
   return [...expanded]
 }
 
-function rankLinks(links: GlossaryLink[], query: string) {
+function rankLinks(links: GlossaryLink[], query: string, itemTerm: string) {
   if (!query) {
     return links
   }
 
   const queryTerms = expandQuery(query)
 
-  return [...links].sort((left, right) => {
-    const leftRank = rankLink(left, queryTerms)
-    const rightRank = rankLink(right, queryTerms)
-
-    return rightRank - leftRank || left.label.localeCompare(right.label, 'fr')
-  })
+  return [...links]
+    .map((link, index) => ({
+      link,
+      index,
+      rank: rankLink(link, queryTerms, itemTerm),
+    }))
+    .sort((left, right) => right.rank - left.rank || left.index - right.index)
+    .map(({ link }) => link)
 }
 
-function rankLink(link: GlossaryLink, queryTerms: string[]) {
+function rankLink(link: GlossaryLink, queryTerms: string[], itemTerm: string) {
   const linkText = normalizeSearch(`${link.label} ${link.href}`)
+  const normalizedTerm = normalizeSearch(itemTerm)
   let rank = 0
 
-  for (const term of queryTerms) {
-    if (linkText.includes(term)) {
+  for (const queryTerm of queryTerms) {
+    if (linkText.includes(queryTerm)) {
       rank += 20
     }
+  }
+
+  if (linkText.includes(normalizedTerm)) {
+    rank += 35
+  }
+
+  if (normalizeSearch(link.label).includes(normalizedTerm)) {
+    rank += 25
   }
 
   return rank

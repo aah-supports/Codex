@@ -1,8 +1,13 @@
 import { parseMarkdown, parseQuizMarkdown } from '../lib/markdown'
 import type { CorpusIndex, ParsedMarkdown, PersonalSheetIndex, QuizQuestion } from '../types/content'
 
-const corpusBase = '/corpus'
-const sheetsBase = '/fiches'
+const publicBase = import.meta.env.BASE_URL
+const corpusBase = publicPath('corpus')
+const sheetsBase = publicPath('fiches')
+
+function publicPath(path: string) {
+  return `${publicBase}${path}`.replace(/\/{2,}/g, '/')
+}
 
 async function fetchText(path: string) {
   const response = await fetch(path)

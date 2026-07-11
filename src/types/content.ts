@@ -38,6 +38,19 @@ export type ParsedMarkdown = {
   body: string
 }
 
+export type PersonalSheetIndex = {
+  schemaVersion: number
+  sheets: PersonalSheetSummary[]
+}
+
+export type PersonalSheetSummary = {
+  id: string
+  title: string
+  description: string
+  path: string
+  tags: string[]
+}
+
 export type QuizQuestion = {
   id: string
   question: string

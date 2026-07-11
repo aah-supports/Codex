@@ -101,7 +101,8 @@ textarea {
 .doc-nav,
 .nav-section,
 .nav-section-links,
-.module-nav-item {
+.module-nav-item,
+.nav-disclosure-body {
   display: grid;
 }
 
@@ -127,6 +128,61 @@ textarea {
 
 .module-nav-item {
   gap: 1px;
+}
+
+.nav-disclosure {
+  display: grid;
+  gap: 1px;
+}
+
+.nav-disclosure summary {
+  display: flex;
+  min-height: 32px;
+  align-items: center;
+  gap: 7px;
+  border-radius: 6px;
+  color: #cbd5e1;
+  cursor: pointer;
+  font-size: 0.88rem;
+  font-weight: 650;
+  line-height: 1.25;
+  list-style: none;
+  padding: 7px 8px;
+}
+
+.nav-disclosure summary::-webkit-details-marker {
+  display: none;
+}
+
+.nav-disclosure summary::before {
+  width: 0;
+  height: 0;
+  border-bottom: 4px solid transparent;
+  border-left: 5px solid #64748b;
+  border-top: 4px solid transparent;
+  content: "";
+  transition: transform 140ms ease;
+}
+
+.nav-disclosure[open] > summary::before {
+  transform: rotate(90deg);
+}
+
+.nav-disclosure summary:hover {
+  background: #111827;
+  color: #f8fafc;
+}
+
+.nav-disclosure-body {
+  gap: 1px;
+  margin-left: 12px;
+  border-left: 1px solid #1f2937;
+  padding-left: 8px;
+}
+
+.module-nav-item > summary {
+  color: #9aa8bb;
+  font-size: 0.82rem;
 }
 
 .nav-link,

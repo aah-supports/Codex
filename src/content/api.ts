@@ -1,7 +1,8 @@
 import { parseMarkdown, parseQuizMarkdown } from '../lib/markdown'
-import type { CorpusIndex, ParsedMarkdown, QuizQuestion } from '../types/content'
+import type { CorpusIndex, ParsedMarkdown, PersonalSheetIndex, QuizQuestion } from '../types/content'
 
 const corpusBase = '/corpus'
+const sheetsBase = '/fiches'
 
 async function fetchText(path: string) {
   const response = await fetch(path)
@@ -33,4 +34,12 @@ export async function getMarkdown(path: string): Promise<ParsedMarkdown> {
 
 export async function getQuiz(path: string): Promise<QuizQuestion[]> {
   return parseQuizMarkdown(await fetchText(`${corpusBase}/${path}`))
+}
+
+export function getPersonalSheetIndex() {
+  return fetchJson<PersonalSheetIndex>(`${sheetsBase}/index.json`)
+}
+
+export async function getPersonalSheet(path: string): Promise<ParsedMarkdown> {
+  return parseMarkdown(await fetchText(`${sheetsBase}/${path}`))
 }

@@ -3,6 +3,8 @@ import { AppShell } from '../shell/AppShell'
 import { CorpusPage } from '../../features/corpus/CorpusPage'
 import { GlossaryPage } from '../../features/glossary/GlossaryPage'
 import { LessonPage } from '../../features/lessons/LessonPage'
+import { PersonalSheetPage } from '../../features/sheets/PersonalSheetPage'
+import { PersonalSheetsPage } from '../../features/sheets/PersonalSheetsPage'
 import { QuizPage } from '../../features/quizzes/QuizPage'
 import { SettingsPage } from '../../features/settings/SettingsPage'
 import { StatsPage } from '../../features/stats/StatsPage'
@@ -51,6 +53,18 @@ const glossaryRoute = createRoute({
   component: GlossaryPage,
 })
 
+const personalSheetsRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: '/fiches',
+  component: PersonalSheetsPage,
+})
+
+const personalSheetRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: '/fiches/$sheetId',
+  component: PersonalSheetPage,
+})
+
 const settingsRoute = createRoute({
   getParentRoute: () => rootRoute,
   path: '/settings',
@@ -64,6 +78,8 @@ const routeTree = rootRoute.addChildren([
   quizRoute,
   statsRoute,
   glossaryRoute,
+  personalSheetsRoute,
+  personalSheetRoute,
   settingsRoute,
 ])
 

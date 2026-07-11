@@ -2,6 +2,7 @@ import { Link } from '@tanstack/react-router'
 import { useEffect } from 'react'
 import { useLearningStore } from '../../stores/learningStore'
 import { useCorpusIndex } from '../../features/corpus/useCorpus'
+import { usePersonalSheetIndex } from '../../features/sheets/usePersonalSheets'
 
 type AppShellProps = {
   children: React.ReactNode
@@ -11,6 +12,7 @@ const navItems = [
   { to: '/corpus', label: 'Parcours' },
   { to: '/stats', label: 'Progression' },
   { to: '/glossary', label: 'Glossaire' },
+  { to: '/fiches', label: 'Fiches perso' },
   { to: '/settings', label: 'Sauvegarde' },
 ] as const
 
@@ -18,6 +20,7 @@ export function AppShell({ children }: AppShellProps) {
   const hydrated = useLearningStore((state) => state.hydrated)
   const hydrate = useLearningStore((state) => state.hydrate)
   const { data } = useCorpusIndex()
+  const { data: personalSheets } = usePersonalSheetIndex()
 
   useEffect(() => {
     if (!hydrated) {
@@ -45,30 +48,59 @@ export function AppShell({ children }: AppShellProps) {
             ))}
           </NavSection>
 
-          {data?.corpora.map((corpus) => (
-            <NavSection key={corpus.id} title={`Cours · ${corpus.title}`}>
-              {corpus.modules.map((module) => (
-                <div key={module.id} className="module-nav-item">
-                  <Link
-                    to="/learn/$corpusId/$moduleId"
-                    params={{ corpusId: corpus.id, moduleId: module.id }}
-                    className="nav-link"
-                    activeProps={{ className: 'nav-link active' }}
-                  >
-                    {module.title}
-                  </Link>
-                  <Link
-                    to="/quiz/$corpusId/$moduleId"
-                    params={{ corpusId: corpus.id, moduleId: module.id }}
-                    className="sub-nav-link"
-                    activeProps={{ className: 'sub-nav-link active' }}
-                  >
-                    QCM
-                  </Link>
+          <NavSection title="Cours">
+            {data?.corpora.map((corpus) => (
+              <details key={corpus.id} className="nav-disclosure" open>
+                <summary>{corpus.title}</summary>
+                <div className="nav-disclosure-body">
+                  {corpus.modules.map((module) => (
+                    <details key={module.id} className="module-nav-item nav-disclosure" open>
+                      <summary>{module.title}</summary>
+                      <div className="nav-disclosure-body">
+                        <Link
+                          to="/learn/$corpusId/$moduleId"
+                          params={{ corpusId: corpus.id, moduleId: module.id }}
+                          className="sub-nav-link"
+                          activeProps={{ className: 'sub-nav-link active' }}
+                        >
+                          Cours
+                        </Link>
+                        <Link
+                          to="/quiz/$corpusId/$moduleId"
+                          params={{ corpusId: corpus.id, moduleId: module.id }}
+                          className="sub-nav-link"
+                          activeProps={{ className: 'sub-nav-link active' }}
+                        >
+                          QCM
+                        </Link>
+                      </div>
+                    </details>
+                  ))}
                 </div>
-              ))}
+              </details>
+            ))}
+          </NavSection>
+
+          {personalSheets?.sheets.length ? (
+            <NavSection title="Fiches perso">
+              <details className="nav-disclosure" open>
+                <summary>Mes fiches</summary>
+                <div className="nav-disclosure-body">
+                  {personalSheets.sheets.map((sheet) => (
+                    <Link
+                      key={sheet.id}
+                      to="/fiches/$sheetId"
+                      params={{ sheetId: sheet.id }}
+                      className="sub-nav-link"
+                      activeProps={{ className: 'sub-nav-link active' }}
+                    >
+                      {sheet.title}
+                    </Link>
+                  ))}
+                </div>
+              </details>
             </NavSection>
-          ))}
+          ) : null}
         </nav>
       </aside>
       <main className="content-area">{children}</main>

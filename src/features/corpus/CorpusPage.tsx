@@ -1,7 +1,6 @@
 import { Link } from '@tanstack/react-router'
 import { Badge } from '../../components/ui/Badge'
 import { Card } from '../../components/ui/Card'
-import { Progress } from '../../components/ui/Progress'
 import { useLearningStore } from '../../stores/learningStore'
 import { useCorpusIndex } from './useCorpus'
 
@@ -29,8 +28,7 @@ export function CorpusPage() {
       </header>
 
       {data.corpora.map((corpus) => {
-        const completed = corpus.modules.filter((module) => progress[module.id]?.lessonCompleted).length
-        const percent = (completed / corpus.modules.length) * 100
+        const attemptedModules = corpus.modules.filter((module) => (progress[module.id]?.quizAttempts ?? 0) > 0).length
 
         return (
           <section key={corpus.id} className="page-stack">
@@ -41,7 +39,10 @@ export function CorpusPage() {
               </div>
               <Badge>v{corpus.version}</Badge>
             </div>
-            <Progress value={percent} label="Leçons terminées" />
+            <p className="muted">
+              QCM tentés : {attemptedModules}/{corpus.modules.length}. L'avancement des cours se règle dans la page
+              Progression.
+            </p>
             <div className="module-grid">
               {corpus.modules.map((module) => {
                 const moduleProgress = progress[module.id]

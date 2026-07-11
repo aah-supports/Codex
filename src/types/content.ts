@@ -63,6 +63,7 @@ export type ModuleProgress = {
   moduleId: ModuleId
   lessonCompleted: boolean
   exerciseCompleted: boolean
+  selfAssessment: number
   bestQuizScore: number
   quizAttempts: number
   updatedAt: string

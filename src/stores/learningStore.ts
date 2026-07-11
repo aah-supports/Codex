@@ -9,6 +9,7 @@ type LearningState = {
   hydrate: () => Promise<void>
   markLessonCompleted: (moduleId: string) => Promise<void>
   markExerciseCompleted: (moduleId: string) => Promise<void>
+  setSelfAssessment: (moduleId: string, value: number) => Promise<void>
   recordQuizScore: (moduleId: string, score: number) => Promise<void>
   exportUserData: () => UserDataExport
   importUserData: (data: UserDataExport) => Promise<void>
@@ -19,10 +20,23 @@ function emptyProgress(moduleId: string): ModuleProgress {
     moduleId,
     lessonCompleted: false,
     exerciseCompleted: false,
+    selfAssessment: 0,
     bestQuizScore: 0,
     quizAttempts: 0,
     updatedAt: nowIso(),
   }
+}
+
+function normalizeProgress(progress: ModuleProgress): ModuleProgress {
+  return {
+    ...emptyProgress(progress.moduleId),
+    ...progress,
+    selfAssessment: clampProgress(progress.selfAssessment ?? 0),
+  }
+}
+
+function clampProgress(value: number) {
+  return Math.min(100, Math.max(0, Math.round(value)))
 }
 
 export const useLearningStore = create<LearningState>((set, get) => ({
@@ -31,7 +45,7 @@ export const useLearningStore = create<LearningState>((set, get) => ({
 
   async hydrate() {
     const progressRows = await readAllProgress()
-    const progress = Object.fromEntries(progressRows.map((entry) => [entry.moduleId, entry]))
+    const progress = Object.fromEntries(progressRows.map((entry) => [entry.moduleId, normalizeProgress(entry)]))
     set({ hydrated: true, progress })
   },
 
@@ -45,6 +59,13 @@ export const useLearningStore = create<LearningState>((set, get) => ({
   async markExerciseCompleted(moduleId) {
     const current = get().progress[moduleId] ?? emptyProgress(moduleId)
     const next = { ...current, exerciseCompleted: true, updatedAt: nowIso() }
+    await saveProgress(next)
+    set((state) => ({ progress: { ...state.progress, [moduleId]: next } }))
+  },
+
+  async setSelfAssessment(moduleId, value) {
+    const current = get().progress[moduleId] ?? emptyProgress(moduleId)
+    const next = { ...current, selfAssessment: clampProgress(value), updatedAt: nowIso() }
     await saveProgress(next)
     set((state) => ({ progress: { ...state.progress, [moduleId]: next } }))
   },
@@ -72,8 +93,9 @@ export const useLearningStore = create<LearningState>((set, get) => ({
   },
 
   async importUserData(data) {
-    const progress = Object.values(data.progress)
+    const progress = Object.values(data.progress).map(normalizeProgress)
+    const nextProgress = Object.fromEntries(progress.map((entry) => [entry.moduleId, entry]))
     await replaceUserData(progress)
-    set({ progress: data.progress })
+    set({ progress: nextProgress })
   },
 }))

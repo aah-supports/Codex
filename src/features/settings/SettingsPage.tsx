@@ -32,7 +32,7 @@ export function SettingsPage() {
 
     for (const corpus of data?.corpora ?? []) {
       const corpusProgress = corpus.modules.map((module) => progress[module.id]).filter(Boolean)
-      const completedModules = corpusProgress.filter((entry) => entry.lessonCompleted).length
+      const completedModules = corpusProgress.filter((entry) => entry.bestQuizScore >= 70).length
       const scored = corpusProgress.filter((entry) => entry.quizAttempts > 0)
       const averageScore =
         scored.length === 0 ? 0 : scored.reduce((total, entry) => total + entry.bestQuizScore, 0) / scored.length
@@ -75,7 +75,7 @@ export function SettingsPage() {
       <div className="settings-grid">
         <Card>
           <h3>Backup complet</h3>
-          <p>Contient progression, scores et tentatives. À garder privé.</p>
+          <p>Contient auto-évaluations, scores et tentatives. À garder privé.</p>
           <Button onClick={exportFullBackup}>Exporter mes données</Button>
         </Card>
         <Card>

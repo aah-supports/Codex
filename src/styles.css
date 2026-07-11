@@ -567,6 +567,46 @@ textarea {
   color: #e5e7eb;
 }
 
+.self-assessment-row {
+  display: grid;
+  grid-template-columns: minmax(220px, 1fr) minmax(220px, 0.9fr);
+  gap: 18px;
+  align-items: center;
+  border-top: 1px solid #1f2937;
+  padding: 14px 0;
+}
+
+.self-assessment-row > div,
+.self-assessment-row label {
+  display: grid;
+  gap: 6px;
+}
+
+.self-assessment-row strong {
+  color: #e5e7eb;
+}
+
+.self-assessment-row span {
+  color: #94a3b8;
+  font-size: 0.88rem;
+}
+
+.self-assessment-row label span {
+  justify-self: end;
+  color: #bfdbfe;
+  font-weight: 800;
+}
+
+.self-assessment-row input[type="range"] {
+  width: 100%;
+  accent-color: #38bdf8;
+  cursor: grab;
+}
+
+.self-assessment-row input[type="range"]:active {
+  cursor: grabbing;
+}
+
 .choice-list {
   display: grid;
   gap: 12px;
@@ -656,6 +696,10 @@ textarea {
   }
 
   .module-status-row {
+    grid-template-columns: 1fr;
+  }
+
+  .self-assessment-row {
     grid-template-columns: 1fr;
   }
 }

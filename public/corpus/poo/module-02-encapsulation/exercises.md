@@ -1,14 +1,6 @@
 ---
 id: poo.module-02.exercises
 title: Exercices
-tags:
-  - exercice
-  - pratique
-  - classe
-  - encapsulation
-  - invariant
-summaryTags:
-  - exercice
 ---
 
 # TP

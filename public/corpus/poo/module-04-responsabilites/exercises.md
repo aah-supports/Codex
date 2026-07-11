@@ -1,14 +1,6 @@
 ---
 id: poo.module-04.exercises
 title: Exercices
-tags:
-  - exercice
-  - pratique
-  - responsabilite
-  - cohesion
-  - couplage
-summaryTags:
-  - exercice
 ---
 
 # Exercice guidé

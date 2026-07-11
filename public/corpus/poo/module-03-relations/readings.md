@@ -2,12 +2,8 @@
 id: poo.module-03.readings
 title: Lectures
 tags:
-  - lecture
-  - association
-  - composition
-  - couplage
-summaryTags:
-  - lecture
+  - def
+  - important
 ---
 
 # Lectures conseillees

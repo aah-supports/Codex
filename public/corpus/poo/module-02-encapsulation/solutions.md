@@ -2,13 +2,7 @@
 id: poo.module-02.solutions
 title: Corrections guidées
 tags:
-  - correction
-  - a-retenir
-  - classe
-  - encapsulation
-  - invariant
-summaryTags:
-  - correction
+  - important
 ---
 
 # Corrections guidées

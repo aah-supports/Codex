@@ -1,15 +1,6 @@
 ---
 id: poo.module-12.lab
 title: Assembler domaine, application et infrastructure
-tags:
-  - atelier
-  - exercice
-  - architecture
-  - domaine
-  - port
-summaryTags:
-  - atelier
-  - pratique
 ---
 
 # Assembler domaine, application et infrastructure

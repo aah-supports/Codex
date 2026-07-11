@@ -1,13 +1,6 @@
 ---
 id: poo.module-11.quiz
 title: QCM
-tags:
-  - quiz
-  - design-pattern
-  - strategy
-  - adapter
-summaryTags:
-  - quiz
 ---
 
 Question: Un design pattern doit être introduit quand...

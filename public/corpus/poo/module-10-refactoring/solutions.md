@@ -2,13 +2,7 @@
 id: poo.module-10.solutions
 title: Corrections guidées
 tags:
-  - correction
-  - a-retenir
-  - refactoring
-  - code-smell
-  - test
-summaryTags:
-  - correction
+  - important
 ---
 
 # Corrections guidées

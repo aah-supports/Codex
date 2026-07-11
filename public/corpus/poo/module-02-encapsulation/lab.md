@@ -1,15 +1,6 @@
 ---
 id: poo.module-02.lab
 title: Construire un objet toujours valide
-tags:
-  - atelier
-  - exercice
-  - classe
-  - encapsulation
-  - invariant
-summaryTags:
-  - atelier
-  - pratique
 ---
 
 # Construire un objet toujours valide

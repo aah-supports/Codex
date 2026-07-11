@@ -1,14 +1,6 @@
 ---
 id: poo.module-01.exercises
 title: Exercices
-tags:
-  - exercice
-  - pratique
-  - objet
-  - classe
-  - responsabilite
-summaryTags:
-  - exercice
 ---
 
 # Exercice guidé

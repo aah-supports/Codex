@@ -59,21 +59,6 @@ export function LessonPage() {
     return <p>Module introuvable.</p>
   }
 
-  const contentItems = [
-    { query: lesson },
-    { query: examples },
-    { query: exercises },
-    { query: solutions },
-    { query: lab },
-    { query: readings },
-  ]
-  const contentTags = uniqueStrings([
-    ...module.tags,
-    ...contentItems.flatMap((item) => getFrontmatterTags(item.query.data)),
-  ])
-  const learningMarkers = contentTags.filter((tag) => pedagogicalTags.has(tag))
-  const conceptMarkers = contentTags.filter((tag) => !pedagogicalTags.has(tag))
-
   return (
     <div className="page-stack">
       <header className="page-header">
@@ -96,15 +81,6 @@ export function LessonPage() {
           {progress?.exerciseCompleted ? 'terminés' : 'à faire'}
         </p>
       </header>
-
-      <Card className="module-summary-card">
-        <div>
-          <p className="eyebrow">Résumé visuel</p>
-          <h3>Repères du module</h3>
-        </div>
-        <TagGroup title="Types de contenu" tags={learningMarkers} />
-        <TagGroup title="Notions travaillées" tags={conceptMarkers} />
-      </Card>
 
       <div className="lesson-layout">
         <Card className="markdown-card">
@@ -165,70 +141,18 @@ function MarkdownState({
 }
 
 const tagLabels: Record<string, string> = {
-  'a-retenir': 'À retenir',
-  'anti-pattern': 'Anti-pattern',
-  architecture: 'Architecture',
-  association: 'Association',
-  atelier: 'Atelier',
-  adapter: 'Adapter',
-  classe: 'Classe',
-  'code-smell': 'Code smell',
-  comportement: 'Comportement',
-  cohesion: 'Cohésion',
-  composition: 'Composition',
-  contrat: 'Contrat',
-  correction: 'Correction',
-  couplage: 'Couplage',
-  definition: 'Définition',
-  dip: 'DIP',
-  domaine: 'Domaine',
-  encapsulation: 'Encapsulation',
-  erreur: 'Erreur fréquente',
-  exception: 'Exception',
-  exemple: 'Exemple',
-  exercice: 'Exercice',
-  glossaire: 'Glossaire',
-  heritage: 'Héritage',
-  interface: 'Interface',
-  invariant: 'Invariant',
-  lecture: 'Lecture',
-  objet: 'Objet',
-  polymorphisme: 'Polymorphisme',
-  port: 'Port',
-  pratique: 'Pratique',
-  quiz: 'QCM',
-  refactoring: 'Refactoring',
-  responsabilite: 'Responsabilité',
-  solid: 'SOLID',
-  synthese: 'Synthèse',
-  test: 'Test',
-  'value-object': 'Value object',
+  def: 'Définition',
+  important: 'Important',
 }
 
-const pedagogicalTags = new Set([
-  'definition',
-  'exemple',
-  'anti-pattern',
-  'erreur',
-  'exercice',
-  'correction',
-  'atelier',
-  'lecture',
-  'quiz',
-  'a-retenir',
-  'synthese',
-  'pratique',
-])
+const visibleTags = new Set(['def', 'important'])
 
 function getFrontmatterTags(markdown: ParsedMarkdown | undefined) {
   if (!markdown) {
     return []
   }
 
-  return uniqueStrings([
-    ...toStringArray(markdown.frontmatter.tags),
-    ...toStringArray(markdown.frontmatter.summaryTags),
-  ])
+  return uniqueStrings(toStringArray(markdown.frontmatter.tags)).filter((tag) => visibleTags.has(tag))
 }
 
 function toStringArray(value: ParsedMarkdown['frontmatter'][string]) {
@@ -257,19 +181,6 @@ function ContentTags({ tags }: { tags: string[] }) {
       {tags.map((tag) => (
         <Badge key={tag}>{formatTag(tag)}</Badge>
       ))}
-    </div>
-  )
-}
-
-function TagGroup({ title, tags }: { title: string; tags: string[] }) {
-  if (tags.length === 0) {
-    return null
-  }
-
-  return (
-    <div className="summary-tag-group">
-      <strong>{title}</strong>
-      <ContentTags tags={tags} />
     </div>
   )
 }

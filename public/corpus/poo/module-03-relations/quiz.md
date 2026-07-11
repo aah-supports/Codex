@@ -1,13 +1,6 @@
 ---
 id: poo.module-03.quiz
 title: QCM
-tags:
-  - quiz
-  - association
-  - composition
-  - couplage
-summaryTags:
-  - quiz
 ---
 
 Question: Une composition indique généralement que...

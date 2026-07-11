@@ -1,13 +1,6 @@
 ---
 id: poo.module-07.quiz
 title: QCM
-tags:
-  - quiz
-  - solid
-  - responsabilite
-  - architecture
-summaryTags:
-  - quiz
 ---
 
 Question: SOLID doit être utilisé principalement comme...

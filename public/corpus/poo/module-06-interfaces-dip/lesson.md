@@ -2,14 +2,8 @@
 id: poo.module-06.lesson
 title: Interfaces et inversion des dépendances
 tags:
-  - definition
-  - a-retenir
-  - interface
-  - contrat
-  - dip
-summaryTags:
-  - definition
-  - a-retenir
+  - def
+  - important
 ---
 
 # Interfaces et inversion des dépendances

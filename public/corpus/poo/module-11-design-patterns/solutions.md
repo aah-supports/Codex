@@ -2,13 +2,7 @@
 id: poo.module-11.solutions
 title: Corrections guidées
 tags:
-  - correction
-  - a-retenir
-  - design-pattern
-  - strategy
-  - adapter
-summaryTags:
-  - correction
+  - important
 ---
 
 # Corrections guidées

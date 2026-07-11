@@ -1,14 +1,6 @@
 ---
 id: poo.module-06.exercises
 title: Exercices
-tags:
-  - exercice
-  - pratique
-  - interface
-  - contrat
-  - dip
-summaryTags:
-  - exercice
 ---
 
 # Exercice guidé

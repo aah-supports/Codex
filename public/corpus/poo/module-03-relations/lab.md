@@ -1,15 +1,6 @@
 ---
 id: poo.module-03.lab
 title: Choisir association, composition ou dépendance
-tags:
-  - atelier
-  - exercice
-  - association
-  - composition
-  - couplage
-summaryTags:
-  - atelier
-  - pratique
 ---
 
 # Choisir association, composition ou dépendance

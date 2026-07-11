@@ -1,14 +1,6 @@
 ---
 id: poo.module-07.exercises
 title: Exercices
-tags:
-  - exercice
-  - pratique
-  - solid
-  - responsabilite
-  - architecture
-summaryTags:
-  - exercice
 ---
 
 # Exercice guidé

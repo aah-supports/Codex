@@ -2,14 +2,8 @@
 id: poo.module-07.lesson
 title: Principes SOLID
 tags:
-  - definition
-  - a-retenir
-  - solid
-  - responsabilite
-  - architecture
-summaryTags:
-  - definition
-  - a-retenir
+  - def
+  - important
 ---
 
 # Principes SOLID

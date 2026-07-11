@@ -1,13 +1,6 @@
 ---
 id: poo.module-04.quiz
 title: QCM
-tags:
-  - quiz
-  - responsabilite
-  - cohesion
-  - couplage
-summaryTags:
-  - quiz
 ---
 
 Question: Une classe peu cohésive est souvent une classe qui...

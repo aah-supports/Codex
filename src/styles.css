@@ -234,26 +234,6 @@ textarea {
   gap: 16px;
 }
 
-.module-summary-card {
-  display: grid;
-  gap: 14px;
-  max-width: 900px;
-}
-
-.module-summary-card h3 {
-  margin: 4px 0 0;
-}
-
-.summary-tag-group {
-  display: grid;
-  gap: 8px;
-}
-
-.summary-tag-group strong {
-  color: #e5e7eb;
-  font-size: 0.9rem;
-}
-
 .card {
   border: 1px solid #233044;
   border-radius: 8px;

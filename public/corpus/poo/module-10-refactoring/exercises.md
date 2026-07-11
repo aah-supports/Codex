@@ -1,14 +1,6 @@
 ---
 id: poo.module-10.exercises
 title: Exercices
-tags:
-  - exercice
-  - pratique
-  - refactoring
-  - code-smell
-  - test
-summaryTags:
-  - exercice
 ---
 
 # Exercice guidé

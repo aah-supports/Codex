@@ -1,15 +1,6 @@
 ---
 id: poo.module-06.lab
 title: Isoler le domaine d’un service externe
-tags:
-  - atelier
-  - exercice
-  - interface
-  - contrat
-  - dip
-summaryTags:
-  - atelier
-  - pratique
 ---
 
 # Isoler le domaine d’un service externe

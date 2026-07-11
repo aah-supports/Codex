@@ -2,12 +2,8 @@
 id: poo.module-02.readings
 title: Lectures
 tags:
-  - lecture
-  - classe
-  - encapsulation
-  - invariant
-summaryTags:
-  - lecture
+  - def
+  - important
 ---
 
 # Lectures conseillees

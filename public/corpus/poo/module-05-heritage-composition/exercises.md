@@ -1,14 +1,6 @@
 ---
 id: poo.module-05.exercises
 title: Exercices
-tags:
-  - exercice
-  - pratique
-  - heritage
-  - composition
-  - polymorphisme
-summaryTags:
-  - exercice
 ---
 
 # TP

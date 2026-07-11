@@ -2,13 +2,7 @@
 id: poo.module-03.solutions
 title: Corrections guidées
 tags:
-  - correction
-  - a-retenir
-  - association
-  - composition
-  - couplage
-summaryTags:
-  - correction
+  - important
 ---
 
 # Corrections guidées

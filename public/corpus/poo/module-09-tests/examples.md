@@ -1,15 +1,6 @@
 ---
 id: poo.module-09.examples
 title: Exemples
-tags:
-  - exemple
-  - anti-pattern
-  - test
-  - comportement
-  - mock
-summaryTags:
-  - exemple
-  - anti-pattern
 ---
 
 # Test de comportement

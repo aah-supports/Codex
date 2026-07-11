@@ -2,14 +2,8 @@
 id: poo.module-12.lesson
 title: Modèle métier et architecture finale
 tags:
-  - definition
-  - a-retenir
-  - architecture
-  - domaine
-  - port
-summaryTags:
-  - definition
-  - a-retenir
+  - def
+  - important
 ---
 
 # Modèle métier et architecture finale

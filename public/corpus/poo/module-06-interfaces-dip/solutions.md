@@ -2,13 +2,7 @@
 id: poo.module-06.solutions
 title: Corrections guidées
 tags:
-  - correction
-  - a-retenir
-  - interface
-  - contrat
-  - dip
-summaryTags:
-  - correction
+  - important
 ---
 
 # Corrections guidées

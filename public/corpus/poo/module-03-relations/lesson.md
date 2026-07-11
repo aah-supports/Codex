@@ -2,14 +2,8 @@
 id: poo.module-03.lesson
 title: Relations entre objets
 tags:
-  - definition
-  - a-retenir
-  - association
-  - composition
-  - couplage
-summaryTags:
-  - definition
-  - a-retenir
+  - def
+  - important
 ---
 
 # Relations entre objets

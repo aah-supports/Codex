@@ -2,14 +2,8 @@
 id: poo.module-10.lesson
 title: Refactoring d'un code existant
 tags:
-  - definition
-  - a-retenir
-  - refactoring
-  - code-smell
-  - test
-summaryTags:
-  - definition
-  - a-retenir
+  - def
+  - important
 ---
 
 # Refactoring d'un code existant

@@ -1,15 +1,6 @@
 ---
 id: poo.module-01.examples
 title: Exemples
-tags:
-  - exemple
-  - anti-pattern
-  - objet
-  - classe
-  - responsabilite
-summaryTags:
-  - exemple
-  - anti-pattern
 ---
 
 # Mauvais départ

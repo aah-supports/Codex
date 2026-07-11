@@ -1,15 +1,6 @@
 ---
 id: poo.module-02.examples
 title: Exemples
-tags:
-  - exemple
-  - anti-pattern
-  - classe
-  - encapsulation
-  - invariant
-summaryTags:
-  - exemple
-  - anti-pattern
 ---
 
 # Problème

@@ -2,14 +2,8 @@
 id: poo.module-02.lesson
 title: Classes, objets et encapsulation
 tags:
-  - definition
-  - a-retenir
-  - classe
-  - encapsulation
-  - invariant
-summaryTags:
-  - definition
-  - a-retenir
+  - def
+  - important
 ---
 
 # Encapsulation

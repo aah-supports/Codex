@@ -1,15 +1,6 @@
 ---
 id: poo.module-10.lab
 title: Refactorer sans changer le comportement
-tags:
-  - atelier
-  - exercice
-  - refactoring
-  - code-smell
-  - test
-summaryTags:
-  - atelier
-  - pratique
 ---
 
 # Refactorer sans changer le comportement

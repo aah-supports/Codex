@@ -1,15 +1,6 @@
 ---
 id: poo.module-08.lab
 title: Créer des objets-valeurs expressifs
-tags:
-  - atelier
-  - exercice
-  - contrat
-  - exception
-  - value-object
-summaryTags:
-  - atelier
-  - pratique
 ---
 
 # Créer des objets-valeurs expressifs

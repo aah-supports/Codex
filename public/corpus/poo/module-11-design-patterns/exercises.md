@@ -1,14 +1,6 @@
 ---
 id: poo.module-11.exercises
 title: Exercices
-tags:
-  - exercice
-  - pratique
-  - design-pattern
-  - strategy
-  - adapter
-summaryTags:
-  - exercice
 ---
 
 # TP

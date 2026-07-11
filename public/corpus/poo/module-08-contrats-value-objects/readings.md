@@ -2,12 +2,8 @@
 id: poo.module-08.readings
 title: Lectures
 tags:
-  - lecture
-  - contrat
-  - exception
-  - value-object
-summaryTags:
-  - lecture
+  - def
+  - important
 ---
 
 # Lectures conseillees

@@ -2,13 +2,7 @@
 id: poo.module-08.solutions
 title: Corrections guidées
 tags:
-  - correction
-  - a-retenir
-  - contrat
-  - exception
-  - value-object
-summaryTags:
-  - correction
+  - important
 ---
 
 # Corrections guidées

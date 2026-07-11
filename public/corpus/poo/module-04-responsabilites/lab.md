@@ -1,15 +1,6 @@
 ---
 id: poo.module-04.lab
 title: Réduire une classe qui fait trop
-tags:
-  - atelier
-  - exercice
-  - responsabilite
-  - cohesion
-  - couplage
-summaryTags:
-  - atelier
-  - pratique
 ---
 
 # Réduire une classe qui fait trop

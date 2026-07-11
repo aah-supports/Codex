@@ -1,15 +1,6 @@
 ---
 id: poo.module-04.examples
 title: Exemples
-tags:
-  - exemple
-  - anti-pattern
-  - responsabilite
-  - cohesion
-  - couplage
-summaryTags:
-  - exemple
-  - anti-pattern
 ---
 
 # Classe qui fait trop

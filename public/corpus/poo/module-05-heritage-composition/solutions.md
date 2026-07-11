@@ -2,13 +2,7 @@
 id: poo.module-05.solutions
 title: Corrections guidées
 tags:
-  - correction
-  - a-retenir
-  - heritage
-  - composition
-  - polymorphisme
-summaryTags:
-  - correction
+  - important
 ---
 
 # Corrections guidées

@@ -2,12 +2,8 @@
 id: poo.module-12.readings
 title: Lectures
 tags:
-  - lecture
-  - architecture
-  - domaine
-  - port
-summaryTags:
-  - lecture
+  - def
+  - important
 ---
 
 # Lectures conseillees

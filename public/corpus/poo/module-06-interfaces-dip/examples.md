@@ -1,15 +1,6 @@
 ---
 id: poo.module-06.examples
 title: Exemples
-tags:
-  - exemple
-  - anti-pattern
-  - interface
-  - contrat
-  - dip
-summaryTags:
-  - exemple
-  - anti-pattern
 ---
 
 # Port

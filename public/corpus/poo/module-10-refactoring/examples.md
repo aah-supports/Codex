@@ -1,15 +1,6 @@
 ---
 id: poo.module-10.examples
 title: Exemples
-tags:
-  - exemple
-  - anti-pattern
-  - refactoring
-  - code-smell
-  - test
-summaryTags:
-  - exemple
-  - anti-pattern
 ---
 
 # Méthode qui fait trop

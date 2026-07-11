@@ -2,12 +2,8 @@
 id: poo.module-07.readings
 title: Lectures
 tags:
-  - lecture
-  - solid
-  - responsabilite
-  - architecture
-summaryTags:
-  - lecture
+  - def
+  - important
 ---
 
 # Lectures conseillees

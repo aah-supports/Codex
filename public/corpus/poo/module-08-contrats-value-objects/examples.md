@@ -1,15 +1,6 @@
 ---
 id: poo.module-08.examples
 title: Exemples
-tags:
-  - exemple
-  - anti-pattern
-  - contrat
-  - exception
-  - value-object
-summaryTags:
-  - exemple
-  - anti-pattern
 ---
 
 # Objet-valeur

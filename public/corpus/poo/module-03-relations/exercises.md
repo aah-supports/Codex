@@ -1,14 +1,6 @@
 ---
 id: poo.module-03.exercises
 title: Exercices
-tags:
-  - exercice
-  - pratique
-  - association
-  - composition
-  - couplage
-summaryTags:
-  - exercice
 ---
 
 # Exercice guidé

@@ -1,13 +1,6 @@
 ---
 id: poo.module-01.quiz
 title: QCM
-tags:
-  - quiz
-  - objet
-  - classe
-  - responsabilite
-summaryTags:
-  - quiz
 ---
 
 Question: Quelle est la meilleure question de départ en conception objet ?

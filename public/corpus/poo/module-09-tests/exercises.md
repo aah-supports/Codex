@@ -1,14 +1,6 @@
 ---
 id: poo.module-09.exercises
 title: Exercices
-tags:
-  - exercice
-  - pratique
-  - test
-  - comportement
-  - mock
-summaryTags:
-  - exercice
 ---
 
 # TP

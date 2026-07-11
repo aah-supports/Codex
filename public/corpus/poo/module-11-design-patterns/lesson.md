@@ -56,3 +56,21 @@ Ne pas demander de memoriser 23 patterns d'un coup. Un étudiant progresse quand
 - "cette API externe fuit partout" ;
 - "cette classe notifie trop de choses" ;
 - "ce status string produit des transitions invalides".
+
+## Approfondissement théorique : les patterns comme solutions nommées
+
+Un design pattern est une solution récurrente à un problème récurrent dans un contexte donné. Cette définition est importante : le pattern n'est pas seulement une structure de classes. Il relie un problème, des forces en tension, une solution et des conséquences.
+
+Strategy répond à la variation d'un algorithme. Dans le projet cinéma, plusieurs politiques de prix peuvent coexister. Le pattern permet de rendre ces politiques interchangeables. Adapter répond à l'incompatibilité entre un contrat attendu et une API fournie. Observer permet de réagir à un événement sans coupler l'émetteur à tous les effets secondaires. State permet de déplacer le comportement qui dépend fortement de l'état courant.
+
+La valeur d'un pattern est aussi pédagogique. Il donne un vocabulaire commun. Dire que le paiement externe est branché par un Adapter ou que les tarifs utilisent Strategy permet de communiquer rapidement une intention de conception.
+
+Mais un pattern a un coût. Il ajoute des types, des indirections et parfois de la complexité. Utiliser un pattern sans tension réelle produit un code cérémoniel. Le bon usage consiste à attendre que le besoin soit visible : plusieurs variations, une frontière externe, plusieurs réactions à un événement, un cycle d'état complexe.
+
+Un pattern doit rester subordonné au domaine. Les noms des classes doivent continuer à parler de réservation, prix, paiement ou notification. Si les noms techniques écrasent le vocabulaire métier, le pattern devient un obstacle.
+
+### Analyse attendue
+
+- Quel problème récurrent est présent ?
+- Quel pattern répond précisément à cette tension ?
+- Quelles conséquences positives et négatives introduit-il ?

@@ -67,3 +67,21 @@ Si ces noms ne portent pas des responsabilités claires, l'abstraction est du br
 - LSP : le code client peut-il remplacer la classe mère par la sous-classe ?
 - ISP : qui utilise vraiment cette méthode ?
 - DIP : le code important dépend-il d'un détail instable ?
+
+## Approfondissement théorique : SOLID comme vocabulaire critique
+
+Les principes SOLID ne sont pas des règles mécaniques. Ils forment un vocabulaire critique pour analyser les tensions d'un code objet. Leur intérêt universitaire est de donner des mots précis à des problèmes souvent ressentis intuitivement : rigidité, fragilité, couplage excessif, abstraction mal placée.
+
+SRP ne signifie pas qu'une classe ne doit avoir qu'une méthode. Il signifie qu'elle doit avoir une raison cohérente de changer. OCP ne signifie pas qu'il ne faut jamais modifier le code existant. Il invite à protéger les parties stables quand une variation est prévisible. LSP rappelle qu'une hiérarchie doit respecter les attentes comportementales, pas seulement compiler.
+
+ISP critique les contrats trop larges. Une interface qui force des méthodes inutiles crée une dépendance artificielle. DIP affirme que les règles de haut niveau doivent dépendre de contrats stables plutôt que de détails techniques. Ces principes se répondent : ils cherchent tous à réduire le coût du changement.
+
+Le mauvais usage de SOLID produit souvent un code trop abstrait. On voit apparaître des interfaces sans variation, des factories sans complexité de création, des classes nommées Manager ou Processor sans responsabilité métier. Le code respecte une apparence de structure, mais perd en lisibilité.
+
+Le bon usage consiste à partir d'un symptôme observable. Chaque nouveau tarif modifie une méthode centrale ? On discute OCP et polymorphisme. Une classe change pour le prix et pour l'email ? On discute SRP. Une sous-classe refuse une méthode héritée ? On discute LSP.
+
+### Attendu académique
+
+- Nommer le principe utile.
+- Décrire le symptôme concret.
+- Justifier la transformation de conception.

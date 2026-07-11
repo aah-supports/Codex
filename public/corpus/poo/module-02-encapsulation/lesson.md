@@ -107,3 +107,21 @@ Cette chaîne révèle que la connaissance est dispersée. Il faut se demander q
 ## Travail attendu
 
 Chaque classe du domaine doit avoir au moins une raison d'exister autre que "stocker des données". Si une classe n'a que des getters et setters, elle est peut-être anémique ou pas encore terminée.
+
+## Approfondissement théorique : encapsulation, abstraction et invariants
+
+L'encapsulation est souvent présentée comme le fait de mettre les attributs en privé. Cette définition est incomplète. Le cœur de l'encapsulation est le contrôle des changements d'état. Un objet possède un état interne, mais cet état ne doit pas pouvoir être transformé n'importe comment par le reste du programme.
+
+La notion centrale est celle d'invariant. Un invariant est une propriété qui doit rester vraie pendant toute la vie de l'objet. Si une salle doit toujours contenir au moins un siège, cette règle ne doit pas dépendre du bon vouloir d'un formulaire. Si une réservation doit toujours contenir au moins une place, cette règle ne doit pas être recopiée dans chaque service.
+
+Dans une perspective théorique, l'encapsulation sert aussi à maintenir une frontière d'abstraction. L'utilisateur de l'objet n'a pas besoin de connaître tous les détails de représentation. Il doit connaître les opérations disponibles et leurs effets. Par exemple, il est plus fort de proposer reserveSeats que setReservedSeats. La première méthode exprime une opération du domaine. La seconde expose une mutation technique.
+
+Cette différence améliore la robustesse. Quand l'état est modifié uniquement par des méthodes métier, l'objet peut vérifier ses règles à chaque changement. Le programme ne dépend plus de la vigilance permanente de tous les appelants. Il existe un point de contrôle local et identifiable.
+
+Il faut cependant éviter un contresens : encapsuler ne veut pas dire cacher tout sans réfléchir. Un getter peut être légitime s'il expose une information utile sans compromettre la cohérence. Un setter peut être légitime s'il correspond vraiment à une action métier contrôlée. Le problème n'est pas la présence d'une méthode publique, mais l'absence de règle derrière cette méthode.
+
+### Raisonnement attendu
+
+- Identifier les invariants avant de choisir les méthodes publiques.
+- Remplacer les mutations génériques par des actions nommées.
+- Tester les comportements qui protègent la validité de l'objet.

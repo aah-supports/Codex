@@ -64,3 +64,21 @@ Chaque étape doit être suffisamment petite pour être comprise en revue.
 Le refactoring révèle souvent les objets manquants. Quand plusieurs lignes manipulent toujours les mêmes valeurs ensemble, il manque peut-être un objet.
 
 Exemple : `amount` et `currency` manipulés partout signalent souvent un objet `Money`.
+
+## Approfondissement théorique : transformer sans changer le sens
+
+Le refactoring est une discipline de transformation contrôlée. Sa définition stricte est importante : modifier la structure interne du code sans changer son comportement observable. Cette idée permet de séparer deux activités différentes : améliorer le design et ajouter une fonctionnalité.
+
+Sur un code existant, la première difficulté est l'incertitude. On ne sait pas toujours quelles règles sont volontaires et quelles règles sont accidentelles. Les tests de caractérisation servent alors à capturer le comportement actuel. Ils ne disent pas que ce comportement est idéal, mais ils empêchent de le modifier sans s'en rendre compte.
+
+Les code smells sont des indices de conception. Une méthode longue peut révéler plusieurs responsabilités. Une liste de paramètres peut révéler un objet manquant. Une duplication peut révéler une règle non nommée. Une chaîne de conditions peut révéler une variation qui mérite du polymorphisme. Chaque smell doit être relié à une douleur concrète.
+
+Le refactoring efficace avance par petites étapes : extraire une méthode, renommer, déplacer une méthode, introduire un objet-valeur, remplacer une condition par une stratégie. Après chaque étape, les tests doivent confirmer que le comportement reste stable. Cette granularité réduit le risque et facilite la revue.
+
+Dans une optique universitaire, il faut savoir expliquer pourquoi une transformation améliore la conception. On ne refactore pas pour obtenir un code plus joli, mais pour rendre une règle plus locale, une responsabilité plus claire ou une évolution future moins coûteuse.
+
+### Discipline pratique
+
+- Un objectif par étape.
+- Un comportement observable conservé.
+- Une justification de conception après la transformation.

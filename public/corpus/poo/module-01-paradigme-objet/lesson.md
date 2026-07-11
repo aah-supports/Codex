@@ -110,3 +110,21 @@ La POO commence quand on justifie ces choix, pas quand on écrit `class`.
 ## Critère de compréhension
 
 Tu as compris ce module si tu peux expliquer pourquoi `Reservation` n'est pas juste une ligne dans une table, mais un objet qui porte une partie du sens métier.
+
+## Approfondissement théorique : ce que change vraiment le paradigme objet
+
+La programmation orientée objet n'est pas seulement une technique de rangement du code. C'est une manière d'organiser la connaissance d'un domaine dans un programme. Dans une approche procédurale simple, on décrit souvent une suite d'opérations appliquées à des données. Dans une approche objet, on cherche à faire émerger des unités qui portent à la fois des informations, des règles et des comportements.
+
+Historiquement, l'idée importante n'est pas la classe, mais l'objet qui reçoit des messages. Un objet ne devrait pas être vu comme un paquet de champs que le reste du programme manipule librement. Il doit plutôt être vu comme un interlocuteur : on lui demande de confirmer une réservation, de refuser une opération invalide ou de calculer une information dont il est responsable.
+
+Cette différence modifie le raisonnement. Au lieu de demander où stocker une donnée, on demande quelle décision doit être protégée. La donnée est importante, mais elle n'est pas suffisante. Une réservation contient un client et une séance, mais elle porte aussi des règles : elle peut être en attente, confirmée, annulée ; elle ne doit pas contenir zéro siège ; elle ne doit pas être confirmée sans paiement valide si cette règle existe dans le domaine.
+
+Le vocabulaire objet permet donc de construire un modèle. Un modèle est une simplification volontaire du réel. Il ne représente pas tout. Il garde seulement ce qui sert au problème traité. Dans une application de cinéma, le modèle ne cherche pas à décrire toute l'industrie du cinéma. Il cherche à représenter correctement les films, les séances, les places, les réservations, les prix et les paiements nécessaires au scénario étudié.
+
+La progression pédagogique consiste à passer d'un code qui fonctionne à un code qui explique. Un code qui fonctionne peut contenir une grande fonction avec beaucoup de conditions. Un code qui explique donne des noms aux décisions importantes. C'est ce qui rend la POO utile dans un contexte universitaire : elle oblige à argumenter la répartition des responsabilités.
+
+### Questions de maîtrise
+
+- Quelle différence fais-tu entre une donnée stockée et une responsabilité métier ?
+- Peux-tu expliquer pourquoi une classe existe sans citer seulement ses attributs ?
+- Le modèle choisi simplifie-t-il réellement le domaine étudié ?

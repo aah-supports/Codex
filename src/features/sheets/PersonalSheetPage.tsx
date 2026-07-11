@@ -36,7 +36,7 @@ export function PersonalSheetPage() {
       <Card className="markdown-card">
         {content.isLoading ? <p>Chargement de la fiche...</p> : null}
         {content.error ? <p>Fiche indisponible.</p> : null}
-        {content.data ? <MarkdownRenderer>{content.data.body}</MarkdownRenderer> : null}
+        {content.data ? <MarkdownRenderer copyCode>{content.data.body}</MarkdownRenderer> : null}
       </Card>
     </div>
   )

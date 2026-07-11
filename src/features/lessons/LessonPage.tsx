@@ -1,20 +1,15 @@
-import { Link, useParams } from '@tanstack/react-router'
+import { useParams } from '@tanstack/react-router'
 import { useQuery } from '@tanstack/react-query'
 import { MarkdownRenderer } from '../../components/MarkdownRenderer'
 import { Badge } from '../../components/ui/Badge'
-import { Button } from '../../components/ui/Button'
 import { Card } from '../../components/ui/Card'
 import { getMarkdown } from '../../content/api'
-import { useLearningStore } from '../../stores/learningStore'
 import type { ParsedMarkdown } from '../../types/content'
 import { useCorpusIndex } from '../corpus/useCorpus'
 
 export function LessonPage() {
   const { corpusId, moduleId } = useParams({ from: '/learn/$corpusId/$moduleId' })
   const { data: index } = useCorpusIndex()
-  const markLessonCompleted = useLearningStore((state) => state.markLessonCompleted)
-  const markExerciseCompleted = useLearningStore((state) => state.markExerciseCompleted)
-  const progress = useLearningStore((state) => state.progress[moduleId])
 
   const corpus = index?.corpora.find((entry) => entry.id === corpusId)
   const module = corpus?.modules.find((entry) => entry.id === moduleId)
@@ -60,21 +55,6 @@ export function LessonPage() {
         <p className="eyebrow">{corpus?.title}</p>
         <h2>{module.title}</h2>
         <p>{module.description}</p>
-        <div className="action-row">
-          <Button onClick={() => void markLessonCompleted(moduleId)} variant="secondary">
-            Marquer la leçon lue
-          </Button>
-          <Button onClick={() => void markExerciseCompleted(moduleId)} variant="secondary">
-            Exercices faits
-          </Button>
-          <Link to="/quiz/$corpusId/$moduleId" params={{ corpusId, moduleId }} className="button primary">
-            Passer le QCM
-          </Link>
-        </div>
-        <p className="muted">
-          Leçon: {progress?.lessonCompleted ? 'terminée' : 'en cours'} · Exercices:{' '}
-          {progress?.exerciseCompleted ? 'terminés' : 'à faire'}
-        </p>
       </header>
 
       <div className="lesson-layout">

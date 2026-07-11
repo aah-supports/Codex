@@ -91,3 +91,21 @@ Le projet est fini si un autre développeur peut :
 - lancer les tests ;
 - remplacer un adaptateur ;
 - justifier les patterns presents.
+
+## Approfondissement théorique : architecture, dépendances et stabilité
+
+L'architecture logicielle organise les dépendances en fonction des raisons de changer. Le domaine change avec les règles métier. L'infrastructure change avec les outils techniques. L'interface change avec les usages. Quand ces dimensions sont mélangées, chaque évolution devient plus risquée.
+
+Dans une architecture orientée domaine, les règles métier restent au centre. Les entités, objets-valeurs et politiques du domaine ne dépendent pas du framework web, de la base de données ou du fournisseur de paiement. La couche application orchestre les cas d'utilisation. L'infrastructure fournit les adaptateurs concrets.
+
+Cette organisation peut être comprise comme une gestion de la stabilité. Les règles métier importantes doivent être protégées des détails volatils. Un changement de base de données ne devrait pas modifier Booking. Un changement de prestataire de paiement ne devrait pas modifier la règle qui dit quand une réservation peut être confirmée.
+
+Les ports jouent un rôle essentiel. Ils expriment les besoins de l'application envers le monde extérieur : sauvegarder une réservation, facturer un paiement, envoyer une notification. Les adaptateurs réalisent ces besoins avec des outils concrets. Cette structure rend les tests plus simples et les remplacements techniques moins coûteux.
+
+Il faut toutefois rester proportionné. Une architecture trop complexe pour un petit projet devient un poids. L'objectif n'est pas de multiplier les couches, mais de placer les frontières là où les raisons de changer sont réellement différentes.
+
+### Soutenance et justification
+
+- Quelle règle métier est protégée dans le domaine ?
+- Quelle dépendance technique est isolée par un port ?
+- Quel compromis as-tu accepté pour garder le projet lisible ?

@@ -66,3 +66,21 @@ Pour ce cours, un bon diagramme montre :
 - invariants importants.
 
 Il peut ignorer les getters, setters et détails techniques.
+
+## Approfondissement théorique : relations, dépendances et coût du modèle
+
+Un programme objet n'est pas une collection de classes isolées. Les objets collaborent. Mais chaque relation a un coût : elle crée une dépendance de compréhension, de compilation, de test et d'évolution. Modéliser les relations est donc un acte de conception, pas un simple dessin UML.
+
+L'association exprime un lien significatif entre deux objets. Une réservation est associée à une séance parce que cette relation fait partie du sens métier. La composition exprime un lien plus fort : une partie appartient à un tout et son cycle de vie est fortement lié à ce tout. Une dépendance ponctuelle exprime simplement qu'un objet utilise un autre objet pour accomplir une opération.
+
+La distinction est importante parce qu'elle influence le couplage. Si une classe conserve trop de références, elle devient sensible à trop de changements. Un objet qui connaît toute la structure interne du système finit par devenir un centre de décision caché. À l'inverse, un objet qui ne connaît rien ne peut pas collaborer utilement. Le travail de conception consiste à choisir les relations nécessaires et à refuser les relations de confort.
+
+Les multiplicités font partie du raisonnement. Dire qu'une séance possède plusieurs sièges, qu'une réservation concerne une séance, ou qu'un client peut avoir plusieurs réservations permet de clarifier les règles avant le code. Les multiplicités ne servent pas seulement aux diagrammes : elles révèlent souvent des invariants.
+
+Un bon modèle limite aussi la navigation. Si le code écrit reservation.getScreening().getRoom().getSeats(), il est peut-être en train de traverser trop de détails. Une méthode comme reservation.canReserve(seatRequest) ou screening.reserve(seats) peut mieux exprimer l'intention et protéger la structure interne.
+
+### Points d'analyse
+
+- La relation correspond-elle à une phrase métier stable ?
+- Qui possède le cycle de vie de qui ?
+- Cette référence est-elle conservée durablement ou utilisée ponctuellement ?

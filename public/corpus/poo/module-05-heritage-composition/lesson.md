@@ -93,3 +93,21 @@ La composition permet de combiner des comportements sans enfermer le modèle dan
 - un code promotionnel.
 
 Cette approche évite une explosion de classes comme `Student3DWednesdayPromotionPricing`.
+
+## Approfondissement théorique : substitution, polymorphisme et réutilisation
+
+L'héritage est souvent découvert comme un mécanisme de réutilisation. Cette vision est dangereuse si elle masque la notion de substitution. Une sous-classe doit pouvoir être utilisée partout où la classe mère est attendue, sans casser les attentes du programme. C'est le principe de substitution.
+
+La relation est donc plus forte qu'un simple partage de code. Si PremiumBooking hérite de Booking mais change le sens de certaines méthodes, ou refuse certaines opérations héritées, la hiérarchie devient trompeuse. Le code client croit manipuler une réservation ordinaire, mais reçoit un objet qui ne respecte pas le même contrat comportemental.
+
+La composition répond à un autre besoin : assembler des comportements. Si le prix varie selon le statut du client, le jour, la 3D ou une promotion, le cœur du problème est une variation de calcul. Il est souvent plus clair de composer Booking avec une PricingPolicy que de créer une hiérarchie de réservations.
+
+Le polymorphisme reste central dans les deux cas. Il permet d'envoyer le même message à plusieurs objets qui respectent le même contrat. La différence est que la composition permet de choisir l'objet variable sans enfermer tout le modèle dans une hiérarchie rigide.
+
+La bonne question n'est donc pas : comment éviter l'héritage ? La bonne question est : quelle relation exprime le mieux le domaine et résistera le mieux aux changements ? L'héritage convient aux spécialisations stables. La composition convient aux comportements interchangeables.
+
+### Critères de décision
+
+- La relation est-elle vraiment de type est-un ?
+- Le sous-type respecte-t-il toutes les attentes du type parent ?
+- Le besoin réel est-il une variation de comportement ?

@@ -53,11 +53,17 @@ export function QuizPage() {
     <div className="page-stack">
       <header className="page-header">
         <p className="eyebrow">QCM</p>
-        <h2>{module.title}</h2>
+        <h2>QCM · {module.title}</h2>
         <p>Chaque correction explique le raisonnement, pas seulement la bonne réponse.</p>
       </header>
 
       <div className="page-stack">
+        <div className="section-heading">
+          <div>
+            <h3>Questions</h3>
+            <p>{quiz.data.length} questions pour vérifier les points essentiels du module.</p>
+          </div>
+        </div>
         {quiz.data.map((question, questionIndex) => (
           <Card key={question.id}>
             <h3>

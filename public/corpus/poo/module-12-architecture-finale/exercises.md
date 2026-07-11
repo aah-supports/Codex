@@ -17,8 +17,8 @@ Terminer le système de réservation de cinéma :
 
 # Livrables
 
-- diagramme de classes limite au domaine ;
-- deux diagrammes de sequence ;
+- diagramme de classes limité au domaine ;
+- deux diagrammes de séquence ;
 - tests ;
 - trois décisions de conception ;
 - une mauvaise conception abandonnée ;
@@ -47,9 +47,9 @@ Classer ces classes par couche :
 Decision:
 Contexte:
 Option retenue:
-Option refusee:
-Consequence positive:
-Consequence negative:
+Option refusée:
+Conséquence positive:
+Conséquence négative:
 ```
 
 ## Niveau 3
@@ -61,21 +61,21 @@ Given une séance disponible
 And deux sièges libres
 When le client réserve et paye
 Then la réservation est confirmée
-And le paiement est enregistre
-And une notification est envoyee
+And le paiement est enregistré
+And une notification est envoyée
 ```
 
 Identifier les objets et ports traversés.
 
 ## Niveau 4
 
-Preparer la soutenance :
+Préparer la soutenance :
 
 - une responsabilité bien placée ;
-- une responsabilité deplacée pendant le refactoring ;
+- une responsabilité déplacée pendant le refactoring ;
 - un pattern utile ;
 - un pattern refusé ;
-- un compromis non resolu.
+- un compromis non résolu.
 
 ## Critère de réussite
 

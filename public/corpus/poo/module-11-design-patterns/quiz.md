@@ -18,3 +18,11 @@ C. Créer une classe abstraite obligatoire.
 D. Éviter la compilation.
 Answer: Integrer une API externe derrière un contrat interne.
 Explanation: L'adaptér protège le cœur du système des détails de l'API externe.
+---
+Question: Quand le pattern Strategy est-il pertinent ?
+A. Quand une classe n’a aucun attribut.
+B. Quand plusieurs algorithmes interchangeables existent pour une même décision.
+C. Quand on veut éviter toutes les interfaces.
+D. Quand on veut stocker des constantes.
+Answer: Quand plusieurs algorithmes interchangeables existent pour une même décision.
+Explanation: Strategy sert à varier un calcul, Adapter à brancher une API incompatible, Observer à réagir à un événement, State à déplacer un comportement qui dépend fortement d’un état.

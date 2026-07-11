@@ -18,3 +18,11 @@ C. Pour éviter les noms de classes.
 D. Pour supprimer les interfaces.
 Answer: Pour localiser les erreurs et garder un filet de sécurité.
 Explanation: Des pas courts rendent les regressions plus faciles à comprendre.
+---
+Question: Pourquoi écrire des tests de caractérisation avant un refactoring risqué ?
+A. Pour figer le comportement actuel avant de modifier la structure.
+B. Pour supprimer le besoin de relire le code.
+C. Pour éviter de nommer les méthodes.
+D. Pour rendre le code plus procédural.
+Answer: Pour figer le comportement actuel avant de modifier la structure.
+Explanation: On ajoute d’abord un test de caractérisation, puis on extrait une méthode nommée. Ensuite seulement, on déplace la règle vers l’objet qui possède les données nécessaires.

@@ -12,7 +12,7 @@ tags:
 
 # Principes SOLID
 
-SOLID n'est pas une checklist magique. Ce sont des outils de diagnostic pour comprendre pourquoi un code resiste au changement.
+SOLID n'est pas une checklist magique. Ce sont des outils de diagnostic pour comprendre pourquoi un code résiste au changement.
 
 ## SRP
 
@@ -20,11 +20,11 @@ Une unité de code doit avoir une raison cohérente de changer.
 
 ## OCP
 
-Un système doit pouvoir être éténdu sans modifier excessivement le code stable.
+Un système doit pouvoir être étendu sans modifier excessivement le code stable.
 
 ## LSP
 
-Une sous-classe doit pouvoir remplacer sa classe de basé sans casser les attentes du programme.
+Une sous-classe doit pouvoir remplacer sa classe de base sans casser les attentes du programme.
 
 ## ISP
 
@@ -38,7 +38,7 @@ Appliquer SOLID mécaniquement peut produire trop d'abstractions. Le but reste d
 
 ## Lecture progressive
 
-SOLID devient utile quand on à déjà vu du code souffrir.
+SOLID devient utile quand on a déjà vu du code souffrir.
 
 Avant d'appliquer un principe, formuler la douleur :
 
@@ -69,5 +69,5 @@ Si ces noms ne portent pas des responsabilités claires, l'abstraction est du br
 - SRP : quelle est la raison de changer ?
 - OCP : quel changement futur est coûteux aujourd'hui ?
 - LSP : le code client peut-il remplacer la classe mère par la sous-classe ?
-- ISP : qui utilisé vraiment cette méthode ?
+- ISP : qui utilise vraiment cette méthode ?
 - DIP : le code important dépend-il d'un détail instable ?

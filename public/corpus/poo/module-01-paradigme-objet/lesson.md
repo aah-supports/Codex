@@ -65,7 +65,7 @@ Cette nuance est importante : on ne veut pas seulement lire les données d'un ob
 
 Une classe ne doit pas forcément représenter un objet physique. Une règle tarifaire, une période de réservation ou une stratégie de paiement peuvent aussi devenir des objets.
 
-## Erreurs frequentes
+## Erreurs fréquentes
 
 - créer une classe pour chaque nom trouvé dans l'énoncé ;
 - commencer par les getters et setters ;
@@ -79,14 +79,14 @@ Pour apprendre la POO, il faut accepter de ralentir au début. Le réflexe natur
 1. décrire le domaine avec des mots simples ;
 2. repérer les choses qui ont une identité stable ;
 3. repérer les règles qui doivent rester vraies ;
-4. attribuer chaque règle à l'objet qui à le plus de légitimité ;
+4. attribuer chaque règle à l'objet qui a le plus de légitimité ;
 5. faire collaborer les objets au lieu de concentrer toutes les décisions.
 
 Dans le projet cinéma, "réserver une place" semble être une action simple. Pourtant cette action implique un client, une séance, une salle, des sièges, une politique tarifaire et un paiement. Le but de la POO est de répartir cette complexité pour que chaque objet reste compréhensible.
 
 ## Exemple d'analyse de domaine
 
-Phrase de depart :
+Phrase de départ :
 
 > Un client réserve deux sièges pour une séance du film Alien dans la salle 3.
 
@@ -106,7 +106,7 @@ Responsabilités possibles :
 - `Room` sait quels sièges existent ;
 - `PricingPolicy` sait calculer un prix.
 
-La POO commence quand on justifie ces choix, pas quand on ecrit `class`.
+La POO commence quand on justifie ces choix, pas quand on écrit `class`.
 
 ## Critère de compréhension
 

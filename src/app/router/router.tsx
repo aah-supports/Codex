@@ -1,6 +1,7 @@
 import { createHashHistory, createRootRoute, createRoute, createRouter, Outlet } from '@tanstack/react-router'
 import { AppShell } from '../shell/AppShell'
 import { CorpusPage } from '../../features/corpus/CorpusPage'
+import { GlossaryPage } from '../../features/glossary/GlossaryPage'
 import { LessonPage } from '../../features/lessons/LessonPage'
 import { QuizPage } from '../../features/quizzes/QuizPage'
 import { SettingsPage } from '../../features/settings/SettingsPage'
@@ -44,6 +45,12 @@ const statsRoute = createRoute({
   component: StatsPage,
 })
 
+const glossaryRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: '/glossary',
+  component: GlossaryPage,
+})
+
 const settingsRoute = createRoute({
   getParentRoute: () => rootRoute,
   path: '/settings',
@@ -56,6 +63,7 @@ const routeTree = rootRoute.addChildren([
   learnRoute,
   quizRoute,
   statsRoute,
+  glossaryRoute,
   settingsRoute,
 ])
 

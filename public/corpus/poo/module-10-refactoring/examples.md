@@ -10,7 +10,7 @@ public void reserve(ReservationRequest request) {
     // vérifier les sièges
     // calculer le prix
     // sauvegarder
-    // debiter
+    // débiter
     // envoyer un email
     // imprimer le billet
 }

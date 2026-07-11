@@ -4,21 +4,21 @@ title: Design patterns utiles
 tags:
   - design-patterns
   - strategy
-  - adaptér
+  - adapter
   - observer
   - state
 ---
 
 # Design patterns utiles
 
-Un pattern n'est pas une decoration. C'est une réponse connue à une tension recurrente.
+Un pattern n'est pas une décoration. C'est une réponse connue à une tension récurrente.
 
 Le bon ordre pédagogique est :
 
 1. rencontrer le problème ;
 2. sentir le coût du code actuel ;
 3. introduire le pattern ;
-4. evaluer le coût du pattern.
+4. évaluer le coût du pattern.
 
 ## Patterns du projet cinéma
 

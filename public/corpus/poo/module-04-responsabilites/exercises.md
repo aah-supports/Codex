@@ -3,7 +3,7 @@ id: poo.module-04.exercises
 title: Exercices
 ---
 
-# Exercice guide
+# Exercice guidé
 
 Prendre une classe `ReservationService` qui :
 
@@ -31,10 +31,10 @@ Pour chacune, écrire une phrase : "cette classe change quand..."
 
 ## Niveau 1
 
-Pour chaque responsabilité, choisir un proprietaire probable :
+Pour chaque responsabilité, choisir un propriétaire probable :
 
 - vérifier qu'une réservation contient au moins un siège ;
-- calculer une reduction étudiante ;
+- calculer une réduction étudiante ;
 - envoyer un email ;
 - sauvegarder une réservation ;
 - produire un numéro de billet ;
@@ -63,9 +63,9 @@ Refactorer en gardant un scénario simple :
 ```text
 Quand un client réserve deux sièges disponibles,
 alors la réservation est confirmée,
-le prix est calcule,
+le prix est calculé,
 la réservation est sauvegardée,
-une notification est envoyee.
+une notification est envoyée.
 ```
 
 ## Critère de réussite

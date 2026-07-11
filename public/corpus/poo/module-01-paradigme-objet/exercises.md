@@ -3,7 +3,7 @@ id: poo.module-01.exercises
 title: Exercices
 ---
 
-# Exercice guide
+# Exercice guidé
 
 À partir du domaine du cinéma, lister les objets probables :
 

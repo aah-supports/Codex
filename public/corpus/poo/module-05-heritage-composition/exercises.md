@@ -11,7 +11,7 @@ Implémenter plusieurs politiques :
 - tarif étudiant ;
 - tarif enfant ;
 - majoration pour une séance 3D ;
-- reduction le mercredi.
+- réduction le mercredi.
 
 # Refactoring
 

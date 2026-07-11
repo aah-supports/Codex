@@ -94,4 +94,4 @@ Une commande peut être loggée, rejouée ou mise en file.
 
 # Quand ne pas utiliser de pattern
 
-Si une application à un seul tarif fixe, `StandardPricing` suffit. Ajouter une hiérarchie Strategy complété sans variation réelle alourdit le code.
+Si une application a un seul tarif fixe, `StandardPricing` suffit. Ajouter une hiérarchie Strategy complète sans variation réelle alourdit le code.

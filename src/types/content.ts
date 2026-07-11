@@ -26,6 +26,8 @@ export type ModuleSummary = {
     lesson: string
     examples: string
     exercises: string
+    solutions?: string
+    lab?: string
     quiz: string
     readings: string
   }

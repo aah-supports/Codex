@@ -3,7 +3,7 @@ id: poo.module-06.exercises
 title: Exercices
 ---
 
-# Exercice guide
+# Exercice guidé
 
 Créer deux implémentations de `ReservationRepository` :
 

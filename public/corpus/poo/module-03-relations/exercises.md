@@ -3,7 +3,7 @@ id: poo.module-03.exercises
 title: Exercices
 ---
 
-# Exercice guide
+# Exercice guidé
 
 Dessiner le diagramme de classes minimal du cinéma :
 

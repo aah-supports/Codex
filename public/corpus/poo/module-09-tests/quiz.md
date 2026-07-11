@@ -18,3 +18,11 @@ C. Remplacer tous les tests unitaires.
 D. Forcer l'héritage.
 Answer: Tester sans utiliser une vraie base de données.
 Explanation: Un fake fournit une implémentation simple et contrôlée pour le test.
+---
+Question: Que doit vérifier en priorité un test orienté objet ?
+A. Le nom des variables privées.
+B. Le nombre exact de lignes.
+C. Le comportement observable de l’objet.
+D. La présence de tous les getters.
+Answer: Le comportement observable de l’objet.
+Explanation: Le test vérifie qu’une réservation impossible est refusée. Il ne vérifie pas l’ordre interne de toutes les méthodes privées.

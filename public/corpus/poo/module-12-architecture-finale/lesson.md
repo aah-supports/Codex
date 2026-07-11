@@ -59,9 +59,9 @@ Ne pas commencer le projet avec tous les dossiers parfaits. La progression recom
 5. brancher l'infrastructure ;
 6. refactorer les frontières quand la douleur apparaît.
 
-L'architecture est une consequence des responsabilités, pas un decor.
+L'architecture est une conséquence des responsabilités, pas un décor.
 
-## Frontieres
+## Frontières
 
 Une frontière se justifie quand deux parties changent pour des raisons différentes.
 

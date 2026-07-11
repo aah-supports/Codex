@@ -1,19 +1,19 @@
 ---
 id: poo.module-09.lesson
-title: Tests unitaires orientes objet
+title: Tests unitaires orientés objet
 tags:
   - tests
   - comportement
   - doubles
 ---
 
-# Tests unitaires orientes objet
+# Tests unitaires orientés objet
 
 Tester un objet ne signifie pas vérifier chaque ligne interne. Un bon test vérifie un comportement observable.
 
 ## État ou interaction
 
-Un test d'état vérifie le résultat après l'action. Un test d'interaction vérifie qu'une collaboration à eu lieu.
+Un test d'état vérifie le résultat après l'action. Un test d'interaction vérifie qu'une collaboration a eu lieu.
 
 Il faut éviter les tests trop liés à l'implémentation. Sinon, chaque refactoring casse les tests alors que le comportement n'a pas changé.
 
@@ -21,8 +21,8 @@ Il faut éviter les tests trop liés à l'implémentation. Sinon, chaque refacto
 
 - fake : implémentation simple mais fonctionnelle ;
 - stub : réponse contrôlée ;
-- mock : verification d'interaction ;
-- dummy : objet passe uniquement pour remplir une signature.
+- mock : vérification d'interaction ;
+- dummy : objet passé uniquement pour remplir une signature.
 
 Utiliser les mocks avec mesure. Trop de mocks peuvent figer la conception.
 
@@ -30,8 +30,8 @@ Utiliser les mocks avec mesure. Trop de mocks peuvent figer la conception.
 
 Un test lisible suit souvent trois temps :
 
-1. Arrange : preparer les objets ;
-2. Act : executer l'action ;
+1. Arrange : préparer les objets ;
+2. Act : exécuter l'action ;
 3. Assert : vérifier le résultat.
 
 ```java

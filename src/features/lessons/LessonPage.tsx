@@ -37,6 +37,16 @@ export function LessonPage() {
     queryFn: () => getMarkdown(module!.paths.exercises),
     enabled: Boolean(module),
   })
+  const solutions = useQuery({
+    queryKey: ['markdown', module?.paths.solutions],
+    queryFn: () => getMarkdown(module!.paths.solutions!),
+    enabled: Boolean(module?.paths.solutions),
+  })
+  const lab = useQuery({
+    queryKey: ['markdown', module?.paths.lab],
+    queryFn: () => getMarkdown(module!.paths.lab!),
+    enabled: Boolean(module?.paths.lab),
+  })
   const readings = useQuery({
     queryKey: ['markdown', module?.paths.readings],
     queryFn: () => getMarkdown(module!.paths.readings),
@@ -83,6 +93,18 @@ export function LessonPage() {
           <h3>Exercices</h3>
           <MarkdownState query={exercises} />
         </Card>
+        {module.paths.solutions ? (
+          <Card className="markdown-card">
+            <h3>Corrections guidées</h3>
+            <MarkdownState query={solutions} />
+          </Card>
+        ) : null}
+        {module.paths.lab ? (
+          <Card className="markdown-card">
+            <h3>Atelier guidé</h3>
+            <MarkdownState query={lab} />
+          </Card>
+        ) : null}
         <Card className="markdown-card">
           <h3>Lectures</h3>
           <MarkdownState query={readings} />

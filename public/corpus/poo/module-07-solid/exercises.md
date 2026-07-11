@@ -3,7 +3,7 @@ id: poo.module-07.exercises
 title: Exercices
 ---
 
-# Exercice guide
+# Exercice guidé
 
 Associer chaque problème à un principe SOLID :
 

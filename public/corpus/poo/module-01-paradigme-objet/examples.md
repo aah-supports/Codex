@@ -3,7 +3,7 @@ id: poo.module-01.examples
 title: Exemples
 ---
 
-# Mauvais depart
+# Mauvais départ
 
 ```java
 double calculateAccountBalance(double balance, double amount, String opération) {

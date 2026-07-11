@@ -8,9 +8,10 @@ type AppShellProps = {
 }
 
 const navItems = [
-  { to: '/corpus', label: 'Overview' },
+  { to: '/corpus', label: 'Parcours' },
   { to: '/stats', label: 'Progression' },
-  { to: '/settings', label: 'Backup' },
+  { to: '/glossary', label: 'Glossaire' },
+  { to: '/settings', label: 'Sauvegarde' },
 ] as const
 
 export function AppShell({ children }: AppShellProps) {

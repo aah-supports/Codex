@@ -18,3 +18,11 @@ C. Pour rendre UML obligatoire.
 D. Pour empêcher les listes.
 Answer: Pour éviter que tout le modèle puisse tout modifier.
 Explanation: Moins un objet connaît d'autres objets, moins les changements se propagent.
+---
+Question: Quelle question aide à choisir une composition ?
+A. Le code utilise-t-il une interface ?
+B. La partie peut-elle vivre sans le tout ?
+C. La classe a-t-elle beaucoup de méthodes ?
+D. Le nom est-il court ?
+Answer: La partie peut-elle vivre sans le tout ?
+Explanation: `Screening` peut composer ses sièges, car ils n’ont pas de sens sans la séance. `Booking` associe un client et une séance. Une notification reste une dépendance utilisée après confirmation.

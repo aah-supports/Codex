@@ -65,7 +65,7 @@ Utiliser l'héritage quand la relation de substitution est solide. Utiliser la c
 Ne commence pas par `extends`. Commence par un problème :
 
 1. plusieurs tarifs existent ;
-2. chaque tarif calcule differemment ;
+2. chaque tarif calcule différemment ;
 3. le code contient une condition qui grossit ;
 4. on introduit un contrat commun ;
 5. on remplace la condition par du polymorphisme.
@@ -88,8 +88,8 @@ Si une sous-classe doit dire "je ne supporte pas cette méthode", c'est un signa
 
 La composition permet de combiner des comportements sans enfermer le modèle dans une hiérarchie rigide. Pour la tarification, on peut composer :
 
-- un tarif de basé ;
-- une reduction ;
+- un tarif de base ;
+- une réduction ;
 - une majoration 3D ;
 - un code promotionnel.
 

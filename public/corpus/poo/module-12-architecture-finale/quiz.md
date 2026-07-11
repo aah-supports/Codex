@@ -18,3 +18,11 @@ C. Les requétés SQL.
 D. Les templates HTML.
 Answer: Les règles métier et invariants.
 Explanation: Le domaine exprime le modèle métier indépendamment des détails techniques.
+---
+Question: Quel est le rôle principal de la couche application ?
+A. Porter toutes les règles métier.
+B. Orchestrer un cas d’usage en utilisant le domaine et des ports.
+C. Remplacer les tests.
+D. Contenir uniquement du CSS.
+Answer: Orchestrer un cas d’usage en utilisant le domaine et des ports.
+Explanation: `Booking`, `Screening` et `Money` restent dans le domaine. `BookSeatUseCase` orchestre. Les repositories, contrôleurs et adaptateurs de paiement restent en infrastructure.

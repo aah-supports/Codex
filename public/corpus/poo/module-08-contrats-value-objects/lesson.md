@@ -11,9 +11,9 @@ tags:
 
 Un objet protège des invariants. Un invariant est une règle qui doit rester vraie pour que l'objet soit valide.
 
-Les contrats aident à raisonnér :
+Les contrats aident à raisonner :
 
-- precondition : ce qui doit être vrai avant l'appel ;
+- précondition : ce qui doit être vrai avant l'appel ;
 - postcondition : ce qui doit être vrai après l'appel ;
 - invariant : ce qui doit rester vrai pendant toute la vie de l'objet.
 
@@ -23,7 +23,7 @@ Une carte refusée, un siège déjà réservé et une base de données indisponi
 
 ## Value Object
 
-Un objet-valeur représente une valeur riche : `Money`, `EmailAddress`, `SeatNumber`. Il est souvent immuable et compare par valeur.
+Un objet-valeur représente une valeur riche : `Money`, `EmailAddress`, `SeatNumber`. Il est souvent immuable et comparé par valeur.
 
 ## Pourquoi les primitives posent problème
 
@@ -53,11 +53,11 @@ Toutes les erreurs ne doivent pas être des `IllegalArgumentException`.
 Exemples :
 
 - `SeatAlreadyReservedException` ;
-- `PaymentRefusédException` ;
+- `PaymentRefusedException` ;
 - `InvalidScreeningPeriodException`.
 
 Nommer les exceptions métier aide à lire les cas d'utilisation et à afficher de meilleurs messages.
 
-## Immutabilite
+## Immutabilité
 
 Un value object doit souvent être immuable. Si un montant change, on crée un nouveau `Money`. Cela évite les modifications invisibles partagées entre plusieurs objets.

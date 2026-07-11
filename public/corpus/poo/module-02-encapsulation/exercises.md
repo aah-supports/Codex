@@ -12,11 +12,11 @@ Créer :
 - `Customer` ;
 - `Screening`.
 
-Ajouter les règles de validite dans les constructeurs.
+Ajouter les règles de validité dans les constructeurs.
 
 # Question
 
-Pourquoi un objet valide des sa construction simplifie-t-il le reste du code ?
+Pourquoi un objet valide dès sa construction simplifie-t-il le reste du code ?
 
 # Atelier progressif
 

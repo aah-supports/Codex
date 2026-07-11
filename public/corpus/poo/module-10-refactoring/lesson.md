@@ -47,7 +47,7 @@ Quand le code est déjà fragile, ne commence pas par "bien architecturer". Comm
 5. renommer pour clarifier ;
 6. recommencer.
 
-## Exemple de sequence
+## Exemple de séquence
 
 Pour une méthode `reserve` de 120 lignes :
 
@@ -58,10 +58,10 @@ Pour une méthode `reserve` de 120 lignes :
 - introduire `PaymentGateway` ;
 - extraire `notifyCustomer`.
 
-Chaque etape doit être suffisamment petite pour être comprise en revue.
+Chaque étape doit être suffisamment petite pour être comprise en revue.
 
 ## Refactoring et design
 
 Le refactoring révèle souvent les objets manquants. Quand plusieurs lignes manipulent toujours les mêmes valeurs ensemble, il manque peut-être un objet.
 
-Exemple : `amount` et `currency` manipules partout signalent souvent un objet `Money`.
+Exemple : `amount` et `currency` manipulés partout signalent souvent un objet `Money`.

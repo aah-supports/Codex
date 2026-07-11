@@ -7,7 +7,13 @@ import { getMarkdown } from '../../content/api'
 type GlossaryItem = {
   term: string
   text: string
+  links: GlossaryLink[]
   searchText: string
+}
+
+type GlossaryLink = {
+  label: string
+  href: string
 }
 
 type RankedGlossaryItem = GlossaryItem & {
@@ -19,11 +25,6 @@ type GlossarySection = {
   items: GlossaryItem[]
 }
 
-type RankedGlossarySection = {
-  title: string
-  items: RankedGlossaryItem[]
-}
-
 export function GlossaryPage() {
   const [query, setQuery] = useState('')
   const glossary = useQuery({
@@ -32,26 +33,20 @@ export function GlossaryPage() {
   })
   const sections = useMemo(() => parseGlossary(glossary.data?.body ?? ''), [glossary.data?.body])
   const normalizedQuery = normalizeSearch(query)
-  const filteredSections: RankedGlossarySection[] = useMemo(() => {
+  const items = useMemo(() => sections.flatMap((section) => section.items), [sections])
+  const visibleItems: RankedGlossaryItem[] = useMemo(() => {
     if (!normalizedQuery) {
-      return sections.map((section) => ({
-        ...section,
-        items: section.items.map((item) => ({ ...item, rank: 0 })),
-      }))
+      return items
+        .map((item) => ({ ...item, rank: 0 }))
+        .sort((left, right) => left.term.localeCompare(right.term, 'fr'))
     }
 
-    return sections
-      .map((section) => ({
-        ...section,
-        items: section.items
-          .map((item) => ({ ...item, rank: rankGlossaryItem(item, normalizedQuery) }))
-          .filter((item) => item.rank > 0)
-          .sort((left, right) => right.rank - left.rank || left.term.localeCompare(right.term, 'fr')),
-      }))
-      .filter((section) => section.items.length > 0)
-  }, [normalizedQuery, sections])
-  const totalItems = sections.reduce((sum, section) => sum + section.items.length, 0)
-  const visibleItems = filteredSections.reduce((sum, section) => sum + section.items.length, 0)
+    return items
+      .map((item) => ({ ...item, rank: rankGlossaryItem(item, normalizedQuery) }))
+      .filter((item) => item.rank > 0)
+      .sort((left, right) => right.rank - left.rank || left.term.localeCompare(right.term, 'fr'))
+  }, [items, normalizedQuery])
+  const totalItems = items.length
 
   return (
     <div className="page-stack">
@@ -74,7 +69,7 @@ export function GlossaryPage() {
         />
         <p>
           {query.trim()
-            ? `${visibleItems} résultat${visibleItems > 1 ? 's' : ''} sur ${totalItems} définitions`
+            ? `${visibleItems.length} résultat${visibleItems.length > 1 ? 's' : ''} sur ${totalItems} définitions`
             : `${totalItems} définitions disponibles`}
         </p>
       </Card>
@@ -82,30 +77,37 @@ export function GlossaryPage() {
       <Card className="glossary-card">
         {glossary.isLoading ? <p>Chargement du glossaire...</p> : null}
         {glossary.error ? <p>Glossaire indisponible.</p> : null}
-        {glossary.data && filteredSections.length === 0 ? (
+        {glossary.data && visibleItems.length === 0 ? (
           <p className="glossary-empty">Aucune définition ne correspond à cette recherche.</p>
         ) : null}
-        {glossary.data && normalizedQuery && filteredSections.length > 0 ? (
+        {glossary.data && normalizedQuery && visibleItems.length > 0 ? (
           <div className="glossary-result-heading">
             <p className="eyebrow">Définitions liées</p>
             <h3>{query.trim()}</h3>
           </div>
         ) : null}
-        {filteredSections.map((section) => (
-          <section className="glossary-section" key={section.title}>
-            <h3>{section.title}</h3>
-            <div className="glossary-list">
-              {section.items.map((item) => (
-                <article className="glossary-item" key={`${section.title}-${item.term}`}>
-                  <h4>{item.term}</h4>
-                  <div className="markdown-card">
-                    <MarkdownRenderer>{item.text}</MarkdownRenderer>
-                  </div>
-                </article>
-              ))}
-            </div>
-          </section>
-        ))}
+        <div className="glossary-list">
+          {visibleItems.map((item) => (
+            <article className="glossary-item" key={item.term}>
+              <h4>{item.term}</h4>
+              <div className="markdown-card">
+                <MarkdownRenderer>{item.text}</MarkdownRenderer>
+              </div>
+              {item.links.length > 0 ? (
+                <div className="glossary-references" aria-label={`Cours associés à ${item.term}`}>
+                  <p>{normalizedQuery ? 'Références pertinentes dans le cours' : 'Références dans le cours'}</p>
+                  <ul>
+                    {rankLinks(item.links, normalizedQuery).map((link) => (
+                      <li key={`${item.term}-${link.href}-${link.label}`}>
+                        <a href={link.href}>{link.label}</a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ) : null}
+            </article>
+          ))}
+        </div>
       </Card>
     </div>
   )
@@ -150,13 +152,43 @@ function createGlossaryItem(text: string): GlossaryItem {
   const index = separatorIndex >= 0 ? separatorIndex : fallbackSeparatorIndex
   const separatorLength = separatorIndex >= 0 ? 3 : 1
   const term = index >= 0 ? text.slice(0, index).replace(/\*\*/g, '').trim() : text
-  const definition = index >= 0 ? text.slice(index + separatorLength).trim() : text
+  const rawDefinition = index >= 0 ? text.slice(index + separatorLength).trim() : text
+  const links = extractMarkdownLinks(rawDefinition)
+  const definition = stripReferenceLinks(rawDefinition)
 
   return {
     term,
     text: definition,
-    searchText: normalizeSearch(`${term} ${definition}`),
+    links,
+    searchText: normalizeSearch(`${term} ${rawDefinition}`),
   }
+}
+
+function extractMarkdownLinks(markdown: string): GlossaryLink[] {
+  const links: GlossaryLink[] = []
+  const seen = new Set<string>()
+
+  for (const match of markdown.matchAll(/\[([^\]]+)]\((#[^)]+)\)/g)) {
+    const [, label, href] = match
+    const key = `${label}-${href}`
+
+    if (!seen.has(key)) {
+      links.push({ label, href })
+      seen.add(key)
+    }
+  }
+
+  return links
+}
+
+function stripReferenceLinks(markdown: string) {
+  const referenceStart = markdown.indexOf(' [Voir ')
+
+  if (referenceStart < 0) {
+    return markdown
+  }
+
+  return markdown.slice(0, referenceStart).trim()
 }
 
 function normalizeSearch(value: string) {
@@ -203,6 +235,34 @@ function expandQuery(query: string) {
   }
 
   return [...expanded]
+}
+
+function rankLinks(links: GlossaryLink[], query: string) {
+  if (!query) {
+    return links
+  }
+
+  const queryTerms = expandQuery(query)
+
+  return [...links].sort((left, right) => {
+    const leftRank = rankLink(left, queryTerms)
+    const rightRank = rankLink(right, queryTerms)
+
+    return rightRank - leftRank || left.label.localeCompare(right.label, 'fr')
+  })
+}
+
+function rankLink(link: GlossaryLink, queryTerms: string[]) {
+  const linkText = normalizeSearch(`${link.label} ${link.href}`)
+  let rank = 0
+
+  for (const term of queryTerms) {
+    if (linkText.includes(term)) {
+      rank += 20
+    }
+  }
+
+  return rank
 }
 
 const RELATED_TERMS: Record<string, string[]> = {

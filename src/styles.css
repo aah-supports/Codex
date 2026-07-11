@@ -624,7 +624,7 @@ textarea {
 
 .glossary-card {
   display: grid;
-  gap: 28px;
+  gap: 18px;
 }
 
 .glossary-result-heading {
@@ -637,18 +637,6 @@ textarea {
 .glossary-result-heading h3 {
   margin: 0;
   color: #f8fafc;
-}
-
-.glossary-section {
-  display: grid;
-  gap: 14px;
-}
-
-.glossary-section h3 {
-  margin: 0;
-  border-bottom: 1px solid #1f2937;
-  color: #f8fafc;
-  padding-bottom: 10px;
 }
 
 .glossary-list {
@@ -677,6 +665,43 @@ textarea {
 
 .glossary-item p {
   margin: 0;
+}
+
+.glossary-references {
+  display: grid;
+  gap: 6px;
+  border-top: 1px solid #1f2937;
+  padding-top: 10px;
+}
+
+.glossary-references p {
+  color: #94a3b8;
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.glossary-references ul {
+  display: grid;
+  gap: 4px;
+  margin: 0;
+  padding-left: 18px;
+}
+
+.glossary-references li {
+  color: #64748b;
+  line-height: 1.45;
+}
+
+.glossary-references a {
+  color: #93c5fd;
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+.glossary-references a:hover {
+  color: #bfdbfe;
+  text-decoration: underline;
 }
 
 .glossary-empty {

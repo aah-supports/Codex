@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "sheets": [
+    {
+      "id": "poo-invariants",
+      "title": "Invariants en POO",
+      "description": "Fiche personnelle courte pour retenir où placer les règles métier.",
+      "path": "poo-invariants.md",
+      "tags": ["poo", "invariant", "important"]
+    }
+  ]
+}

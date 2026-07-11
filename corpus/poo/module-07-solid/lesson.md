@@ -1,0 +1,87 @@
+---
+id: poo.module-07.lesson
+title: Principes SOLID
+tags:
+  - def
+  - important
+---
+
+# Principes SOLID
+
+SOLID n'est pas une checklist magique. Ce sont des outils de diagnostic pour comprendre pourquoi un code résiste au changement.
+
+## SRP
+
+Une unité de code doit avoir une raison cohérente de changer.
+
+## OCP
+
+Un système doit pouvoir être étendu sans modifier excessivement le code stable.
+
+## LSP
+
+Une sous-classe doit pouvoir remplacer sa classe de base sans casser les attentes du programme.
+
+## ISP
+
+Un client ne doit pas dépendre de méthodes dont il n'a pas besoin.
+
+## DIP
+
+Les règles de haut niveau ne doivent pas dépendre directement des détails techniques.
+
+Appliquer SOLID mécaniquement peut produire trop d'abstractions. Le but reste de réduire le coût du changement.
+
+## Lecture progressive
+
+SOLID devient utile quand on a déjà vu du code souffrir.
+
+Avant d'appliquer un principe, formuler la douleur :
+
+- "chaque nouveau tarif modifie cette méthode" ;
+- "cette classe change pour trop de raisons" ;
+- "cette sous-classe ne respecte pas le comportement attendu" ;
+- "cette interface force des méthodes inutiles" ;
+- "le domaine dépend d'une base de données".
+
+Le principe vient ensuite nommer le problème.
+
+## Exemple de mauvais usage
+
+Il est possible de respecter SOLID en apparence et de produire un code illisible :
+
+```text
+MovieServiceInterface
+MovieServiceImpl
+MovieManager
+MovieHandler
+MovieProcessor
+```
+
+Si ces noms ne portent pas des responsabilités claires, l'abstraction est du bruit.
+
+## Questions d'auto-diagnostic
+
+- SRP : quelle est la raison de changer ?
+- OCP : quel changement futur est coûteux aujourd'hui ?
+- LSP : le code client peut-il remplacer la classe mère par la sous-classe ?
+- ISP : qui utilise vraiment cette méthode ?
+- DIP : le code important dépend-il d'un détail instable ?
+
+## Approfondissement théorique : SOLID comme vocabulaire critique
+
+Les principes SOLID ne sont pas des règles mécaniques. Ils forment un vocabulaire critique pour analyser les tensions d'un code objet. Leur intérêt universitaire est de donner des mots précis à des problèmes souvent ressentis intuitivement : rigidité, fragilité, couplage excessif, abstraction mal placée.
+
+SRP ne signifie pas qu'une classe ne doit avoir qu'une méthode. Il signifie qu'elle doit avoir une raison cohérente de changer. OCP ne signifie pas qu'il ne faut jamais modifier le code existant. Il invite à protéger les parties stables quand une variation est prévisible. LSP rappelle qu'une hiérarchie doit respecter les attentes comportementales, pas seulement compiler.
+
+ISP critique les contrats trop larges. Une interface qui force des méthodes inutiles crée une dépendance artificielle. DIP affirme que les règles de haut niveau doivent dépendre de contrats stables plutôt que de détails techniques. Ces principes se répondent : ils cherchent tous à réduire le coût du changement.
+
+Le mauvais usage de SOLID produit souvent un code trop abstrait. On voit apparaître des interfaces sans variation, des factories sans complexité de création, des classes nommées Manager ou Processor sans responsabilité métier. Le code respecte une apparence de structure, mais perd en lisibilité.
+
+Le bon usage consiste à partir d'un symptôme observable. Chaque nouveau tarif modifie une méthode centrale ? On discute OCP et polymorphisme. Une classe change pour le prix et pour l'email ? On discute SRP. Une sous-classe refuse une méthode héritée ? On discute LSP.
+
+### Attendu académique
+
+- Nommer le principe utile.
+- Décrire le symptôme concret.
+- Justifier la transformation de conception.

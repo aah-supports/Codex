@@ -584,8 +584,104 @@ textarea {
   line-height: 1.7;
 }
 
+.glossary-search-card,
 .glossary-card {
-  max-width: 760px;
+  max-width: 980px;
+}
+
+.glossary-search-card {
+  display: grid;
+  gap: 10px;
+}
+
+.glossary-search-card label {
+  color: #e5e7eb;
+  font-size: 0.92rem;
+  font-weight: 800;
+}
+
+.glossary-search-card input {
+  width: 100%;
+  border: 1px solid #334155;
+  border-radius: 8px;
+  background: #020617;
+  color: #f8fafc;
+  font: inherit;
+  padding: 12px 14px;
+}
+
+.glossary-search-card input:focus {
+  border-color: #60a5fa;
+  box-shadow: 0 0 0 3px rgb(96 165 250 / 18%);
+  outline: none;
+}
+
+.glossary-search-card p {
+  margin: 0;
+  color: #94a3b8;
+  font-size: 0.9rem;
+}
+
+.glossary-card {
+  display: grid;
+  gap: 28px;
+}
+
+.glossary-result-heading {
+  display: grid;
+  gap: 3px;
+  border-bottom: 1px solid #1f2937;
+  padding-bottom: 12px;
+}
+
+.glossary-result-heading h3 {
+  margin: 0;
+  color: #f8fafc;
+}
+
+.glossary-section {
+  display: grid;
+  gap: 14px;
+}
+
+.glossary-section h3 {
+  margin: 0;
+  border-bottom: 1px solid #1f2937;
+  color: #f8fafc;
+  padding-bottom: 10px;
+}
+
+.glossary-list {
+  display: grid;
+  gap: 10px;
+}
+
+.glossary-item {
+  display: grid;
+  gap: 8px;
+  border: 1px solid #1f2937;
+  border-radius: 8px;
+  background: #0b1120;
+  padding: 14px;
+}
+
+.glossary-item h4 {
+  margin: 0;
+  color: #93c5fd;
+  font-size: 1rem;
+}
+
+.glossary-item .markdown-card {
+  max-width: none;
+}
+
+.glossary-item p {
+  margin: 0;
+}
+
+.glossary-empty {
+  margin: 0;
+  color: #cbd5e1;
 }
 
 .module-status-list {

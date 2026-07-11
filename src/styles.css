@@ -339,6 +339,39 @@ textarea {
   padding-bottom: 10px;
 }
 
+.solution-card {
+  position: relative;
+  margin-top: 10px;
+  border-color: #2f5f4a;
+  background: #0c1f1b;
+}
+
+.solution-card::before {
+  position: absolute;
+  top: -14px;
+  left: 18px;
+  width: min(220px, calc(100% - 36px));
+  height: 1px;
+  background: #2f5f4a;
+  content: "";
+}
+
+.solution-heading {
+  display: grid;
+  gap: 4px;
+  border-bottom: 1px solid #1f3d35;
+  padding-bottom: 10px;
+}
+
+.solution-heading .eyebrow {
+  color: #86efac;
+}
+
+.solution-heading h3 {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
 .markdown-card pre {
   overflow-x: auto;
   border-radius: 8px;

@@ -94,8 +94,11 @@ export function LessonPage() {
           <MarkdownState query={exercises} />
         </Card>
         {module.paths.solutions ? (
-          <Card className="markdown-card">
-            <h3>Corrections guidées</h3>
+          <Card className="markdown-card solution-card">
+            <div className="solution-heading">
+              <p className="eyebrow">Après l’exercice</p>
+              <h3>Corrections guidées</h3>
+            </div>
             <MarkdownState query={solutions} />
           </Card>
         ) : null}

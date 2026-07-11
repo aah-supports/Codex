@@ -21,9 +21,10 @@ export function CorpusPage() {
     <div className="page-stack">
       <header className="page-header">
         <p className="eyebrow">Apprentissage progressif</p>
-        <h2>Reprendre ou démarrer un module</h2>
+        <h2>Reprendre ou démarrer un cours</h2>
         <p>
-          Les contenus viennent des fichiers Markdown versionnés. Ta progression reste locale et exportable.
+          Chaque cours est un corpus Markdown versionné. La POO est le premier parcours, et d’autres corpus pourront
+          être ajoutés sans changer le socle de l’application.
         </p>
       </header>
 

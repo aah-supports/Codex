@@ -29,15 +29,15 @@ export function AppShell({ children }: AppShellProps) {
     <div className="app-shell">
       <aside className="sidebar">
         <div className="brand-block">
-          <h1>POO</h1>
-          <span>Learning API</span>
+          <h1>Corpus</h1>
+          <span>Plateforme de cours</span>
         </div>
         <div className="version-block">
-          <span>Version</span>
+          <span>Corpus</span>
           <strong>{data?.corpora[0]?.version ?? '0.1.0'}</strong>
         </div>
         <nav className="main-nav doc-nav" aria-label="Navigation principale">
-          <NavSection title="App">
+          <NavSection title="Plateforme">
             {navItems.map((item) => (
               <Link key={item.to} to={item.to} className="nav-link" activeProps={{ className: 'nav-link active' }}>
                 {item.label}
@@ -46,7 +46,7 @@ export function AppShell({ children }: AppShellProps) {
           </NavSection>
 
           {data?.corpora.map((corpus) => (
-            <NavSection key={corpus.id} title={corpus.title}>
+            <NavSection key={corpus.id} title={`Cours · ${corpus.title}`}>
               {corpus.modules.map((module) => (
                 <div key={module.id} className="module-nav-item">
                   <Link

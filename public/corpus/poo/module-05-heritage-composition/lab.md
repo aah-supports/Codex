@@ -1,6 +1,15 @@
 ---
 id: poo.module-05.lab
 title: Remplacer un héritage fragile par une composition
+tags:
+  - atelier
+  - exercice
+  - heritage
+  - composition
+  - polymorphisme
+summaryTags:
+  - atelier
+  - pratique
 ---
 
 # Remplacer un héritage fragile par une composition

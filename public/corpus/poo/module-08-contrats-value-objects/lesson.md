@@ -2,9 +2,14 @@
 id: poo.module-08.lesson
 title: Exceptions, contrats et objets-valeurs
 tags:
-  - exception
+  - definition
+  - a-retenir
   - contrat
+  - exception
   - value-object
+summaryTags:
+  - definition
+  - a-retenir
 ---
 
 # Exceptions, contrats et objets-valeurs

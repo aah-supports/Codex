@@ -1,6 +1,15 @@
 ---
 id: poo.module-01.lab
 title: Transformer un script en objets responsables
+tags:
+  - atelier
+  - exercice
+  - objet
+  - classe
+  - responsabilite
+summaryTags:
+  - atelier
+  - pratique
 ---
 
 # Transformer un script en objets responsables

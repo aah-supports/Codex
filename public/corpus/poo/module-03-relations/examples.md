@@ -1,6 +1,15 @@
 ---
 id: poo.module-03.examples
 title: Exemples
+tags:
+  - exemple
+  - anti-pattern
+  - association
+  - composition
+  - couplage
+summaryTags:
+  - exemple
+  - anti-pattern
 ---
 
 # Composition d'une salle

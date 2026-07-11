@@ -2,11 +2,14 @@
 id: poo.module-11.lesson
 title: Design patterns utiles
 tags:
-  - design-patterns
+  - definition
+  - a-retenir
+  - design-pattern
   - strategy
   - adapter
-  - observer
-  - state
+summaryTags:
+  - definition
+  - a-retenir
 ---
 
 # Design patterns utiles

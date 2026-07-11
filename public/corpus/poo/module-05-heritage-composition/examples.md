@@ -1,6 +1,15 @@
 ---
 id: poo.module-05.examples
 title: Exemples
+tags:
+  - exemple
+  - anti-pattern
+  - heritage
+  - composition
+  - polymorphisme
+summaryTags:
+  - exemple
+  - anti-pattern
 ---
 
 # Contrat

@@ -1,6 +1,13 @@
 ---
 id: poo.module-08.quiz
 title: QCM
+tags:
+  - quiz
+  - contrat
+  - exception
+  - value-object
+summaryTags:
+  - quiz
 ---
 
 Question: Un value object est souvent comparé...

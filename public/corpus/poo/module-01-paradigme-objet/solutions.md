@@ -1,6 +1,14 @@
 ---
 id: poo.module-01.solutions
 title: Corrections guidées
+tags:
+  - correction
+  - a-retenir
+  - objet
+  - classe
+  - responsabilite
+summaryTags:
+  - correction
 ---
 
 # Corrections guidées

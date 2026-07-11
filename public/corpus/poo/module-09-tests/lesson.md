@@ -2,9 +2,14 @@
 id: poo.module-09.lesson
 title: Tests unitaires orientés objet
 tags:
-  - tests
+  - definition
+  - a-retenir
+  - test
   - comportement
-  - doubles
+  - mock
+summaryTags:
+  - definition
+  - a-retenir
 ---
 
 # Tests unitaires orientés objet

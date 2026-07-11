@@ -4,10 +4,12 @@ import { useQuery } from '@tanstack/react-query'
 import ReactMarkdown from 'react-markdown'
 import hljs from 'highlight.js/lib/core'
 import java from 'highlight.js/lib/languages/java'
+import { Badge } from '../../components/ui/Badge'
 import { Button } from '../../components/ui/Button'
 import { Card } from '../../components/ui/Card'
 import { getMarkdown } from '../../content/api'
 import { useLearningStore } from '../../stores/learningStore'
+import type { ParsedMarkdown } from '../../types/content'
 import { useCorpusIndex } from '../corpus/useCorpus'
 
 hljs.registerLanguage('java', java)
@@ -57,6 +59,21 @@ export function LessonPage() {
     return <p>Module introuvable.</p>
   }
 
+  const contentItems = [
+    { query: lesson },
+    { query: examples },
+    { query: exercises },
+    { query: solutions },
+    { query: lab },
+    { query: readings },
+  ]
+  const contentTags = uniqueStrings([
+    ...module.tags,
+    ...contentItems.flatMap((item) => getFrontmatterTags(item.query.data)),
+  ])
+  const learningMarkers = contentTags.filter((tag) => pedagogicalTags.has(tag))
+  const conceptMarkers = contentTags.filter((tag) => !pedagogicalTags.has(tag))
+
   return (
     <div className="page-stack">
       <header className="page-header">
@@ -79,6 +96,15 @@ export function LessonPage() {
           {progress?.exerciseCompleted ? 'terminés' : 'à faire'}
         </p>
       </header>
+
+      <Card className="module-summary-card">
+        <div>
+          <p className="eyebrow">Résumé visuel</p>
+          <h3>Repères du module</h3>
+        </div>
+        <TagGroup title="Types de contenu" tags={learningMarkers} />
+        <TagGroup title="Notions travaillées" tags={conceptMarkers} />
+      </Card>
 
       <div className="lesson-layout">
         <Card className="markdown-card">
@@ -120,7 +146,7 @@ export function LessonPage() {
 function MarkdownState({
   query,
 }: {
-  query: ReturnType<typeof useQuery<{ body: string }>>
+  query: ReturnType<typeof useQuery<ParsedMarkdown>>
 }) {
   if (query.isLoading) {
     return <p>Chargement...</p>
@@ -130,7 +156,122 @@ function MarkdownState({
     return <p>Contenu indisponible.</p>
   }
 
-  return <ReactMarkdown components={{ code: CodeBlock }}>{query.data.body}</ReactMarkdown>
+  return (
+    <>
+      <ContentTags tags={getFrontmatterTags(query.data)} />
+      <ReactMarkdown components={{ code: CodeBlock }}>{query.data.body}</ReactMarkdown>
+    </>
+  )
+}
+
+const tagLabels: Record<string, string> = {
+  'a-retenir': 'À retenir',
+  'anti-pattern': 'Anti-pattern',
+  architecture: 'Architecture',
+  association: 'Association',
+  atelier: 'Atelier',
+  adapter: 'Adapter',
+  classe: 'Classe',
+  'code-smell': 'Code smell',
+  comportement: 'Comportement',
+  cohesion: 'Cohésion',
+  composition: 'Composition',
+  contrat: 'Contrat',
+  correction: 'Correction',
+  couplage: 'Couplage',
+  definition: 'Définition',
+  dip: 'DIP',
+  domaine: 'Domaine',
+  encapsulation: 'Encapsulation',
+  erreur: 'Erreur fréquente',
+  exception: 'Exception',
+  exemple: 'Exemple',
+  exercice: 'Exercice',
+  glossaire: 'Glossaire',
+  heritage: 'Héritage',
+  interface: 'Interface',
+  invariant: 'Invariant',
+  lecture: 'Lecture',
+  objet: 'Objet',
+  polymorphisme: 'Polymorphisme',
+  port: 'Port',
+  pratique: 'Pratique',
+  quiz: 'QCM',
+  refactoring: 'Refactoring',
+  responsabilite: 'Responsabilité',
+  solid: 'SOLID',
+  synthese: 'Synthèse',
+  test: 'Test',
+  'value-object': 'Value object',
+}
+
+const pedagogicalTags = new Set([
+  'definition',
+  'exemple',
+  'anti-pattern',
+  'erreur',
+  'exercice',
+  'correction',
+  'atelier',
+  'lecture',
+  'quiz',
+  'a-retenir',
+  'synthese',
+  'pratique',
+])
+
+function getFrontmatterTags(markdown: ParsedMarkdown | undefined) {
+  if (!markdown) {
+    return []
+  }
+
+  return uniqueStrings([
+    ...toStringArray(markdown.frontmatter.tags),
+    ...toStringArray(markdown.frontmatter.summaryTags),
+  ])
+}
+
+function toStringArray(value: ParsedMarkdown['frontmatter'][string]) {
+  if (Array.isArray(value)) {
+    return value.filter((item): item is string => typeof item === 'string')
+  }
+
+  return typeof value === 'string' ? [value] : []
+}
+
+function uniqueStrings(values: string[]) {
+  return Array.from(new Set(values.filter(Boolean)))
+}
+
+function formatTag(tag: string) {
+  return tagLabels[tag] ?? tag.replaceAll('-', ' ')
+}
+
+function ContentTags({ tags }: { tags: string[] }) {
+  if (tags.length === 0) {
+    return null
+  }
+
+  return (
+    <div className="content-tags" aria-label="Tags du contenu">
+      {tags.map((tag) => (
+        <Badge key={tag}>{formatTag(tag)}</Badge>
+      ))}
+    </div>
+  )
+}
+
+function TagGroup({ title, tags }: { title: string; tags: string[] }) {
+  if (tags.length === 0) {
+    return null
+  }
+
+  return (
+    <div className="summary-tag-group">
+      <strong>{title}</strong>
+      <ContentTags tags={tags} />
+    </div>
+  )
 }
 
 function CodeBlock({ className, children, ...props }: ComponentPropsWithoutRef<'code'>) {

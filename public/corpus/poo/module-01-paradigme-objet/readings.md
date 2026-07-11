@@ -1,6 +1,13 @@
 ---
 id: poo.module-01.readings
 title: Lectures
+tags:
+  - lecture
+  - objet
+  - classe
+  - responsabilite
+summaryTags:
+  - lecture
 ---
 
 # Lectures conseillees

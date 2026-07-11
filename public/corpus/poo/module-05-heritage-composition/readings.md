@@ -1,6 +1,13 @@
 ---
 id: poo.module-05.readings
 title: Lectures
+tags:
+  - lecture
+  - heritage
+  - composition
+  - polymorphisme
+summaryTags:
+  - lecture
 ---
 
 # Lectures conseillees

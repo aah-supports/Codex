@@ -1,6 +1,14 @@
 ---
 id: poo.module-04.solutions
 title: Corrections guidées
+tags:
+  - correction
+  - a-retenir
+  - responsabilite
+  - cohesion
+  - couplage
+summaryTags:
+  - correction
 ---
 
 # Corrections guidées

@@ -1,6 +1,13 @@
 ---
 id: poo.module-10.quiz
 title: QCM
+tags:
+  - quiz
+  - refactoring
+  - code-smell
+  - test
+summaryTags:
+  - quiz
 ---
 
 Question: Un refactoring doit normalement...

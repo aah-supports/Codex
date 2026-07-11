@@ -1,6 +1,13 @@
 ---
 id: poo.module-02.quiz
 title: QCM
+tags:
+  - quiz
+  - classe
+  - encapsulation
+  - invariant
+summaryTags:
+  - quiz
 ---
 
 Question: Pourquoi éviter les attributs publics pour un objet métier ?

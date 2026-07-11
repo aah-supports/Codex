@@ -2,9 +2,14 @@
 id: poo.module-03.lesson
 title: Relations entre objets
 tags:
+  - definition
+  - a-retenir
   - association
   - composition
-  - uml
+  - couplage
+summaryTags:
+  - definition
+  - a-retenir
 ---
 
 # Relations entre objets

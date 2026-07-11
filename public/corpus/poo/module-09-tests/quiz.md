@@ -1,6 +1,13 @@
 ---
 id: poo.module-09.quiz
 title: QCM
+tags:
+  - quiz
+  - test
+  - comportement
+  - mock
+summaryTags:
+  - quiz
 ---
 
 Question: Un test trop lie à l'implémentation risque de...

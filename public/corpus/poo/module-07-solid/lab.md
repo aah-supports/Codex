@@ -1,6 +1,15 @@
 ---
 id: poo.module-07.lab
 title: Utiliser SOLID comme outil de diagnostic
+tags:
+  - atelier
+  - exercice
+  - solid
+  - responsabilite
+  - architecture
+summaryTags:
+  - atelier
+  - pratique
 ---
 
 # Utiliser SOLID comme outil de diagnostic

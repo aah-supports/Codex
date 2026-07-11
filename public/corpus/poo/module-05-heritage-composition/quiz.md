@@ -1,6 +1,13 @@
 ---
 id: poo.module-05.quiz
 title: QCM
+tags:
+  - quiz
+  - heritage
+  - composition
+  - polymorphisme
+summaryTags:
+  - quiz
 ---
 
 Question: Pourquoi l'héritage peut-il être dangereux ?

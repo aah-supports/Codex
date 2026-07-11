@@ -1,6 +1,13 @@
 ---
 id: poo.module-09.readings
 title: Lectures
+tags:
+  - lecture
+  - test
+  - comportement
+  - mock
+summaryTags:
+  - lecture
 ---
 
 # Lectures conseillees

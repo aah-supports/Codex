@@ -1,6 +1,15 @@
 ---
 id: poo.module-07.examples
 title: Exemples
+tags:
+  - exemple
+  - anti-pattern
+  - solid
+  - responsabilite
+  - architecture
+summaryTags:
+  - exemple
+  - anti-pattern
 ---
 
 # Violation OCP

@@ -1,6 +1,14 @@
 ---
 id: poo.module-08.exercises
 title: Exercices
+tags:
+  - exercice
+  - pratique
+  - contrat
+  - exception
+  - value-object
+summaryTags:
+  - exercice
 ---
 
 # TP

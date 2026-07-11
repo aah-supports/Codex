@@ -1,6 +1,15 @@
 ---
 id: poo.module-11.lab
 title: Choisir un pattern à partir d’une tension
+tags:
+  - atelier
+  - exercice
+  - design-pattern
+  - strategy
+  - adapter
+summaryTags:
+  - atelier
+  - pratique
 ---
 
 # Choisir un pattern à partir d’une tension

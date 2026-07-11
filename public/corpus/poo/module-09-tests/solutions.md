@@ -1,6 +1,14 @@
 ---
 id: poo.module-09.solutions
 title: Corrections guidées
+tags:
+  - correction
+  - a-retenir
+  - test
+  - comportement
+  - mock
+summaryTags:
+  - correction
 ---
 
 # Corrections guidées

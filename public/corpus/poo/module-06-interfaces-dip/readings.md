@@ -1,6 +1,13 @@
 ---
 id: poo.module-06.readings
 title: Lectures
+tags:
+  - lecture
+  - interface
+  - contrat
+  - dip
+summaryTags:
+  - lecture
 ---
 
 # Lectures conseillees

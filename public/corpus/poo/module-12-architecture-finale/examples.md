@@ -1,6 +1,15 @@
 ---
 id: poo.module-12.examples
 title: Exemples
+tags:
+  - exemple
+  - anti-pattern
+  - architecture
+  - domaine
+  - port
+summaryTags:
+  - exemple
+  - anti-pattern
 ---
 
 # Cas d'utilisation

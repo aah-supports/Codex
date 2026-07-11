@@ -1,6 +1,12 @@
 ---
 id: shared.glossary
 title: Glossaire
+tags:
+  - glossaire
+  - definition
+  - a-retenir
+summaryTags:
+  - definition
 ---
 
 # Glossaire progressif

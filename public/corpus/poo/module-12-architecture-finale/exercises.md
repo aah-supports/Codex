@@ -1,6 +1,14 @@
 ---
 id: poo.module-12.exercises
 title: Exercices
+tags:
+  - exercice
+  - pratique
+  - architecture
+  - domaine
+  - port
+summaryTags:
+  - exercice
 ---
 
 # Projet final

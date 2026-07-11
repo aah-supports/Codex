@@ -1,6 +1,15 @@
 ---
 id: poo.module-09.lab
 title: Tester un comportement plutôt qu’une implémentation
+tags:
+  - atelier
+  - exercice
+  - test
+  - comportement
+  - mock
+summaryTags:
+  - atelier
+  - pratique
 ---
 
 # Tester un comportement plutôt qu’une implémentation

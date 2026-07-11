@@ -1,6 +1,13 @@
 ---
 id: poo.module-04.readings
 title: Lectures
+tags:
+  - lecture
+  - responsabilite
+  - cohesion
+  - couplage
+summaryTags:
+  - lecture
 ---
 
 # Lectures conseillees

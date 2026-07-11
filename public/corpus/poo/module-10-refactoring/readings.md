@@ -1,6 +1,13 @@
 ---
 id: poo.module-10.readings
 title: Lectures
+tags:
+  - lecture
+  - refactoring
+  - code-smell
+  - test
+summaryTags:
+  - lecture
 ---
 
 # Lectures conseillees

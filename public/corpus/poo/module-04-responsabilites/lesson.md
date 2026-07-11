@@ -2,9 +2,14 @@
 id: poo.module-04.lesson
 title: Responsabilités, cohésion et couplage
 tags:
-  - responsabilité
-  - cohésion
+  - definition
+  - a-retenir
+  - responsabilite
+  - cohesion
   - couplage
+summaryTags:
+  - definition
+  - a-retenir
 ---
 
 # Responsabilités, cohésion et couplage

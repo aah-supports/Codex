@@ -2,9 +2,14 @@
 id: poo.module-01.lesson
 title: Comprendre le paradigme objet
 tags:
-  - poo
+  - definition
+  - a-retenir
   - objet
-  - responsabilité
+  - classe
+  - responsabilite
+summaryTags:
+  - definition
+  - a-retenir
 ---
 
 # Comprendre le paradigme objet

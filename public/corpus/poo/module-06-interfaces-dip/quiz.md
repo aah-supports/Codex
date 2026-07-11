@@ -1,6 +1,13 @@
 ---
 id: poo.module-06.quiz
 title: QCM
+tags:
+  - quiz
+  - interface
+  - contrat
+  - dip
+summaryTags:
+  - quiz
 ---
 
 Question: Pourquoi injecter une dépendance par constructeur ?

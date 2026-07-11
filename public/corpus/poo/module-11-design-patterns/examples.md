@@ -1,6 +1,15 @@
 ---
 id: poo.module-11.examples
 title: Exemples
+tags:
+  - exemple
+  - anti-pattern
+  - design-pattern
+  - strategy
+  - adapter
+summaryTags:
+  - exemple
+  - anti-pattern
 ---
 
 # State

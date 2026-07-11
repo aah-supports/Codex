@@ -1,6 +1,13 @@
 ---
 id: poo.module-12.quiz
 title: QCM
+tags:
+  - quiz
+  - architecture
+  - domaine
+  - port
+summaryTags:
+  - quiz
 ---
 
 Question: Dans une architecture séparée, la base de données appartient plutôt à...

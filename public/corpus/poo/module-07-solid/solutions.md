@@ -1,6 +1,14 @@
 ---
 id: poo.module-07.solutions
 title: Corrections guidées
+tags:
+  - correction
+  - a-retenir
+  - solid
+  - responsabilite
+  - architecture
+summaryTags:
+  - correction
 ---
 
 # Corrections guidées

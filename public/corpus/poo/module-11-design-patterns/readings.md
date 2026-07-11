@@ -1,6 +1,13 @@
 ---
 id: poo.module-11.readings
 title: Lectures
+tags:
+  - lecture
+  - design-pattern
+  - strategy
+  - adapter
+summaryTags:
+  - lecture
 ---
 
 # Lectures conseillees

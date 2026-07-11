@@ -2,9 +2,14 @@
 id: poo.module-05.lesson
 title: Héritage, composition et polymorphisme
 tags:
-  - héritage
+  - definition
+  - a-retenir
+  - heritage
   - composition
   - polymorphisme
+summaryTags:
+  - definition
+  - a-retenir
 ---
 
 # Héritage, composition et polymorphisme

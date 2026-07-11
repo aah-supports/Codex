@@ -63,7 +63,7 @@ export function AppShell({ children }: AppShellProps) {
                     className="sub-nav-link"
                     activeProps={{ className: 'sub-nav-link active' }}
                   >
-                    QCM
+                    QCM rapide
                   </Link>
                 </div>
               ))}

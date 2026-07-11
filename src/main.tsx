@@ -5,6 +5,10 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { router } from './app/router/router'
 import './styles.css'
 
+if (!window.location.hash) {
+  window.location.hash = '/'
+}
+
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {

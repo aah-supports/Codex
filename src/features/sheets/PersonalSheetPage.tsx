@@ -1,6 +1,6 @@
 import { Link, useParams } from '@tanstack/react-router'
 import { useQuery } from '@tanstack/react-query'
-import ReactMarkdown from 'react-markdown'
+import { MarkdownRenderer } from '../../components/MarkdownRenderer'
 import { Card } from '../../components/ui/Card'
 import { getPersonalSheet } from '../../content/api'
 import { usePersonalSheetIndex } from './usePersonalSheets'
@@ -36,7 +36,7 @@ export function PersonalSheetPage() {
       <Card className="markdown-card">
         {content.isLoading ? <p>Chargement de la fiche...</p> : null}
         {content.error ? <p>Fiche indisponible.</p> : null}
-        {content.data ? <ReactMarkdown>{content.data.body}</ReactMarkdown> : null}
+        {content.data ? <MarkdownRenderer>{content.data.body}</MarkdownRenderer> : null}
       </Card>
     </div>
   )

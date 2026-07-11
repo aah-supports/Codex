@@ -42,11 +42,11 @@ L'application orchestre les cas d'utilisation : créer une réservation, annuler
 
 ## Infrastructure
 
-L'infrastructure contient les détails : basé de données, paiement externe, email.
+L'infrastructure contient les détails : base de données, paiement externe, email.
 
 ## Presentation
 
-La presentation adapte les entrees et sorties : API, contrôleur, interface.
+La présentation adapte les entrees et sorties : API, contrôleur, interface.
 
 ## Construire l'architecture progressivement
 
@@ -57,7 +57,7 @@ Ne pas commencer le projet avec tous les dossiers parfaits. La progression recom
 3. ajouter les cas d'utilisation ;
 4. introduire les ports nécessaires ;
 5. brancher l'infrastructure ;
-6. refactorer les frontieres quand la douleur apparait.
+6. refactorer les frontières quand la douleur apparaît.
 
 L'architecture est une consequence des responsabilités, pas un decor.
 
@@ -68,18 +68,18 @@ Une frontière se justifie quand deux parties changent pour des raisons différe
 Exemples :
 
 - les règles de réservation changent avec le métier ;
-- la basé de données change avec l'infrastructure ;
+- la base de données change avec l'infrastructure ;
 - l'API HTTP change avec la presentation ;
 - le prestataire de paiement change avec un contrat externe.
 
-Chaque frontière doit reduire le coût d'un changement probable.
+Chaque frontière doit réduire le coût d'un changement probable.
 
 ## Defense des choix
 
 En soutenance, il ne suffit pas de dire "j'ai utilisé Clean Architecture". Il faut expliquer :
 
 - quelle règle métier est protégée ;
-- quel detail technique est isole ;
+- quel détail technique est isolé ;
 - quel test prouve le comportement ;
 - quel compromis à été accepté.
 
@@ -87,7 +87,7 @@ En soutenance, il ne suffit pas de dire "j'ai utilisé Clean Architecture". Il f
 
 Le projet est fini si un autre développeur peut :
 
-- lire le domaine sans connaître la basé de données ;
+- lire le domaine sans connaître la base de données ;
 - comprendre les cas d'utilisation ;
 - lancer les tests ;
 - remplacer un adaptateur ;

@@ -15,7 +15,7 @@ L'héritage exprime une relation de spécialisation. Il ne doit pas servir uniqu
 
 À la fin du module, tu dois pouvoir :
 
-- reconnaitre une vraie relation "est un" ;
+- reconnaître une vraie relation "est un" ;
 - expliquer ce que `extends` implique ;
 - utiliser une interface pour obtenir du polymorphisme ;
 - remplacer une chaîne de conditions par des stratégies ;
@@ -86,7 +86,7 @@ Si une sous-classe doit dire "je ne supporte pas cette méthode", c'est un signa
 
 ## Composition et combinaison
 
-La composition permet de combiner des comportements sans enfermer le modèle dans une hierarchie rigide. Pour la tarification, on peut composer :
+La composition permet de combiner des comportements sans enfermer le modèle dans une hiérarchie rigide. Pour la tarification, on peut composer :
 
 - un tarif de basé ;
 - une reduction ;

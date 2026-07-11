@@ -11,7 +11,7 @@ tags:
 
 Un objet protège des invariants. Un invariant est une règle qui doit rester vraie pour que l'objet soit valide.
 
-Les contrats aident à raisonner :
+Les contrats aident à raisonnér :
 
 - precondition : ce qui doit être vrai avant l'appel ;
 - postcondition : ce qui doit être vrai après l'appel ;
@@ -19,7 +19,7 @@ Les contrats aident à raisonner :
 
 ## Erreur métier ou technique
 
-Une carte refusée, un siège déjà réserve et une basé de données indisponible ne sont pas le même type de problème.
+Une carte refusée, un siège déjà réservé et une base de données indisponible ne sont pas le même type de problème.
 
 ## Value Object
 
@@ -60,4 +60,4 @@ Nommer les exceptions métier aide à lire les cas d'utilisation et à afficher 
 
 ## Immutabilite
 
-Un value object doit souvent être immuable. Si un montant change, on créé un nouveau `Money`. Cela évite les modifications invisibles partagees entre plusieurs objets.
+Un value object doit souvent être immuable. Si un montant change, on crée un nouveau `Money`. Cela évite les modifications invisibles partagées entre plusieurs objets.

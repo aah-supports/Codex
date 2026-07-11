@@ -17,7 +17,7 @@ Implémenter au minimum :
 Pour chaque pattern utilisé, écrire :
 
 - le problème initial ;
-- la solution apportee ;
+- la solution apportée ;
 - le coût ajoute ;
 - pourquoi une solution plus simple ne suffit pas.
 

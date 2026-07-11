@@ -5,7 +5,7 @@
       "id": "poo",
       "title": "Programmation orientée objet",
       "description": "Parcours progressif basé sur le plan de cours POO et le projet fil rouge de réservation de cinéma.",
-      "version": "0.3.1",
+      "version": "0.3.2",
       "modules": [
         {
           "id": "poo.module-01",

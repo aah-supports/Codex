@@ -15,7 +15,7 @@ Tester un objet ne signifie pas vérifier chaque ligne interne. Un bon test vér
 
 Un test d'état vérifie le résultat après l'action. Un test d'interaction vérifie qu'une collaboration à eu lieu.
 
-Il faut éviter les tests trop lies à l'implémentation. Sinon, chaque refactoring casse les tests alors que le comportement n'a pas change.
+Il faut éviter les tests trop liés à l'implémentation. Sinon, chaque refactoring casse les tests alors que le comportement n'a pas changé.
 
 ## Doubles de test
 

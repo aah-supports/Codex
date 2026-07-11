@@ -13,6 +13,18 @@ La Programmation orientée objet ne consiste pas seulement à ranger du code dan
 
 Ce module suit une progression volontairement simple, inspirée des approches pratiques type MOOC d'Helsinki et Head First Java : partir d'un petit exemple, observer le problème, puis introduire le vocabulaire.
 
+## Comment lire ce cours
+
+Chaque notion doit être comprise dans cet ordre :
+
+1. le problème concret qu'elle résout ;
+2. sa définition ;
+3. un exemple court ;
+4. une erreur fréquente ;
+5. un exercice pour vérifier que tu sais l'utiliser.
+
+Si une notion semble abstraite, reviens toujours au projet cinéma. Par exemple, "responsabilité" signifie simplement : "quel objet doit prendre cette décision dans une réservation de cinéma ?"
+
 ## Objectifs
 
 À la fin du module, tu dois pouvoir :

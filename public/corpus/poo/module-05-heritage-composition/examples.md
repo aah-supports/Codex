@@ -31,7 +31,7 @@ public class StudentPricing implements PricingPolicy {
 }
 ```
 
-Le code client dépend du contrat `PricingPolicy`, pas des classes concrétés.
+Le code client dépend du contrat `PricingPolicy`, pas des classes concrètes.
 
 # Explosion par héritage
 
@@ -41,7 +41,7 @@ public class StudentPricing3DWednesday extends StudentPricing3D {
 }
 ```
 
-Cette hierarchie devient vite artificielle. Elle encode des combinaisons dans les noms de classes.
+Cette hiérarchie devient vite artificielle. Elle encode des combinaisons dans les noms de classes.
 
 # Composition de politiques
 

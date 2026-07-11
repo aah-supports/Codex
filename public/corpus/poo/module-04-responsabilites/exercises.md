@@ -38,7 +38,7 @@ Pour chaque responsabilité, choisir un proprietaire probable :
 - envoyer un email ;
 - sauvegarder une réservation ;
 - produire un numéro de billet ;
-- refusér une transition d'état invalide.
+- refuser une transition d'état invalide.
 
 ## Niveau 2
 

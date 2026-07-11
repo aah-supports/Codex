@@ -35,8 +35,8 @@ Coder `Room`, `Seat` et `Screening`. Ajouter une méthode qui refusé deux séan
 Classer les relations :
 
 - une salle contient des sièges ;
-- une séance concerne un film ;
-- une réservation concerne un client ;
+- une séance concerné un film ;
+- une réservation concerné un client ;
 - une réservation contient plusieurs sièges ;
 - un paiement confirme une réservation.
 
@@ -57,7 +57,7 @@ Discuter les cardinalités qui pourraient changer selon le métier.
 
 ## Niveau 3
 
-Coder une méthode `Room.hasSeat(SeatNumber seatNumber)` et l'utiliser dans `Reservation` pour refusér un siège qui n'appartient pas à la salle de la séance.
+Coder une méthode `Room.hasSeat(SeatNumber seatNumber)` et l'utiliser dans `Reservation` pour refuser un siège qui n'appartient pas à la salle de la séance.
 
 ## Critère de réussite
 

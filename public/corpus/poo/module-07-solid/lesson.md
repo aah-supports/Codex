@@ -34,7 +34,7 @@ Un client ne doit pas dépendre de méthodes dont il n'a pas besoin.
 
 Les règles de haut niveau ne doivent pas dépendre directement des détails techniques.
 
-Appliquer SOLID mécaniquement peut produire trop d'abstractions. Le but reste de reduire le coût du changement.
+Appliquer SOLID mécaniquement peut produire trop d'abstractions. Le but reste de réduire le coût du changement.
 
 ## Lecture progressive
 
@@ -46,7 +46,7 @@ Avant d'appliquer un principe, formuler la douleur :
 - "cette classe change pour trop de raisons" ;
 - "cette sous-classe ne respecte pas le comportement attendu" ;
 - "cette interface force des méthodes inutiles" ;
-- "le domaine dépend d'une basé de données".
+- "le domaine dépend d'une base de données".
 
 Le principe vient ensuite nommer le problème.
 
@@ -70,4 +70,4 @@ Si ces noms ne portent pas des responsabilités claires, l'abstraction est du br
 - OCP : quel changement futur est coûteux aujourd'hui ?
 - LSP : le code client peut-il remplacer la classe mère par la sous-classe ?
 - ISP : qui utilisé vraiment cette méthode ?
-- DIP : le code important dépend-il d'un detail instable ?
+- DIP : le code important dépend-il d'un détail instable ?

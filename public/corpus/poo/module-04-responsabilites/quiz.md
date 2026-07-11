@@ -14,7 +14,7 @@ Explanation: La cohésion baisse quand une classe rassemble des responsabilités
 Question: Information Expert aide à choisir...
 A. L'objet qui porte une responsabilité.
 B. La couleur du theme.
-C. La basé de données.
+C. La base de données.
 D. Le nom du package racine.
 Answer: L'objet qui porte une responsabilité.
 Explanation: Le principe invite à placer le comportement près de l'information utile.

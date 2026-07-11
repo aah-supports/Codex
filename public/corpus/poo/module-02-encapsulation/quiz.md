@@ -12,9 +12,9 @@ Answer: Parce qu'ils permettent de casser les invariants.
 Explanation: Un attribut public peut être modifie sans passer par les règles de validation de l'objet.
 ---
 Question: Que signifie un objet valide des sa construction ?
-A. Tous ses invariants essentiels sont déjà respectes.
+A. Tous ses invariants essentiels sont déjà respectés.
 B. Il possède au moins un setter.
 C. Il ne peut jamais changer.
 D. Il est forcément sérialisable.
-Answer: Tous ses invariants essentiels sont déjà respectes.
+Answer: Tous ses invariants essentiels sont déjà respectés.
 Explanation: Le constructeur empeche de créer un objet incohérent.

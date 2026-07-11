@@ -17,4 +17,4 @@ B. Pour supprimer les constructeurs.
 C. Pour rendre UML obligatoire.
 D. Pour empêcher les listes.
 Answer: Pour éviter que tout le modèle puisse tout modifier.
-Explanation: Moins un objet connait d'autres objets, moins les changements se propagent.
+Explanation: Moins un objet connaît d'autres objets, moins les changements se propagent.

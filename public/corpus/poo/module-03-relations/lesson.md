@@ -9,7 +9,7 @@ tags:
 
 # Relations entre objets
 
-Un programme objet n'est pas une collection de classes isolees. C'est un graphe d'objets qui collaborent.
+Un programme objet n'est pas une collection de classes isolées. C'est un graphe d'objets qui collaborent.
 
 Les relations principales sont :
 
@@ -22,14 +22,14 @@ Les relations principales sont :
 
 Avant d'ajouter un attribut, demander : "cet objet doit-il vraiment connaître cet autre objet ?"
 
-Dans le cinéma, une `Screening` concerne un `Movie` et une `Room`. Une `Room` compose ses `Seat`. Une `Reservation` associe un `Customer`, une `Screening` et des sièges.
+Dans le cinéma, une `Screening` concerné un `Movie` et une `Room`. Une `Room` compose ses `Seat`. Une `Reservation` associe un `Customer`, une `Screening` et des sièges.
 
 ## Multiplicites
 
 Les cardinalités forcent à clarifier le modèle :
 
 - une salle contient plusieurs sièges ;
-- une séance concerne exactement un film ;
+- une séance concerné exactement un film ;
 - une réservation contient au moins un siège ;
 - un client peut avoir plusieurs réservations.
 
@@ -52,7 +52,7 @@ Exemple inverse : un `Customer` existe sans `Reservation`. Une réservation refe
 
 Une relation bidirectionnelle semble pratique, mais elle augmente la complexité.
 
-Si `Room` connait toutes ses `Screening` et que chaque `Screening` connait sa `Room`, il faut maintenir les deux côtés cohérents. Ce n'est utile que si le domaine le demande vraiment.
+Si `Room` connaît toutes ses `Screening` et que chaque `Screening` connaît sa `Room`, il faut maintenir les deux côtés cohérents. Ce n'est utile que si le domaine le demande vraiment.
 
 ## UML utile, pas bureaucratique
 

@@ -15,31 +15,52 @@ L'encapsulation protège l'état interne d'un objet. Elle évite que n'importe q
 À la fin du module, tu dois pouvoir :
 
 - rendre un attribut privé quand il porte une règle ;
-- construire un objet valide des le depart ;
+- construire un objet valide dès le départ ;
 - distinguer getter utile et setter dangereux ;
 - placer les validations dans le bon objet ;
 - expliquer ce qu'est un invariant.
 
-Un objet doit idealement être valide des sa construction. Les invariants importants doivent être vérifies au plus près de l'objet concerne.
+Un objet doit idéalement être valide dès sa construction. Les invariants importants doivent être vérifiés au plus près de l'objet concerné.
 
 ## Invariant
 
-Un invariant est une règle qui doit toujours rester vraie.
+Un invariant est une règle qui doit toujours rester vraie pour qu'un objet reste cohérent.
+
+Autrement dit : si cette règle est fausse, l'objet ne devrait pas exister dans cet état.
 
 Exemples :
 
-- un film à une durée positive ;
+- un film a une durée positive ;
 - une salle contient au moins un siège ;
 - une réservation contient au moins un siège ;
 - une adresse email contient un format acceptable.
 
-Si l'invariant est disperse dans plusieurs services, il sera oublie. S'il est protège dans l'objet, le modèle devient plus robuste.
+## Pourquoi placer l'invariant dans l'objet ?
+
+Prenons la règle : "un film ne peut pas avoir une durée négative".
+
+Si cette règle est vérifiée uniquement dans un formulaire, elle peut être oubliée ailleurs : dans un import CSV, dans un test, dans une API, dans un script d'administration. Le programme peut alors créer un `Movie` invalide malgré la validation du formulaire.
+
+Si la règle est dans le constructeur de `Movie`, chaque création de film passe par le même garde-fou.
+
+```java
+public Movie(String title, int durationInMinutes) {
+    if (durationInMinutes <= 0) {
+        throw new IllegalArgumentException("Duration must be positive");
+    }
+
+    this.title = title;
+    this.durationInMinutes = durationInMinutes;
+}
+```
+
+Le modèle devient plus robuste parce qu'il ne dépend plus de la vigilance de tous les appelants. L'objet protège lui-même son état.
 
 ## Attention aux setters automatiques
 
-Ajouter un setter pour chaque attribut revient souvent à rendre l'objet modifiable depuis partout. Cela deplace les règles ailleurs et fragilise le modèle.
+Ajouter un setter pour chaque attribut revient souvent à rendre l'objet modifiable depuis partout. Cela déplace les règles ailleurs et fragilise le modèle.
 
-Un setter n'est pas interdit. Il doit correspondre à une vraie operation métier.
+Un setter n'est pas interdit. Il doit correspondre à une vraie opération métier.
 
 `setDuration(-10)` est faible. `rescheduleTo(newPeriod)` ou `renameTo(title)` peut être plus expressif si l'objet vérifie ses règles.
 
@@ -50,12 +71,12 @@ Commencer petit :
 1. créer la classe ;
 2. rendre les attributs privés ;
 3. ajouter le constructeur ;
-4. refusér les valeurs invalides ;
+4. refuser les valeurs invalides ;
 5. exposer seulement ce qui est nécessaire.
 
 ## Encapsulation et langage métier
 
-L'encapsulation ne sert pas seulement à cacher des attributs. Elle permet de donner un nom métier aux operations.
+L'encapsulation ne sert pas seulement à cacher des attributs. Elle permet de donner un nom métier aux opérations.
 
 Comparer :
 

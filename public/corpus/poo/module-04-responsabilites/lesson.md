@@ -13,6 +13,14 @@ Une bonne classe n'est pas une classe courte par principe. C'est une classe dont
 
 La cohésion mesure si les éléments d'une classe travaillent vers une même intention. Le couplage mesure à quel point une classe dépend des détails des autres.
 
+Ces deux mots sont abstraits, donc il faut les relier à une situation concrète.
+
+Une classe très cohésive ressemble à un outil spécialisé : tout ce qu'elle contient sert le même objectif. Par exemple, une classe `PricingPolicy` qui calcule uniquement un prix.
+
+Une classe très couplée connaît trop de détails des autres classes. Par exemple, une classe qui navigue dans `reservation.getScreening().getRoom().getName()` dépend de la structure interne de `Reservation`, `Screening` et `Room`.
+
+Le problème n'est pas esthétique. Plus une classe connaît de détails, plus elle risque de casser quand un détail change.
+
 ## Diagnostic simple
 
 Demander :
@@ -24,13 +32,15 @@ Demander :
 
 ## Information Expert
 
-Le principe GRASP Information Expert propose d'attribuer une responsabilité à l'objet qui possède l'information nécessaire pour la realiser.
+Le principe GRASP Information Expert propose d'attribuer une responsabilité à l'objet qui possède l'information nécessaire pour la réaliser.
 
-Ce n'est pas une loi mécanique. Il faut aussi regarder la cohésion, la testabilite et le niveau d'abstraction.
+Exemple : pour savoir si une réservation contient au moins cinq sièges, `Reservation` est un bon candidat, car elle possède déjà la liste des sièges.
 
-## Deplacer le comportement vers le bon objet
+Ce n'est pas une loi mécanique. Il faut aussi regarder la cohésion, la testabilité et le niveau d'abstraction.
 
-Une mauvaise conception apparait souvent ainsi :
+## Déplacer le comportement vers le bon objet
+
+Une mauvaise conception apparaît souvent ainsi :
 
 ```java
 if (reservation.getSeats().size() > 5) {
@@ -38,7 +48,7 @@ if (reservation.getSeats().size() > 5) {
 }
 ```
 
-La classe qui contient ce code connait la structure interne de `Reservation`. Une meilleure piste est de demander :
+La classe qui contient ce code connaît la structure interne de `Reservation`. Une meilleure piste est de demander :
 
 ```java
 if (reservation.isGroupBooking()) {
@@ -60,8 +70,14 @@ Un objet central qui sait tout faire devient vite impossible à maintenir. Dans 
 - génération de billet ;
 - remboursement.
 
-Le refactoring consiste à identifier les axes de changement, puis à distribuer les responsabilités.
+Ici, "axe de changement" signifie "raison probable pour laquelle le code devra évoluer". Le prix peut changer pour une raison commerciale. La persistance peut changer pour une raison technique. Les notifications peuvent changer pour une raison produit.
+
+Le refactoring consiste à identifier ces axes de changement, puis à distribuer les responsabilités.
 
 ## Cohésion avant abstraction
 
-Ne pas créer une interface uniquement parce qu'une classe existe. Chercher d'abord une responsabilité claire. Une abstraction faible rend le code plus difficile à lire.
+Ne pas créer une interface uniquement parce qu'une classe existe. Chercher d'abord une responsabilité claire.
+
+Une abstraction est une idée générale qui cache un détail. Par exemple, `PaymentGateway` cache le détail "Stripe", "PayPal" ou "faux paiement de test".
+
+Une abstraction faible est une abstraction qui ne cache rien d'utile. Si une interface n'a qu'une seule implémentation, aucun changement probable, et un nom flou, elle ajoute surtout du bruit.

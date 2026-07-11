@@ -12,7 +12,7 @@ Créer :
 - `SeatNumber` ;
 - `ScreeningPeriod`.
 
-Pour chacun, definir les invariants.
+Pour chacun, définir les invariants.
 
 # Exercice autonome
 
@@ -53,4 +53,4 @@ Modifier `Reservation` pour utiliser `Money` et `SeatNumber`. Rechercher les end
 
 ## Critère de réussite
 
-Un objet-valeur doit refusér une valeur invalide au moment de sa creation.
+Un objet-valeur doit refuser une valeur invalide au moment de sa création.

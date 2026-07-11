@@ -4,7 +4,7 @@ title: Design patterns utiles
 tags:
   - design-patterns
   - strategy
-  - adapter
+  - adaptér
   - observer
   - state
 ---
@@ -26,7 +26,7 @@ Le bon ordre pédagogique est :
 - Adapter : prestataire de paiement externe ;
 - Observer : notification après réservation ;
 - State : cycle de vie d'une réservation ;
-- Factory Method : creation contrôlée quand elle devient complexe ;
+- Factory Method : création contrôlée quand elle devient complexe ;
 - Command : action exécutable ou annulable.
 
 Éviter d'ajouter une factory, trois interfaces et quatre classes pour construire un objet simple.
@@ -35,7 +35,7 @@ Le bon ordre pédagogique est :
 
 Avant d'utiliser un pattern, poser trois questions :
 
-1. quel problème concret est en train d'apparaitre ?
+1. quel problème concret est en train d'apparaître ?
 2. quel changement futur devient difficile ?
 3. quel coût le pattern ajoute-t-il ?
 
@@ -43,17 +43,17 @@ Un pattern ajoute souvent des classes, des interfaces et une indirection. Ce co�
 
 ## Progression par problèmes
 
-Strategy apparait quand une condition choisit entre plusieurs algorithmes.
+Strategy apparaît quand une condition choisit entre plusieurs algorithmes.
 
-Adapter apparait quand une API externe ne correspond pas au contrat du domaine.
+Adapter apparaît quand une API externe ne correspond pas au contrat du domaine.
 
-Observer apparait quand plusieurs réactions doivent suivre un evenement sans coupler l'emetteur à tous les recepteurs.
+Observer apparaît quand plusieurs réactions doivent suivre un événement sans coupler l'émetteur à tous les récepteurs.
 
-State apparait quand les transitions d'un objet dépendent fortement de son état courant.
+State apparaît quand les transitions d'un objet dépendent fortement de son état courant.
 
 ## Anti-pattern pédagogique
 
-Ne pas demander de memoriser 23 patterns d'un coup. Un étudiant progresse quand il reconnait la tension :
+Ne pas demander de memoriser 23 patterns d'un coup. Un étudiant progresse quand il reconnaît la tension :
 
 - "cette condition grossit" ;
 - "cette API externe fuit partout" ;

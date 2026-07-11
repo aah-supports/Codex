@@ -37,7 +37,7 @@ Créer les ports :
 - `PaymentGateway` ;
 - `NotificationService`.
 
-Pour chaque port, écrire une phrase : "le domaine à besoin de..."
+Pour chaque port, écrire une phrase : "le domaine a besoin de..."
 
 ## Niveau 3
 

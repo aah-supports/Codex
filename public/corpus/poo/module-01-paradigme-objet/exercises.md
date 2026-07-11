@@ -16,7 +16,7 @@ title: Exercices
 
 Pour chaque objet, noter :
 
-- ce qu'il connait ;
+- ce qu'il connaît ;
 - ce qu'il fait ;
 - avec quels autres objets il collabore.
 

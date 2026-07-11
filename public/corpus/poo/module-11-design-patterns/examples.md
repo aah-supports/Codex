@@ -45,7 +45,7 @@ public class StripePaymentAdapter implements PaymentGateway {
 
 Le domaine dépend de `PaymentGateway`, pas de Stripe.
 
-# Observer pour les evenements
+# Observer pour les événements
 
 ```java
 public interface ReservationListener {

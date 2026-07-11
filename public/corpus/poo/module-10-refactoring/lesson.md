@@ -9,7 +9,7 @@ tags:
 
 # Refactoring d'un code existant
 
-Refactorer, ce n'est pas réécrire parce qu'on prefere un autre style. C'est ameliorer la structure interne sans changer le comportement observable.
+Refactorer, ce n'est pas réécrire parce qu'on préfère un autre style. C'est améliorer la structure interne sans changer le comportement observable.
 
 Le refactoring se fait par petites transformations :
 
@@ -22,7 +22,7 @@ Le refactoring se fait par petites transformations :
 
 ## Code smells
 
-Un code smell n'est pas une preuve de bug. C'est un signal qui merite une analyse.
+Un code smell n'est pas une preuve de bug. C'est un signal qui mérite une analyse.
 
 Exemples :
 
@@ -38,7 +38,7 @@ Les tests servent de filet de sécurité. Sans test, commencer par caractériser
 
 ## Stratégie en code existant
 
-Quand le code est déjà fragile, ne commence pas par "bien architecturer". Commence par reduire le risque.
+Quand le code est déjà fragile, ne commence pas par "bien architecturer". Commence par réduire le risque.
 
 1. comprendre le comportement actuel ;
 2. écrire un test de caracterisation ;

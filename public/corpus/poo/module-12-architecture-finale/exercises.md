@@ -65,14 +65,14 @@ And le paiement est enregistre
 And une notification est envoyee
 ```
 
-Identifier les objets et ports traverses.
+Identifier les objets et ports traversés.
 
 ## Niveau 4
 
 Preparer la soutenance :
 
-- une responsabilité bien placee ;
-- une responsabilité deplacee pendant le refactoring ;
+- une responsabilité bien placée ;
+- une responsabilité deplacée pendant le refactoring ;
 - un pattern utile ;
 - un pattern refusé ;
 - un compromis non resolu.

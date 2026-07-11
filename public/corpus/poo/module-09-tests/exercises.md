@@ -45,7 +45,7 @@ Scénarios :
 
 - paiement accepté : réservation sauvegardée ;
 - paiement refusé : réservation non sauvegardée ;
-- siège déjà réserve : exception métier.
+- siège déjà réservé : exception métier.
 
 ## Critère de réussite
 

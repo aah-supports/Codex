@@ -6,12 +6,12 @@ title: Exemples
 # Mauvais depart
 
 ```java
-double calculateAccountBalance(double balance, double amount, String operation) {
-    if (operation.equals("deposit")) {
+double calculateAccountBalance(double balance, double amount, String opération) {
+    if (opération.equals("deposit")) {
         return balance + amount;
     }
 
-    if (operation.equals("withdraw")) {
+    if (opération.equals("withdraw")) {
         return balance - amount;
     }
 
@@ -19,7 +19,7 @@ double calculateAccountBalance(double balance, double amount, String operation) 
 }
 ```
 
-Le code connait l'operation sous forme de chaîne et ne protège pas vraiment le compte.
+Le code connaît l'opération sous forme de chaîne et ne protège pas vraiment le compte.
 
 # Version objet
 
@@ -41,7 +41,7 @@ public class BankAccount {
 }
 ```
 
-La responsabilité se rapproche de l'objet concerne.
+La responsabilité se rapproche de l'objet concerné.
 
 # Exemple fil rouge : réservation de cinéma
 
@@ -83,6 +83,6 @@ public class Reservation {
 }
 ```
 
-La réservation porte dejà une information utile : le nombre de sièges. La tarification pourra ensuite collaborer avec elle.
+La réservation porte déjà une information utile : le nombre de sièges. La tarification pourra ensuite collaborer avec elle.
 
-Point pédagogique : ne cherche pas encore l'architecture parfaite. Le premier pas est de faire apparaitre les concepts du domaine.
+Point pédagogique : ne cherche pas encore l'architecture parfaite. Le premier pas est de faire apparaître les concepts du domaine.

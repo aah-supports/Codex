@@ -33,7 +33,7 @@ public class FakeReservationRepository implements ReservationRepository {
 }
 ```
 
-Le fake permet de tester un cas d'utilisation sans basé de données.
+Le fake permet de tester un cas d'utilisation sans base de données.
 
 # Test d'invariant
 

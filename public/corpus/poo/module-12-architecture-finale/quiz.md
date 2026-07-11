@@ -3,13 +3,13 @@ id: poo.module-12.quiz
 title: QCM
 ---
 
-Question: Dans une architecture séparée, la basé de données appartient plutôt a...
+Question: Dans une architecture séparée, la base de données appartient plutôt à...
 A. L'infrastructure.
 B. L'entite métier.
 C. L'objet-valeur.
 D. La classe mère.
 Answer: L'infrastructure.
-Explanation: La basé de données est un detail technique que le domaine ne doit pas connaître directement.
+Explanation: La base de données est un détail technique que le domaine ne doit pas connaître directement.
 ---
 Question: Le domaine doit contenir principalement...
 A. Les règles métier et invariants.

@@ -26,7 +26,7 @@ public class CreateReservationUseCase {
 ```text
 Décision: dépendance vers PaymentGateway et non StripeClient.
 Raison: le paiement externe est un détail instable.
-Conséquence: il faut écrire un adapter, mais les tests et le domaine restent simples.
+Conséquence: il faut écrire un adaptér, mais les tests et le domaine restent simples.
 ```
 
 # Package domaine

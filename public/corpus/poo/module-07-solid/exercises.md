@@ -21,7 +21,7 @@ Refactorer un exemple de tarification pour appliquer OCP sans ajouter d'abstract
 
 ## Niveau 1
 
-Pour chaque extrait, nommer le principe concerne et la douleur concrété :
+Pour chaque extrait, nommer le principe concerné et la douleur concrète :
 
 ```java
 public class ReservationService {
@@ -46,7 +46,7 @@ public class UseCase {
 
 ## Niveau 2
 
-Refactorer uniquement ce qui fait mal. Ne pas ajouter d'interface si une classe concrété suffit pour le moment.
+Refactorer uniquement ce qui fait mal. Ne pas ajouter d'interface si une classe concrète suffit pour le moment.
 
 ## Niveau 3
 

@@ -32,14 +32,14 @@ Après chaque etape, les tests doivent rester verts.
 Identifier le smell principal :
 
 - méthode de 80 lignes ;
-- classe qui connait SQL et SMTP ;
+- classe qui connaît SQL et SMTP ;
 - `String status` compare partout ;
 - `double amount` et `String currency` passes ensemble ;
 - cinq `if` pour les types de clients.
 
 ## Niveau 2
 
-Choisir le refactoring adapte :
+Choisir le refactoring adapté :
 
 - Extract Method ;
 - Extract Class ;
@@ -49,7 +49,7 @@ Choisir le refactoring adapte :
 
 ## Niveau 3
 
-Faire un plan de refactoring en 5 commits maximum. Chaque commit doit avoir un objectif verifiable.
+Faire un plan de refactoring en 5 commits maximum. Chaque commit doit avoir un objectif vérifiable.
 
 ## Critère de réussite
 

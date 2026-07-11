@@ -478,6 +478,48 @@ textarea {
   color: #f8fafc;
 }
 
+.text-copy-block,
+.copyable-list-item {
+  position: relative;
+  padding-right: 72px;
+}
+
+.text-copy-block .text-copy-button,
+.copyable-list-item .text-copy-button {
+  position: absolute;
+  top: 2px;
+  right: 0;
+  opacity: 0;
+}
+
+.copyable-list-item .text-copy-button {
+  top: 0;
+}
+
+.text-copy-block:hover .text-copy-button,
+.text-copy-block:focus-within .text-copy-button,
+.copyable-list-item:hover .text-copy-button,
+.copyable-list-item:focus-within .text-copy-button {
+  opacity: 1;
+}
+
+.text-copy-button {
+  min-height: 25px;
+  border: 1px solid #334155;
+  border-radius: 6px;
+  background: #0f172a;
+  color: #94a3b8;
+  cursor: pointer;
+  font-size: 0.73rem;
+  font-weight: 750;
+  padding: 3px 8px;
+}
+
+.text-copy-button:hover {
+  border-color: #60a5fa;
+  color: #f8fafc;
+}
+
 .markdown-card code {
   font-family: "SFMono-Regular", Consolas, monospace;
   font-size: 0.92rem;

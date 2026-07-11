@@ -110,7 +110,7 @@ function MarkdownState({
   return (
     <>
       <ContentTags tags={getFrontmatterTags(query.data)} />
-      <MarkdownRenderer>{query.data.body}</MarkdownRenderer>
+      <MarkdownRenderer copyCode copyText>{query.data.body}</MarkdownRenderer>
     </>
   )
 }

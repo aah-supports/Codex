@@ -1,0 +1,4 @@
+interface:
+  display_name: "Générer une correction"
+  short_description: "Rédiger des corrections pédagogiques de POO"
+  default_prompt: "Use $generer-correction to produce a clear POO correction with explanation, pitfalls, and corrected code or reasoning."

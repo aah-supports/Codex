@@ -1,0 +1,4 @@
+interface:
+  display_name: "Générer un exercice"
+  short_description: "Créer des exercices progressifs de POO"
+  default_prompt: "Use $generer-exercice to draft a progressive POO exercise in the corpus format, with guided steps and a clear success target."

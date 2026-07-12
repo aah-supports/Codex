@@ -1,0 +1,4 @@
+interface:
+  display_name: "Vérifier la cohérence"
+  short_description: "Contrôler la cohérence du corpus"
+  default_prompt: "Use $verifier-coherence to check a POO corpus for factual consistency, progression issues, duplicate notions, and mismatched references."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Adapter le niveau"
+  short_description: "Adapter la difficulté pédagogique"
+  default_prompt: "Use $adapter-niveau to rewrite a POO lesson, exercise, or QCM for a target level while preserving the same concept."

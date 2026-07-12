@@ -1,0 +1,4 @@
+interface:
+  display_name: "Générer un QCM"
+  short_description: "Créer des QCM pédagogiques de POO"
+  default_prompt: "Use $generer-qcm to generate a concise POO QCM in the corpus format, with one correct answer and short explanations."

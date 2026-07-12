@@ -57,6 +57,10 @@ Exemples :
 
 Nommer les exceptions métier aide à lire les cas d'utilisation et à afficher de meilleurs messages.
 
+La conception par contrat insiste sur un point simple mais exigeant : une abstraction est utile si elle rend la validité locale et vérifiable. Quand un `Money` valide sa devise et son arrondi à un seul endroit, le reste du programme n'a plus à répéter ces règles partout.
+
+Les objets-valeurs donnent aussi une forme précise à des valeurs qui seraient autrement ambiguës. Deux types techniquement identiques peuvent représenter des réalités métier très différentes. Le rôle du modèle est précisément de lever cette ambiguïté en nommant les concepts au lieu de laisser des primitives se mélanger.
+
 ## Immutabilité
 
 Un value object doit souvent être immuable. Si un montant change, on crée un nouveau `Money`. Cela évite les modifications invisibles partagées entre plusieurs objets.

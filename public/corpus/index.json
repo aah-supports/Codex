@@ -5,8 +5,31 @@
       "id": "poo",
       "title": "Programmation orientée objet",
       "description": "Parcours progressif basé sur le plan de cours POO et le projet fil rouge de réservation de cinéma.",
-      "version": "0.4.4",
+      "version": "0.4.5",
       "modules": [
+        {
+          "id": "poo.module-00",
+          "slug": "histoire-auteurs",
+          "title": "Histoire de la POO et auteurs clés",
+          "description": "Situer les fondations historiques, les acteurs clés et la bibliographie de départ.",
+          "level": "beginner",
+          "durationMinutes": 60,
+          "tags": [
+            "poo",
+            "histoire",
+            "bibliographie",
+            "auteurs"
+          ],
+          "paths": {
+            "lesson": "poo/module-00-histoire-auteurs/lesson.md",
+            "examples": "poo/module-00-histoire-auteurs/examples.md",
+            "exercises": "poo/module-00-histoire-auteurs/exercises.md",
+            "quiz": "poo/module-00-histoire-auteurs/quiz.md",
+            "readings": "poo/module-00-histoire-auteurs/readings.md",
+            "solutions": "poo/module-00-histoire-auteurs/solutions.md",
+            "lab": "poo/module-00-histoire-auteurs/lab.md"
+          }
+        },
         {
           "id": "poo.module-01",
           "slug": "paradigme-objet",

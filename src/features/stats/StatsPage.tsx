@@ -29,22 +29,28 @@ export function StatsPage() {
         </p>
       </header>
 
-      <div className="stats-grid">
+      <div className="page-summary">
         <Card>
-          <span className="metric">{attemptedModuleIds.size}/{modules.length}</span>
-          <p>Modules évalués en QCM</p>
+          <span className="page-summary-label">Modules évalués</span>
+          <span className="page-summary-value">
+            {attemptedModuleIds.size}/{modules.length}
+          </span>
+          <p className="page-summary-note">Modules avec au moins une tentative de QCM.</p>
         </Card>
         <Card>
-          <span className="metric">{formatPercent(averageScore)}</span>
-          <p>Meilleur score moyen QCM</p>
+          <span className="page-summary-label">Score moyen</span>
+          <span className="page-summary-value">{formatPercent(averageScore)}</span>
+          <p className="page-summary-note">Meilleur score observé par module déjà tenté.</p>
         </Card>
         <Card>
-          <span className="metric">{strongQuizModules}</span>
-          <p>QCM à 70 % ou plus</p>
+          <span className="page-summary-label">Modules solides</span>
+          <span className="page-summary-value">{strongQuizModules}</span>
+          <p className="page-summary-note">Modules à 70 % ou plus sur leur meilleur essai.</p>
         </Card>
         <Card>
-          <span className="metric">{attempts}</span>
-          <p>Tentatives QCM</p>
+          <span className="page-summary-label">Tentatives</span>
+          <span className="page-summary-value">{attempts}</span>
+          <p className="page-summary-note">Total des essais QCM enregistrés localement.</p>
         </Card>
       </div>
 

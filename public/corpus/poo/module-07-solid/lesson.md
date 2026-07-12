@@ -80,6 +80,10 @@ Le mauvais usage de SOLID produit souvent un code trop abstrait. On voit appara�
 
 Le bon usage consiste à partir d'un symptôme observable. Chaque nouveau tarif modifie une méthode centrale ? On discute OCP et polymorphisme. Une classe change pour le prix et pour l'email ? On discute SRP. Une sous-classe refuse une méthode héritée ? On discute LSP.
 
+En ce sens, SOLID n'est pas une morale du code propre. C'est une grammaire pour décrire les formes récurrentes de fragilité dans un modèle objet. On peut lire chaque principe comme une réponse à une tension précise : comment garder une unité de responsabilité, comment protéger ce qui est stable, comment éviter les contrats trompeurs, comment limiter les interfaces inutiles, comment séparer le métier des détails techniques.
+
+Cette grille de lecture rejoint l'approche de Meyer, Booch ou Larman : le but n'est pas d'additionner des techniques, mais de construire un système dont les dépendances reflètent les raisons de changer. SOLID devient alors un outil d'analyse, utile pour commenter un choix d'architecture et non pour le réduire à une check-list.
+
 ### Attendu académique
 
 - Nommer le principe utile.

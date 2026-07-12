@@ -36,6 +36,14 @@ Produire le même type de contenu que l’entrée :
 - éviter le jargon non expliqué ;
 - conserver le français et les accents du corpus.
 
+## Style de sortie
+
+- écrire de manière académique, claire et précise ;
+- éviter les salutations, les formules d’introduction et les émoticônes ;
+- rester référencé sur le corpus plutôt que générique ;
+- si du code est nécessaire, utiliser le langage adapté au corpus ;
+- terminer par une section de références du cours si elle est pertinente.
+
 ## Contrôle qualité
 
 - vérifier que le sens initial est conservé ;

@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "rootDirectory": "generated",
+  "buckets": [
+    {
+      "kind": "qcm",
+      "title": "QCM générés",
+      "directory": "generated/qcm",
+      "indexPath": "generated/qcm/index.json",
+      "tags": ["qcm", "generated", "quiz"]
+    },
+    {
+      "kind": "exercise",
+      "title": "Exercices générés",
+      "directory": "generated/exercises",
+      "indexPath": "generated/exercises/index.json",
+      "tags": ["exercise", "generated", "atelier"]
+    },
+    {
+      "kind": "correction",
+      "title": "Corrections générées",
+      "directory": "generated/corrections",
+      "indexPath": "generated/corrections/index.json",
+      "tags": ["correction", "generated", "solution"]
+    }
+  ]
+}

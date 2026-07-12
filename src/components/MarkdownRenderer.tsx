@@ -1,4 +1,4 @@
-import { useState, type ComponentPropsWithoutRef, type ReactNode } from 'react'
+import { Children, isValidElement, useState, type ComponentPropsWithoutRef, type ReactNode } from 'react'
 import ReactMarkdown from 'react-markdown'
 import hljs from 'highlight.js/lib/core'
 import java from 'highlight.js/lib/languages/java'
@@ -88,6 +88,18 @@ function CodePre({
   copyCode: boolean
 }) {
   const code = extractText(children)
+  const language = getLanguage(children)
+
+  if (language === 'uml' || language === 'mermaid') {
+    return (
+      <div className="diagram-frame">
+        <div className="diagram-label">Schéma UML</div>
+        <pre className="diagram-body" {...props}>
+          {children}
+        </pre>
+      </div>
+    )
+  }
 
   if (!copyCode) {
     return <pre {...props}>{children}</pre>
@@ -135,4 +147,14 @@ function CodeBlock({ className, children, ...props }: ComponentPropsWithoutRef<'
       {children}
     </code>
   )
+}
+
+function getLanguage(children: ReactNode) {
+  const child = Children.only(children)
+
+  if (isValidElement<{ className?: string }>(child)) {
+    return /language-(\w+)/.exec(child.props.className ?? '')?.[1]
+  }
+
+  return undefined
 }

@@ -1,7 +1,9 @@
 import { createHashHistory, createRootRoute, createRoute, createRouter, Outlet } from '@tanstack/react-router'
 import { AppShell } from '../shell/AppShell'
+import { ChatPage } from '../../features/chat/ChatPage'
 import { CorpusPage } from '../../features/corpus/CorpusPage'
 import { GlossaryPage } from '../../features/glossary/GlossaryPage'
+import { GenerationPage } from '../../features/generation/GenerationPage'
 import { LessonPage } from '../../features/lessons/LessonPage'
 import { PersonalSheetPage } from '../../features/sheets/PersonalSheetPage'
 import { PersonalSheetsPage } from '../../features/sheets/PersonalSheetsPage'
@@ -53,6 +55,18 @@ const glossaryRoute = createRoute({
   component: GlossaryPage,
 })
 
+const generationRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: '/generation',
+  component: GenerationPage,
+})
+
+const chatRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: '/chat',
+  component: ChatPage,
+})
+
 const personalSheetsRoute = createRoute({
   getParentRoute: () => rootRoute,
   path: '/fiches',
@@ -78,6 +92,8 @@ const routeTree = rootRoute.addChildren([
   quizRoute,
   statsRoute,
   glossaryRoute,
+  generationRoute,
+  chatRoute,
   personalSheetsRoute,
   personalSheetRoute,
   settingsRoute,

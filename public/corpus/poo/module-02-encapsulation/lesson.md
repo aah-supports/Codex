@@ -35,6 +35,25 @@ Exemples :
 - une réservation contient au moins un siège ;
 - une adresse email contient un format acceptable.
 
+## UML simple pour protéger une règle
+
+Quand une classe porte un invariant important, un petit diagramme aide à voir où vit la règle.
+
+```uml
+┌──────────────────────────┐
+│          Movie           │
+├──────────────────────────┤
+│ - title: String          │
+│ - durationInMinutes: int │
+├──────────────────────────┤
+│ + Movie(...)             │
+│ + renameTo(...)          │
+│ + rescheduleTo(...)      │
+└──────────────────────────┘
+```
+
+Ce schéma rappelle une idée simple : la durée ne doit pas être modifiée librement par n'importe quel service. Elle passe par une opération contrôlée par l'objet.
+
 ## Pourquoi placer l'invariant dans l'objet ?
 
 Prenons la règle : "un film ne peut pas avoir une durée négative".
@@ -118,7 +137,13 @@ Dans une perspective théorique, l'encapsulation sert aussi à maintenir une fro
 
 Cette différence améliore la robustesse. Quand l'état est modifié uniquement par des méthodes métier, l'objet peut vérifier ses règles à chaque changement. Le programme ne dépend plus de la vigilance permanente de tous les appelants. Il existe un point de contrôle local et identifiable.
 
+Bertrand Meyer formalise cette idée dans la conception par contrat : une classe doit non seulement cacher ses données, mais surtout garantir que ses promesses restent vraies. Cela change la manière de lire une API. Un constructeur, une méthode ou une exception ne sont pas de simples mécanismes techniques ; ils expriment des obligations entre le code appelant et l'objet appelé.
+
+Dans ce cadre, les invariants ne sont pas des validations accessoires. Ils sont la charpente logique du modèle. Si l'invariant vit ailleurs que dans l'objet, il dépend de l'attention humaine. S'il vit dans l'objet, le modèle gagne en localité, en lisibilité et en fiabilité.
+
 Il faut cependant éviter un contresens : encapsuler ne veut pas dire cacher tout sans réfléchir. Un getter peut être légitime s'il expose une information utile sans compromettre la cohérence. Un setter peut être légitime s'il correspond vraiment à une action métier contrôlée. Le problème n'est pas la présence d'une méthode publique, mais l'absence de règle derrière cette méthode.
+
+Steve McConnell insiste aussi sur un point important : la complexité ne disparaît pas parce qu'on la distribue. Encapsuler ne consiste pas à déplacer la complexité hors de vue, mais à la concentrer là où elle peut être contrôlée et testée.
 
 ### Raisonnement attendu
 

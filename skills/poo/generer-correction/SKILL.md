@@ -57,6 +57,14 @@ Suivre une structure proche du corpus :
 - éviter les explications vagues ;
 - garder un français précis, simple et accentué.
 
+## Style de sortie
+
+- écrire de manière académique, claire et précise ;
+- éviter les salutations, les formules d’introduction et les émoticônes ;
+- rester référencé sur le corpus plutôt que générique ;
+- si du code est nécessaire, utiliser le langage adapté au corpus ;
+- terminer par une section de références du cours si elle est pertinente et lisible.
+
 ## Contrôle qualité
 
 - vérifier que la correction répond bien à l’énoncé ;

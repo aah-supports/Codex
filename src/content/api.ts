@@ -1,9 +1,16 @@
 import { parseMarkdown, parseQuizMarkdown } from '../lib/markdown'
-import type { CorpusIndex, ParsedMarkdown, PersonalSheetIndex, QuizQuestion } from '../types/content'
+import type {
+  CorpusIndex,
+  GeneratedContentIndex,
+  ParsedMarkdown,
+  PersonalSheetIndex,
+  QuizQuestion,
+} from '../types/content'
 
 const publicBase = import.meta.env.BASE_URL
 const corpusBase = publicPath('corpus')
 const sheetsBase = publicPath('fiches')
+const generatedBase = publicPath('corpus/generated')
 
 function publicPath(path: string) {
   return `${publicBase}${path}`.replace(/\/{2,}/g, '/')
@@ -47,4 +54,8 @@ export function getPersonalSheetIndex() {
 
 export async function getPersonalSheet(path: string): Promise<ParsedMarkdown> {
   return parseMarkdown(await fetchText(`${sheetsBase}/${path}`))
+}
+
+export function getGeneratedContentIndex() {
+  return fetchJson<GeneratedContentIndex>(`${generatedBase}/index.json`)
 }

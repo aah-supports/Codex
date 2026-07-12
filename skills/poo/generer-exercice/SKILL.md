@@ -58,6 +58,14 @@ Suivre la structure du corpus :
 - garder des formulations claires et progressives ;
 - conserver les accents et le français du corpus.
 
+## Style de sortie
+
+- écrire de manière académique, claire et précise ;
+- éviter les salutations, les formules d’introduction et les émoticônes ;
+- rester référencé sur le corpus plutôt que générique ;
+- si du code est nécessaire, utiliser le langage adapté au corpus ;
+- terminer par une section de références du cours si elle est pertinente.
+
 ## Contrôle qualité
 
 - vérifier que l’exercice est faisable sans information externe ;

@@ -40,3 +40,11 @@ Si rien n’est problématique, le dire explicitement.
 - séparer les erreurs factuelles des choix pédagogiques ;
 - distinguer les blocages importants des améliorations mineures ;
 - rester bref, précis et actionnable.
+
+## Style de sortie
+
+- écrire de manière académique, claire et précise ;
+- éviter les salutations, les formules d’introduction et les émoticônes ;
+- rester référencé sur le corpus plutôt que générique ;
+- si du code est nécessaire, utiliser le langage adapté au corpus ;
+- terminer par une section de références du cours si elle est pertinente et lisible.

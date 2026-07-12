@@ -67,6 +67,30 @@ Pour ce cours, un bon diagramme montre :
 
 Il peut ignorer les getters, setters et détails techniques.
 
+```uml
+┌──────────────┐      1      ┌──────────────┐
+│    Movie     │─────────────│  Screening   │
+└──────────────┘             └──────────────┘
+                                   │ 1
+                                   │
+                                   │ *
+                             ┌──────────────┐
+                             │    Room      │
+                             └──────────────┘
+                                   │ 1
+                                   │
+                                   │ *
+                             ┌──────────────┐
+                             │    Seat      │
+                             └──────────────┘
+
+┌──────────────┐      1      ┌──────────────┐
+│   Customer   │─────────────│ Reservation  │
+└──────────────┘             └──────────────┘
+```
+
+La lecture attendue est simple : une salle possède ses sièges, une séance relie un film et une salle, une réservation référence un client et des sièges.
+
 ## Approfondissement théorique : relations, dépendances et coût du modèle
 
 Un programme objet n'est pas une collection de classes isolées. Les objets collaborent. Mais chaque relation a un coût : elle crée une dépendance de compréhension, de compilation, de test et d'évolution. Modéliser les relations est donc un acte de conception, pas un simple dessin UML.
@@ -78,6 +102,10 @@ La distinction est importante parce qu'elle influence le couplage. Si une classe
 Les multiplicités font partie du raisonnement. Dire qu'une séance possède plusieurs sièges, qu'une réservation concerne une séance, ou qu'un client peut avoir plusieurs réservations permet de clarifier les règles avant le code. Les multiplicités ne servent pas seulement aux diagrammes : elles révèlent souvent des invariants.
 
 Un bon modèle limite aussi la navigation. Si le code écrit reservation.getScreening().getRoom().getSeats(), il est peut-être en train de traverser trop de détails. Une méthode comme reservation.canReserve(seatRequest) ou screening.reserve(seats) peut mieux exprimer l'intention et protéger la structure interne.
+
+Les travaux de modélisation orientée objet insistent justement sur cette lecture relationnelle du domaine. Chez Larman, une bonne relation n'est pas choisie parce qu'elle "fonctionne", mais parce qu'elle raconte une vérité stable du problème. Une association, une composition ou une dépendance ne sont donc pas des décorations UML : elles sont une manière de dire ce que le système considère comme durable, ce qui est temporaire, et ce qui peut être remplacé.
+
+Cette lecture est utile pour éviter deux excès opposés. Le premier consiste à tout relier, comme si une application devait être entièrement navigable de partout. Le second consiste à tout couper, comme si les objets vivaient isolés. Le bon modèle garde juste assez de liens pour exprimer le domaine sans le figer.
 
 ### Points d'analyse
 

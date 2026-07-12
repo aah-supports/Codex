@@ -1,94 +1,61 @@
-import { ChangeEvent } from 'react'
+import { useEffect, useState } from 'react'
 import { Button } from '../../components/ui/Button'
 import { Card } from '../../components/ui/Card'
-import { getOrCreateAnonymousUserId } from '../../lib/id'
-import { nowIso } from '../../lib/date'
-import { useLearningStore } from '../../stores/learningStore'
-import type { AnonymousStatsExport, UserDataExport } from '../../types/content'
-import { useCorpusIndex } from '../corpus/useCorpus'
+import { getDefaultOllamaConfig, readOllamaConfig, saveOllamaConfig } from '../../lib/ollama'
 
 export function SettingsPage() {
-  const exportUserData = useLearningStore((state) => state.exportUserData)
-  const importUserData = useLearningStore((state) => state.importUserData)
-  const progress = useLearningStore((state) => state.progress)
-  const { data } = useCorpusIndex()
+  const [config, setConfig] = useState(getDefaultOllamaConfig())
 
-  function download(filename: string, payload: unknown) {
-    const blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' })
-    const url = URL.createObjectURL(blob)
-    const link = document.createElement('a')
-    link.href = url
-    link.download = filename
-    link.click()
-    URL.revokeObjectURL(url)
-  }
+  useEffect(() => {
+    setConfig(readOllamaConfig())
+  }, [])
 
-  function exportFullBackup() {
-    download(`poo-learning-backup-${new Date().toISOString().slice(0, 10)}.json`, exportUserData())
-  }
-
-  function exportAnonymousStats() {
-    const corpora: AnonymousStatsExport['corpora'] = {}
-
-    for (const corpus of data?.corpora ?? []) {
-      const corpusProgress = corpus.modules.map((module) => progress[module.id]).filter(Boolean)
-      const completedModules = corpusProgress.filter((entry) => entry.bestQuizScore >= 70).length
-      const scored = corpusProgress.filter((entry) => entry.quizAttempts > 0)
-      const averageScore =
-        scored.length === 0 ? 0 : scored.reduce((total, entry) => total + entry.bestQuizScore, 0) / scored.length
-
-      corpora[corpus.id] = {
-        completedModules,
-        averageScore: Math.round(averageScore),
-        quizAttempts: corpusProgress.reduce((total, entry) => total + entry.quizAttempts, 0),
-        touchedModuleIds: corpusProgress.map((entry) => entry.moduleId),
-      }
-    }
-
-    download('stats.anonymous.json', {
-      schemaVersion: 1,
-      anonymousUserId: getOrCreateAnonymousUserId(),
-      generatedAt: nowIso(),
-      corpora,
-    } satisfies AnonymousStatsExport)
-  }
-
-  async function importBackup(event: ChangeEvent<HTMLInputElement>) {
-    const file = event.target.files?.[0]
-
-    if (!file) {
-      return
-    }
-
-    const text = await file.text()
-    await importUserData(JSON.parse(text) as UserDataExport)
+  function saveConfig() {
+    saveOllamaConfig(config)
   }
 
   return (
     <div className="page-stack">
       <header className="page-header">
-        <p className="eyebrow">Sauvegarde</p>
-        <h2>Exporter, importer, partager</h2>
-        <p>Le backup complet est privé. Les stats anonymisées peuvent être poussées sur GitHub si tu le choisis.</p>
+        <p className="eyebrow">Paramètres</p>
+        <h2>Configuration locale</h2>
+        <p>Le modèle Ollama est configuré ici. Le reste est laissé au local et aux fichiers du corpus.</p>
       </header>
 
       <div className="settings-grid">
-        <Card>
-          <h3>Backup complet</h3>
-          <p>Contient auto-évaluations, scores et tentatives. À garder privé.</p>
-          <Button onClick={exportFullBackup}>Exporter mes données</Button>
+        <Card className="settings-panel">
+          <h3>Ollama local</h3>
+          <p>Le modèle par défaut reste <strong>gemma4:e4b-mlx</strong>.</p>
+          <label>
+            Modèle
+            <input
+              value={config.model}
+              onChange={(event) => setConfig((state) => ({ ...state, model: event.target.value }))}
+              placeholder="gemma4:e4b-mlx"
+            />
+          </label>
+          <Button onClick={saveConfig}>Enregistrer la config</Button>
         </Card>
-        <Card>
-          <h3>Stats anonymisées</h3>
-          <p>Contient uniquement des scores agrégés et des ids de modules.</p>
-          <Button onClick={exportAnonymousStats} variant="secondary">
-            Exporter pour GitHub
-          </Button>
-        </Card>
-        <Card>
-          <h3>Restaurer</h3>
-          <p>Recharge un backup JSON complet dans IndexedDB.</p>
-          <input type="file" accept="application/json" onChange={(event) => void importBackup(event)} />
+
+        <Card className="settings-panel">
+          <h3>Installation locale pour les étudiants</h3>
+          <p>Le principe est simple: l’application React tourne dans le navigateur, et Ollama tourne sur la machine locale.</p>
+          <ul className="settings-list">
+            <li>Installer Ollama sur la machine de l’étudiant.</li>
+            <li>Lancer le serveur local avec <code>ollama serve</code>.</li>
+            <li>Télécharger le modèle avec <code>ollama pull gemma4:e4b-mlx</code>.</li>
+            <li>Garder l’application et Ollama sur la même machine, sans service distant.</li>
+          </ul>
+          <p>
+            Contraintes matérielles: sur une machine modeste, prévoir au minimum 8 Go de RAM, idéalement 16 Go pour
+            plus de confort. En CPU seul, la génération sera plus lente; il faut donc privilégier des prompts courts et
+            des corpus ciblés. Si la machine est trop juste, utiliser un modèle plus léger ou désactiver les usages
+            lourds de génération.
+          </p>
+          <p>
+            Côté usage, on évite d’ouvrir trop d’onglets lourds pendant la génération et on garde les corpus
+            raisonnables pour ne pas surcharger la mémoire.
+          </p>
         </Card>
       </div>
     </div>

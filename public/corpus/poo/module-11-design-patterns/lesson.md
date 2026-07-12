@@ -69,6 +69,10 @@ Mais un pattern a un coût. Il ajoute des types, des indirections et parfois de 
 
 Un pattern doit rester subordonné au domaine. Les noms des classes doivent continuer à parler de réservation, prix, paiement ou notification. Si les noms techniques écrasent le vocabulaire métier, le pattern devient un obstacle.
 
+La littérature classique sur les patterns met l'accent sur leur nature relationnelle : un pattern n'est pas une recette isolée, mais une réponse à une tension récurrente dans un contexte donné. C'est pour cela qu'on les étudie avec le problème, les forces en présence, la solution et les conséquences. Cette lecture évite de réduire les patterns à une simple liste de noms à mémoriser.
+
+Elle explique aussi pourquoi certains ouvrages insistent davantage sur l'intuition du problème que sur la structure finale. La vraie compétence n'est pas de réciter "Strategy", "Adapter" ou "State", mais de reconnaître à quel moment la variation, la frontière technique ou le cycle de vie justifie leur usage.
+
 ### Analyse attendue
 
 - Quel problème récurrent est présent ?

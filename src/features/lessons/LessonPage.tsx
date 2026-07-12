@@ -50,28 +50,48 @@ export function LessonPage() {
   }
 
   return (
-    <div className="page-stack">
+    <div className="page-stack lesson-shell">
       <header className="page-header">
         <p className="eyebrow">{corpus?.title}</p>
         <h2>{module.title}</h2>
         <p>{module.description}</p>
+        <div className="tag-row">
+          {module.tags.map((tag) => (
+            <Badge key={tag}>{tag}</Badge>
+          ))}
+        </div>
       </header>
 
       <div className="lesson-layout">
-        <Card className="markdown-card">
-          <h3>Leçon</h3>
+        <Card className="markdown-card" id="chapitre-lecon">
+          <div className="section-heading">
+            <div className="lesson-section-title">
+              <p className="eyebrow">Chapitre 1</p>
+              <h3>Leçon</h3>
+            </div>
+          </div>
           <MarkdownState query={lesson} />
         </Card>
-        <Card className="markdown-card">
-          <h3>Exemples</h3>
+        <Card className="markdown-card" id="chapitre-exemples">
+          <div className="section-heading">
+            <div className="lesson-section-title">
+              <p className="eyebrow">Chapitre 2</p>
+              <h3>Exemples</h3>
+            </div>
+          </div>
           <MarkdownState query={examples} />
         </Card>
-        <Card className="markdown-card">
-          <h3>Exercices</h3>
+        <Card className="markdown-card" id="chapitre-exercices">
+          <div className="section-heading">
+            <div className="lesson-section-title">
+              <p className="eyebrow">Chapitre 3</p>
+              <h3>Exercices</h3>
+            </div>
+          </div>
           <MarkdownState query={exercises} />
         </Card>
         {module.paths.solutions ? (
-          <Card className="markdown-card solution-card">
+          <Card className="markdown-card solution-card" id="chapitre-corrections">
             <div className="solution-heading">
               <p className="eyebrow">Après l’exercice</p>
               <h3>Corrections guidées</h3>
@@ -80,13 +100,23 @@ export function LessonPage() {
           </Card>
         ) : null}
         {module.paths.lab ? (
-          <Card className="markdown-card">
-            <h3>Atelier guidé</h3>
+          <Card className="markdown-card" id="chapitre-atelier">
+            <div className="section-heading">
+              <div className="lesson-section-title">
+                <p className="eyebrow">Chapitre 4</p>
+                <h3>Atelier guidé</h3>
+              </div>
+            </div>
             <MarkdownState query={lab} />
           </Card>
         ) : null}
-        <Card className="markdown-card">
-          <h3>Lectures</h3>
+        <Card className="markdown-card" id="chapitre-lectures">
+          <div className="section-heading">
+            <div className="lesson-section-title">
+              <p className="eyebrow">Lecture</p>
+              <h3>Lectures</h3>
+            </div>
+          </div>
           <MarkdownState query={readings} />
         </Card>
       </div>

@@ -16,7 +16,7 @@ export function CorpusPage() {
     return <p>Impossible de charger le corpus.</p>
   }
 
-  return (
+    return (
     <div className="page-stack">
       <header className="page-header">
         <p className="eyebrow">Apprentissage progressif</p>
@@ -26,6 +26,26 @@ export function CorpusPage() {
           être ajoutés sans changer le socle de l’application.
         </p>
       </header>
+
+      <div className="page-summary">
+        <Card>
+          <span className="page-summary-label">Corpus disponibles</span>
+          <span className="page-summary-value">{data.corpora.length}</span>
+          <p className="page-summary-note">Le contenu est chargé depuis les corpus Markdown du dépôt.</p>
+        </Card>
+        <Card>
+          <span className="page-summary-label">Modules total</span>
+          <span className="page-summary-value">
+            {data.corpora.reduce((total, corpus) => total + corpus.modules.length, 0)}
+          </span>
+          <p className="page-summary-note">Chaque module regroupe leçon, exemples, exercices et lectures.</p>
+        </Card>
+        <Card>
+          <span className="page-summary-label">Suivi local</span>
+          <span className="page-summary-value">IndexedDB</span>
+          <p className="page-summary-note">Les scores, la progression et l’auto-évaluation restent sur la machine.</p>
+        </Card>
+      </div>
 
       {data.corpora.map((corpus) => {
         const attemptedModules = corpus.modules.filter((module) => (progress[module.id]?.quizAttempts ?? 0) > 0).length
@@ -54,6 +74,10 @@ export function CorpusPage() {
                       <Badge>{module.durationMinutes} min</Badge>
                     </div>
                     <p>{module.description}</p>
+                    <p className="muted">
+                      {moduleProgress?.bestQuizScore ?? 0} % au meilleur QCM · {moduleProgress?.quizAttempts ?? 0}{' '}
+                      tentative(s) · progression manuelle à ajuster dans Stats
+                    </p>
                     <div className="tag-row">
                       {module.tags.map((tag) => (
                         <Badge key={tag}>{tag}</Badge>
@@ -67,10 +91,6 @@ export function CorpusPage() {
                         QCM
                       </Link>
                     </div>
-                    <p className="muted">
-                      Score QCM: {moduleProgress?.bestQuizScore ?? 0} % · Tentatives:{' '}
-                      {moduleProgress?.quizAttempts ?? 0}
-                    </p>
                   </Card>
                 )
               })}

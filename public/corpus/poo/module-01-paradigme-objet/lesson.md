@@ -10,6 +10,8 @@ tags:
 
 La Programmation orientée objet ne consiste pas seulement à ranger du code dans des classes. Le point central est de répartir correctement les responsabilités.
 
+Après le chapitre d'ouverture sur l'histoire et les auteurs, ce module entre dans le vocabulaire de base du modèle objet.
+
 Ce module suit une progression volontairement simple, inspirée des approches pratiques type MOOC d'Helsinki et Head First Java : partir d'un petit exemple, observer le problème, puis introduire le vocabulaire.
 
 ## Comment lire ce cours
@@ -122,6 +124,10 @@ Cette différence modifie le raisonnement. Au lieu de demander où stocker une d
 Le vocabulaire objet permet donc de construire un modèle. Un modèle est une simplification volontaire du réel. Il ne représente pas tout. Il garde seulement ce qui sert au problème traité. Dans une application de cinéma, le modèle ne cherche pas à décrire toute l'industrie du cinéma. Il cherche à représenter correctement les films, les séances, les places, les réservations, les prix et les paiements nécessaires au scénario étudié.
 
 La progression pédagogique consiste à passer d'un code qui fonctionne à un code qui explique. Un code qui fonctionne peut contenir une grande fonction avec beaucoup de conditions. Un code qui explique donne des noms aux décisions importantes. C'est ce qui rend la POO utile dans un contexte universitaire : elle oblige à argumenter la répartition des responsabilités.
+
+Dans la littérature fondatrice, cette idée revient souvent sous des formes différentes. Alan Kay insiste sur les objets comme unités de communication plutôt que comme simples paquets de données. Grady Booch, lui, montre que l'analyse orientée objet consiste à repérer des objets, leurs responsabilités et leurs collaborations. La conséquence est importante : apprendre la POO, ce n'est pas accumuler des mots-clés, c'est apprendre à décrire un système avec des frontières conceptuelles stables.
+
+Cette exigence explique pourquoi le cours commence par le vocabulaire du modèle. Tant qu'on ne distingue pas clairement objet, classe, instance, état et responsabilité, on mélange facilement les niveaux de lecture. Or un bon modèle objet repose précisément sur cette séparation.
 
 ### Questions de maîtrise
 

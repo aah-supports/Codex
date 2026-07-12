@@ -50,6 +50,14 @@ Explanation: ...
 - ne pas inventer de notion hors corpus ;
 - varier les formulations sans changer le fond.
 
+## Style de sortie
+
+- écrire de manière académique, claire et précise ;
+- éviter les salutations, les formules d’introduction et les émoticônes ;
+- rester référencé sur le corpus plutôt que générique ;
+- si du code est nécessaire, utiliser le langage adapté au corpus ;
+- terminer par une section de références du cours si elle est pertinente.
+
 ## Contrôle qualité
 
 - vérifier que `Answer` correspond exactement à une proposition ;

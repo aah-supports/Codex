@@ -1,6 +1,6 @@
 ---
 name: build-poo-learning-app
-description: Build or extend a downloadable offline-first learning application for object-oriented programming using React, TypeScript, TanStack Router, TanStack Query, Zustand, markdown knowledge corpus files, progressive lessons, examples, exercises, QCM/quizzes, stats, corpus tags, and optional local small-model exercise generation. Use when creating, improving, or maintaining the POO learning app based on POO/plan.md or any future course corpus.
+description: Build or extend a downloadable offline-first learning application for object-oriented programming using React, TypeScript, TanStack Router, TanStack Query, Zustand, markdown knowledge corpus files, progressive lessons, examples, exercises, QCM/quizzes, stats, corpus tags, an opening historical/bibliographic chapter, and optional local small-model exercise generation. Use when creating, improving, or maintaining the POO learning app based on POO/plan.md or any future course corpus.
 ---
 
 # Build POO Learning App
@@ -116,6 +116,7 @@ Créer un index central qui décrit les corpus disponibles, leur ordre, leurs mo
 
 Suivre la progression de `plan.md` :
 
+0. ouverture historique et bibliographique : auteurs clés, idées fondatrices, influences pédagogiques ;
 1. paradigme objet ;
 2. classes, objets et encapsulation ;
 3. relations entre objets ;
@@ -142,6 +143,17 @@ Pour chaque module, produire au minimum :
 - des lectures complémentaires.
 
 Utiliser les citations et images mentales comme accroches pédagogiques, mais ne pas les transformer en gimmick. Pour l'héritage et `extends`, intégrer l'idée célèbre : "la forêt, le gorille et la banane" pour montrer le risque d'hériter de plus que ce dont on a besoin. L'utiliser dans le module héritage/composition pour expliquer pourquoi la composition est souvent préférable à un héritage fragile.
+
+Pour le module d'ouverture, présenter brièvement les acteurs qui structurent le cours :
+
+- Ole-Johan Dahl et Kristen Nygaard : Simula, simulation, classes et objets ;
+- Alan Kay : objets comme unités de messages et de collaboration ;
+- Grady Booch : analyse et conception orientées objet ;
+- Bertrand Meyer : encapsulation, invariants, conception par contrat ;
+- Rebecca Wirfs-Brock et Alan McKean : rôles, responsabilités et collaborations ;
+- Craig Larman : UML, GRASP, analyse et conception progressives ;
+- Sandi Metz et Joshua Bloch : composition, dépendances et pratiques robustes ;
+- Kathy Sierra et Bert Bates, ainsi que le MOOC d'Helsinki : progression pédagogique, lisibilité et apprentissage par petits pas.
 
 ## Lectures web
 
@@ -249,6 +261,18 @@ Avant de terminer une implémentation :
 - vérifier le comportement hors ligne si une PWA ou un bundle statique est prévu ;
 - vérifier que le corpus peut être enrichi sans modifier les composants React ;
 - ajouter des tests ciblés sur parsing de corpus, calcul de progression et scoring de QCM.
+
+## Bilan sur le contenu
+
+Quand le corpus POO est enrichi, garder le même niveau d'exigence sur le fond :
+
+- commencer par l'histoire du champ et les auteurs qui ont façonné ses concepts ;
+- relier chaque notion à une définition précise et à une difficulté réelle ;
+- développer davantage les distinctions conceptuelles au lieu d'empiler des résumés ;
+- citer la littérature structurante quand une idée vient d'un auteur identifiable ;
+- insérer des diagrammes UML simples seulement lorsqu'ils clarifient le modèle ;
+- garder des exemples concrets, des exercices et des QCM alignés sur la progression ;
+- éviter les formulations trop rapides, les concepts non explicités et les passages purement décoratifs.
 
 ## Principes de décision
 

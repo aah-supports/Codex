@@ -8,14 +8,6 @@ type AppShellProps = {
   children: React.ReactNode
 }
 
-const navItems = [
-  { to: '/corpus', label: 'Parcours' },
-  { to: '/stats', label: 'Progression' },
-  { to: '/glossary', label: 'Glossaire' },
-  { to: '/fiches', label: 'Fiches perso' },
-  { to: '/settings', label: 'Sauvegarde' },
-] as const
-
 export function AppShell({ children }: AppShellProps) {
   const hydrated = useLearningStore((state) => state.hydrated)
   const hydrate = useLearningStore((state) => state.hydrate)
@@ -40,14 +32,6 @@ export function AppShell({ children }: AppShellProps) {
           <strong>{data?.corpora[0]?.version ?? '0.1.0'}</strong>
         </div>
         <nav className="main-nav doc-nav" aria-label="Navigation principale">
-          <NavSection title="Plateforme">
-            {navItems.map((item) => (
-              <Link key={item.to} to={item.to} className="nav-link" activeProps={{ className: 'nav-link active' }}>
-                {item.label}
-              </Link>
-            ))}
-          </NavSection>
-
           <NavSection title="Cours">
             {data?.corpora.map((corpus) => (
               <details key={corpus.id} className="nav-disclosure" open>
@@ -103,7 +87,38 @@ export function AppShell({ children }: AppShellProps) {
           ) : null}
         </nav>
       </aside>
-      <main className="content-area">{children}</main>
+      <div className="workspace">
+        <header className="topbar">
+          <nav className="topbar-nav" aria-label="Navigation rapide">
+            <Link to="/generation" className="topbar-link" activeProps={{ className: 'topbar-link active' }}>
+              <span className="topbar-shortcut">[G]</span> GÉN
+            </Link>
+            <Link to="/stats" className="topbar-link" activeProps={{ className: 'topbar-link active' }}>
+              <span className="topbar-shortcut">[S]</span> STATS
+            </Link>
+            <Link to="/glossary" className="topbar-link" activeProps={{ className: 'topbar-link active' }}>
+              <span className="topbar-shortcut">[R]</span> SEARCH
+            </Link>
+            <Link to="/fiches" className="topbar-link" activeProps={{ className: 'topbar-link active' }}>
+              <span className="topbar-shortcut">[F]</span> FICHES PERSO
+            </Link>
+            <Link to="/settings" className="topbar-link" activeProps={{ className: 'topbar-link active' }}>
+              <span className="topbar-shortcut">[P]</span> PARAM
+            </Link>
+            <Link to="/chat" className="topbar-link topbar-gemma" activeProps={{ className: 'topbar-link topbar-gemma active' }}>
+              <span className="gemma-mark" aria-hidden="true">
+                G4
+              </span>
+              <span className="topbar-shortcut">[C]</span> CHAT
+            </Link>
+          </nav>
+          <div className="topbar-meta">
+            <span>Local only</span>
+            <strong>Ollama gemma4:e4b-mlx</strong>
+          </div>
+        </header>
+        <main className="content-area">{children}</main>
+      </div>
     </div>
   )
 }

@@ -1,5 +1,6 @@
 import { create } from 'zustand'
 import { nowIso } from '../lib/date'
+import { readGeneratedDrafts, replaceGeneratedDrafts } from '../lib/generatedDrafts'
 import { readAllProgress, replaceUserData, saveProgress } from './userDb'
 import type { ModuleProgress, UserDataExport } from '../types/content'
 
@@ -89,6 +90,7 @@ export const useLearningStore = create<LearningState>((set, get) => ({
       schemaVersion: 1,
       exportedAt: nowIso(),
       progress: state.progress,
+      generatedDrafts: Object.fromEntries(readGeneratedDrafts().map((draft) => [draft.id, draft])),
     }
   },
 
@@ -96,6 +98,7 @@ export const useLearningStore = create<LearningState>((set, get) => ({
     const progress = Object.values(data.progress).map(normalizeProgress)
     const nextProgress = Object.fromEntries(progress.map((entry) => [entry.moduleId, entry]))
     await replaceUserData(progress)
+    replaceGeneratedDrafts(Object.values(data.generatedDrafts ?? {}))
     set({ progress: nextProgress })
   },
 }))

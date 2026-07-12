@@ -49,6 +49,28 @@ public class DiscountedPricing implements PricingPolicy {
 }
 ```
 
+```uml
+┌─────────────────────┐
+│   PricingPolicy      │
+├─────────────────────┤
+│ + calculatePrice()   │
+└─────────────────────┘
+        ▲       ▲
+        │       │
+┌──────────────┐ ┌──────────────┐
+│ StandardPricing│ │ StudentPricing│
+└──────────────┘ └──────────────┘
+
+┌─────────────────────┐
+│ DiscountedPricing   │
+├─────────────────────┤
+│ - basePricing       │───> PricingPolicy
+│ - discount          │
+└─────────────────────┘
+```
+
+Ce schéma montre la différence entre spécialiser une famille de comportements et assembler un comportement avec un autre. La composition reste plus souple quand la variation porte sur un calcul.
+
 ## Polymorphisme
 
 Le polymorphisme permet d'utiliser plusieurs implémentations derrière un même contrat.
@@ -93,6 +115,10 @@ La composition permet de combiner des comportements sans enfermer le modèle dan
 - un code promotionnel.
 
 Cette approche évite une explosion de classes comme `Student3DWednesdayPromotionPricing`.
+
+Joshua Bloch résume bien le sujet : la composition est souvent plus sûre que l'héritage, parce qu'elle réduit la surface des surprises. Sandi Metz pousse la même logique plus loin : le code lisible n'est pas celui qui réutilise le plus, mais celui qui exprime clairement qui dépend de quoi. Autrement dit, l'héritage n'est pas condamné, mais il doit être justifié par une substitution réelle, pas par un simple confort de réutilisation.
+
+Dans un cours universitaire, cette distinction est essentielle. Un étudiant peut écrire `extends` très vite ; il est beaucoup plus difficile d'expliquer pourquoi cette hiérarchie reste saine lorsque les règles métier changent. C'est exactement là que la composition devient intellectuellement plus robuste : elle fait apparaître les variations comme des collaborations, pas comme des branches de plus en plus fragiles.
 
 ## Approfondissement théorique : substitution, polymorphisme et réutilisation
 

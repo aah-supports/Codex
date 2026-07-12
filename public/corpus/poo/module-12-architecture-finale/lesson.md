@@ -47,6 +47,27 @@ L'infrastructure contient les détails : base de données, paiement externe, ema
 
 La présentation adapte les entrees et sorties : API, contrôleur, interface.
 
+```uml
+┌──────────────────────┐
+│       domain         │
+│  model / pricing     │
+└──────────────────────┘
+           ▲
+           │ dépendance autorisée
+┌──────────────────────┐
+│    application       │
+│  use cases / ports   │
+└──────────────────────┘
+           ▲
+           │
+┌──────────────────────┐      ┌──────────────────────┐
+│   infrastructure    │──────▶│    presentation      │
+│ db / payment / mail │      │   http / ui / api    │
+└──────────────────────┘      └──────────────────────┘
+```
+
+Le schéma reste volontairement simple : le domaine au centre, l'application qui orchestre, et les détails techniques autour.
+
 ## Construire l'architecture progressivement
 
 Ne pas commencer le projet avec tous les dossiers parfaits. La progression recommandee :
@@ -72,6 +93,10 @@ Exemples :
 - le prestataire de paiement change avec un contrat externe.
 
 Chaque frontière doit réduire le coût d'un changement probable.
+
+Cette logique rejoint fortement l'approche DDD et Clean Architecture : on organise le code autour des raisons de changer, pas autour des outils. Le domaine conserve son vocabulaire propre, l'application orchestre les cas d'utilisation, et l'infrastructure reste remplaçable. L'intérêt intellectuel de cette séparation n'est pas esthétique. Il est de rendre visibles les dépendances de sens.
+
+En pratique, cette manière de construire le système oblige à poser de vraies questions : quelle règle métier doit rester stable, quel détail technique est provisoire, et quel compromis vaut la peine d'être accepté maintenant ? C'est ce niveau d'argumentation qu'on attend à la fin du parcours.
 
 ## Defense des choix
 

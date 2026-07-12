@@ -1,5 +1,6 @@
 export type CorpusId = string
 export type ModuleId = string
+export type GeneratedContentKind = 'qcm' | 'exercise' | 'correction'
 
 export type CorpusIndex = {
   schemaVersion: number
@@ -36,6 +37,32 @@ export type ModuleSummary = {
 export type ParsedMarkdown = {
   frontmatter: Record<string, string | string[] | number | boolean>
   body: string
+}
+
+export type GeneratedDraft = {
+  id: string
+  kind: GeneratedContentKind
+  title: string
+  tags: string[]
+  sourceModuleId?: ModuleId
+  sourceCorpusId?: CorpusId
+  prompt: string
+  markdown: string
+  model: string
+  createdAt: string
+  updatedAt: string
+}
+
+export type GeneratedContentIndex = {
+  schemaVersion: number
+  rootDirectory: string
+  buckets: Array<{
+    kind: GeneratedContentKind
+    title: string
+    directory: string
+    indexPath: string
+    tags: string[]
+  }>
 }
 
 export type PersonalSheetIndex = {
@@ -88,4 +115,5 @@ export type UserDataExport = {
   schemaVersion: number
   exportedAt: string
   progress: Record<ModuleId, ModuleProgress>
+  generatedDrafts: Record<string, GeneratedDraft>
 }

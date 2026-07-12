@@ -25,6 +25,24 @@ export function PersonalSheetsPage() {
         </p>
       </header>
 
+      <div className="page-summary">
+        <Card>
+          <span className="page-summary-label">Source</span>
+          <span className="page-summary-value">Markdown</span>
+          <p className="page-summary-note">Chaque fiche est stockée dans le dossier local prévu pour le site.</p>
+        </Card>
+        <Card>
+          <span className="page-summary-label">Usage</span>
+          <span className="page-summary-value">Consultation</span>
+          <p className="page-summary-note">Les fiches complètent le corpus sans modifier les cours existants.</p>
+        </Card>
+        <Card>
+          <span className="page-summary-label">Fiches</span>
+          <span className="page-summary-value">{data.sheets.length}</span>
+          <p className="page-summary-note">Fiches personnelles indexées dans l’application.</p>
+        </Card>
+      </div>
+
       <div className="module-grid">
         {data.sheets.map((sheet) => (
           <Card key={sheet.id}>

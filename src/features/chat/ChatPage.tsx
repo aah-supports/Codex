@@ -72,6 +72,11 @@ export function ChatPage() {
       return
     }
 
+    if (!config.enabled) {
+      setError('Active l’IA dans les paramètres avant d’utiliser le chat.')
+      return
+    }
+
     const nextUserMessage: ChatMessage = {
       id: crypto.randomUUID(),
       role: 'user',
@@ -119,6 +124,7 @@ export function ChatPage() {
         <h2>Chat de corpus</h2>
         <p>
           Choisis un cours, pose tes questions et reçois des réponses qui renvoient vers les chapitres concernés.
+          Sans configuration IA, cette zone reste inactive.
         </p>
       </header>
 
@@ -127,7 +133,9 @@ export function ChatPage() {
           <div className="chat-toolbar">
             <div className="chat-toolbar-copy">
               <h3>Discussion</h3>
-              <p>Modèle: {config.model}</p>
+              <p>
+                Mode: {config.provider === 'local' ? 'local' : 'API'} · Modèle: {config.model}
+              </p>
             </div>
             <Badge>{selectedCorpus?.title ?? 'Choisir un corpus'}</Badge>
           </div>
@@ -214,7 +222,10 @@ export function ChatPage() {
               placeholder="Demande une explication, une comparaison ou une aide sur un chapitre..."
             />
             <div className="chat-form-actions">
-              <Button type="submit" disabled={sending || !question.trim() || !knowledge.data?.length || !selectedCorpusId}>
+              <Button
+                type="submit"
+                disabled={sending || !question.trim() || !knowledge.data?.length || !selectedCorpusId || !config.enabled}
+              >
                 {sending ? 'Réponse...' : 'Envoyer'}
               </Button>
             </div>

@@ -60,6 +60,11 @@ export function GenerationPage() {
       return
     }
 
+    if (!config.enabled) {
+      setError('Active l’IA dans les paramètres avant de lancer une génération.')
+      return
+    }
+
     setStatus('loading')
     setError('')
 
@@ -108,31 +113,13 @@ export function GenerationPage() {
   return (
     <div className="page-stack">
       <header className="page-header">
-        <p className="eyebrow">IA locale</p>
-        <h2>Génération de contenus avec Ollama</h2>
+        <p className="eyebrow">Génération</p>
+        <h2>Génération de contenus</h2>
         <p>
-          Le modèle par défaut est <strong>gemma4:e4b-mlx</strong>. Tout reste local : tu peux générer des QCM,
-          exercices ou corrections sans backend distant. La configuration se fait dans la page paramètres.
+          Le moteur est activé dans les paramètres. Ici, tu choisis le type de contenu, le corpus source et la
+          consigne.
         </p>
       </header>
-
-      <div className="page-summary">
-        <Card>
-          <span className="page-summary-label">Modèle actif</span>
-          <span className="page-summary-value">{config.model}</span>
-          <p className="page-summary-note">Le moteur local Ollama sert de base à la génération.</p>
-        </Card>
-        <Card>
-          <span className="page-summary-label">Corpus choisi</span>
-          <span className="page-summary-value">{corpus?.title ?? '—'}</span>
-          <p className="page-summary-note">La génération s’appuie sur le corpus sélectionné dans le formulaire.</p>
-        </Card>
-        <Card>
-          <span className="page-summary-label">Sortie</span>
-          <span className="page-summary-value">{kindLabels[kind]}</span>
-          <p className="page-summary-note">Le contenu généré est rangé par type et exportable en Markdown.</p>
-        </Card>
-      </div>
 
       <div className="generation-grid">
         <Card className="generation-panel">
@@ -182,11 +169,16 @@ export function GenerationPage() {
             />
           </label>
           <div className="card-actions">
-            <Button onClick={() => void handleGenerate()} disabled={status === 'loading'}>
-              {status === 'loading' ? 'Génération...' : 'Générer avec Ollama'}
+            <Button onClick={() => void handleGenerate()} disabled={status === 'loading' || !config.enabled}>
+              {status === 'loading' ? 'Génération...' : 'Générer'}
             </Button>
           </div>
           {error ? <p className="generation-error">{error}</p> : null}
+          <p className="generation-hint">
+            {config.enabled
+              ? `Moteur actif: ${config.provider === 'local' ? 'local' : 'API'} · ${config.model}`
+              : 'Active le moteur dans Paramètres pour lancer une génération.'}
+          </p>
         </Card>
       </div>
 

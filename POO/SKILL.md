@@ -208,7 +208,7 @@ Les stats doivent aider à reprendre le travail, pas seulement afficher des grap
 
 Prévoir une feature isolée `features/generation`.
 
-Le modèle local est optionnel. L'app doit rester utilisable sans modèle. Quand l'option est activée :
+Le moteur IA est optionnel. L'app doit rester utilisable sans moteur. Quand l'option est activée :
 
 - lire le corpus Markdown local comme contexte ;
 - générer des exercices, QCM et corrections à partir d'un module ou tag ;
@@ -217,7 +217,12 @@ Le modèle local est optionnel. L'app doit rester utilisable sans modèle. Quand
 - éviter d'écraser le corpus officiel ;
 - stocker les générations dans un espace utilisateur séparé.
 
-Une intégration possible est Ollama avec un petit modèle Mistral local, mais garder l'interface remplaçable.
+Prévoir deux modes de configuration dans les paramètres :
+
+- modèle local, par exemple Ollama avec `gemma4:e4b-mlx` ;
+- API distante configurée manuellement, avec base URL, modèle et clé éventuelle.
+
+L'interface doit rester remplaçable. Les appels de génération et de chat ne partent que si le moteur est explicitement activé. Sur GitHub Pages, la partie IA reste désactivée par défaut tant qu'aucune configuration locale n'a été saisie.
 
 ## Design
 
@@ -273,6 +278,18 @@ Quand le corpus POO est enrichi, garder le même niveau d'exigence sur le fond :
 - insérer des diagrammes UML simples seulement lorsqu'ils clarifient le modèle ;
 - garder des exemples concrets, des exercices et des QCM alignés sur la progression ;
 - éviter les formulations trop rapides, les concepts non explicités et les passages purement décoratifs.
+
+## Processus d'installation à documenter
+
+Quand tu mets à jour le README ou la page Paramètres, documenter clairement :
+
+1. l'installation du dépôt ;
+2. le fonctionnement sans IA ;
+3. la configuration du mode local ;
+4. la configuration d'une API distante ;
+5. l'activation explicite du moteur ;
+6. le comportement par défaut sur GitHub Pages ;
+7. les contraintes matérielles du mode local.
 
 ## Principes de décision
 

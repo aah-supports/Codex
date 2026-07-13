@@ -6,8 +6,11 @@ const DEFAULT_OLLAMA_MODEL = 'gemma4:e4b-mlx'
 const OLLAMA_CONFIG_KEY = 'poo-learning-ollama-config'
 
 export type OllamaConfig = {
+  enabled: boolean
+  provider: 'local' | 'api'
   baseUrl: string
   model: string
+  apiKey: string
 }
 
 type GenerateOptions = {
@@ -23,8 +26,11 @@ type GenerateOptions = {
 
 export function getDefaultOllamaConfig(): OllamaConfig {
   return {
+    enabled: false,
+    provider: 'local',
     baseUrl: DEFAULT_OLLAMA_BASE_URL,
     model: DEFAULT_OLLAMA_MODEL,
+    apiKey: '',
   }
 }
 
@@ -41,10 +47,15 @@ export function readOllamaConfig(): OllamaConfig {
     }
 
     const parsed = JSON.parse(raw) as Partial<OllamaConfig>
+    const hasLegacyValues =
+      typeof parsed.baseUrl === 'string' || typeof parsed.model === 'string' || typeof parsed.provider === 'string'
 
     return {
+      enabled: parsed.enabled ?? hasLegacyValues,
+      provider: parsed.provider === 'api' ? 'api' : 'local',
       baseUrl: parsed.baseUrl?.trim() || DEFAULT_OLLAMA_BASE_URL,
       model: parsed.model?.trim() || DEFAULT_OLLAMA_MODEL,
+      apiKey: parsed.apiKey?.trim() || '',
     }
   } catch {
     return getDefaultOllamaConfig()
@@ -56,11 +67,10 @@ export function saveOllamaConfig(config: OllamaConfig) {
 }
 
 export async function generateWithOllama(config: OllamaConfig, options: GenerateOptions) {
+  assertConfigEnabled(config)
   const response = await fetch(`${config.baseUrl.replace(/\/$/, '')}/api/generate`, {
     method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
+    headers: buildRequestHeaders(config),
     body: JSON.stringify({
       model: config.model,
       stream: false,
@@ -87,11 +97,10 @@ export async function chatWithOllama(
     sources: KnowledgeSource[]
   },
 ) {
+  assertConfigEnabled(config)
   const response = await fetch(`${config.baseUrl.replace(/\/$/, '')}/api/generate`, {
     method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
+    headers: buildRequestHeaders(config),
     body: JSON.stringify({
       model: config.model,
       stream: false,
@@ -180,4 +189,22 @@ function buildChatPrompt(options: {
   ]
     .filter(Boolean)
     .join('\n')
+}
+
+function assertConfigEnabled(config: OllamaConfig) {
+  if (!config.enabled) {
+    throw new Error('La configuration IA est désactivée dans les paramètres.')
+  }
+}
+
+function buildRequestHeaders(config: OllamaConfig): Record<string, string> {
+  const headers: Record<string, string> = {
+    'Content-Type': 'application/json',
+  }
+
+  if (config.apiKey.trim()) {
+    headers.Authorization = `Bearer ${config.apiKey.trim()}`
+  }
+
+  return headers
 }
